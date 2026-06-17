@@ -1,0 +1,178 @@
+[
+  {
+    "id": 1,
+    "project": "xss-reflection-scanner",
+    "title": "XSS Reflection Scanner",
+    "description": "A tool that crawls target endpoints for input parameters, injects common XSS payloads (script tags, event handlers, SVG injections), and detects which inputs are reflected in the response without sanitization. Demo server has endpoints that reflect input raw, escape HTML entities, and use CSP headers respectively.",
+    "category": "web_security",
+    "repo": "cyberlab-xss-reflection-scanner",
+    "date": "2026-05-26T12:00:00.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built an XSS reflection scanner with an Express demo server exposing three endpoints at different security levels (raw, HTML-escaped, CSP-protected). All 16 node:test tests passed, covering true positives, false positives, output format, and edge cases.",
+    "tests_passed": 16,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Reflected cross-site scripting (XSS)",
+      "HTML entity encoding as XSS mitigation",
+      "Content-Security-Policy as secondary defence",
+      "XSS payload injection and detection",
+      "Severity classification (HIGH vs MEDIUM)"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 2,
+    "project": "port-scanner-service-fingerprinting",
+    "title": "Port Scanner with Service Fingerprinting",
+    "description": "Scans a range of localhost ports, identifies which are open, and attempts to fingerprint the service by analysing banner responses. Demo server opens three ports with different services: HTTP (Express), raw TCP echo, and a fake SMTP relay.",
+    "category": "network_security",
+    "repo": "cyberlab-port-scanner-service-fingerprinting",
+    "date": "2026-05-26T14:00:00.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built a parallel TCP port scanner that fingerprints services via banner analysis (HTTP response headers, SMTP 220 greeting, echo reflection). Demo server exposes HTTP, TCP echo, and fake SMTP on consecutive ports. All 22 node:test tests passed on first run.",
+    "tests_passed": 22,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "TCP port scanning",
+      "Service banner grabbing and fingerprinting",
+      "HTTP, SMTP, and echo service identification",
+      "Parallel async TCP probing with Promise.all",
+      "Information leakage via server banners"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 3,
+    "project": "sql-injection-detector",
+    "title": "SQL Injection Detector",
+    "description": "Sends parameterized and unparameterized queries to endpoints backed by SQLite. Detects error-based, union-based, and boolean-based blind SQLi. Demo server has a login form and search endpoint — one using raw string concatenation, one using parameterized queries.",
+    "category": "web_security",
+    "repo": "cyberlab-sql-injection-detector",
+    "date": "2026-06-01T00:00:00.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built a SQL injection detector with an Express + node:sqlite demo server exposing vulnerable (string-concatenated) and safe (parameterized) login and search endpoints. All 20 node:test tests passed, covering error-based SQLi, authentication bypass, and UNION-based data exfiltration.",
+    "tests_passed": 20,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Error-based SQL injection via unbalanced quotes",
+      "Authentication bypass with always-true SQL condition",
+      "UNION-based SQL injection for data exfiltration",
+      "Parameterized queries as the complete mitigation",
+      "SQL error information disclosure as a secondary vulnerability"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 4,
+    "project": "hash-collision-demonstrator",
+    "title": "Hash Collision Demonstrator",
+    "description": "Compares MD5, SHA-1, and SHA-256 by hashing large sets of inputs and measuring collision resistance. Demonstrates known MD5 weaknesses. Demo server provides a hash-verification API that the tool tests against.",
+    "category": "cryptography",
+    "repo": "cyberlab-hash-collision-demonstrator",
+    "date": "2026-06-01T05:01:00.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built a hash algorithm security scanner with an Express demo server exposing MD5 (vulnerable), SHA-1 (deprecated), and SHA-256 (safe) hash endpoints. The server computes a live birthday-attack collision on a 32-bit MD5 prefix at startup. All 23 node:test tests passed.",
+    "tests_passed": 23,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "MD5 cryptographic weakness and practical collision attacks",
+      "SHA-1 deprecation via the SHAttered attack (2017)",
+      "Birthday paradox and its impact on hash collision resistance",
+      "SHA-256 as the current minimum secure standard",
+      "Algorithm agility and deprecation lifecycle"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 5,
+    "project": "brute-force-rate-limiter-demo",
+    "title": "Brute Force Rate Limiter Demo",
+    "description": "Tests login endpoints for brute force protection. Measures how many attempts before lockout, checks if lockout is IP-based or account-based, tests if rate limits reset properly. Demo server has a login route with configurable rate limiting.",
+    "category": "authentication_and_access",
+    "repo": "cyberlab-brute-force-rate-limiter-demo",
+    "date": "2026-06-08T00:00:00.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built a brute force protection demo with an Express server exposing a vulnerable endpoint (no rate limiting) and a protected endpoint (IP-based lockout after 5 consecutive failures with 30-second window). A scanner tool probes both and reports findings as structured JSON. All 20 node:test tests passed on first run.",
+    "tests_passed": 20,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Brute force login attacks and credential guessing",
+      "IP-based rate limiting and account lockout",
+      "Fixed-window lockout with configurable threshold",
+      "Retry-After header signalling for 429 responses",
+      "True positive detection vs. false positive suppression in security scanners"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 6,
+    "project": "file-entropy-analyzer",
+    "title": "File Entropy Analyzer",
+    "description": "Calculates Shannon entropy of files to detect packed, encrypted, or compressed content. High entropy suggests obfuscation. Demo server serves files with varying entropy levels. Tool analyzes each and classifies them.",
+    "category": "malware_analysis_and_forensics",
+    "repo": "cyberlab-file-entropy-analyzer",
+    "date": "2026-06-08T10:14:22.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built a Shannon entropy scanner with an Express demo server serving four files at different entropy levels (0, ~4, ~8, ~8 bits/byte). The tool fetches, analyzes, and classifies each file, flagging the two high-entropy blobs as encrypted_or_packed. All 22 node:test tests passed on the first run.",
+    "tests_passed": 22,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Shannon entropy as a randomness metric for byte streams",
+      "High entropy (>7.5 b/B) as an indicator of encryption or packing",
+      "False-positive suppression: plain text and structured data are not flagged",
+      "File content classification: plain_text / natural_language / compressed / encrypted_or_packed",
+      "Safe endpoint restricting binary content delivery vs. unrestricted download"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 7,
+    "project": "csrf-token-validator",
+    "title": "CSRF Token Validator",
+    "description": "Tests form endpoints for CSRF protection. Checks for token presence, token rotation on each request, SameSite cookie attributes, and referer header validation. Demo server has a funds transfer form — one protected, one unprotected.",
+    "category": "web_security",
+    "repo": "cyberlab-csrf-token-validator",
+    "date": "2026-06-15T05:06:50.399Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built a CSRF token validator with an Express demo server exposing a vulnerable funds-transfer endpoint (no token check), a protected endpoint (synchronizer token + single-use rotation), and cookie endpoints with and without SameSite=Strict. All 21 node:test tests passed on the first run.",
+    "tests_passed": 21,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Cross-Site Request Forgery (CSRF) attack mechanism",
+      "Synchronizer token pattern as the primary CSRF defence",
+      "Single-use token rotation to prevent token replay attacks",
+      "SameSite=Strict cookie attribute as a complementary browser-level defence",
+      "Session-scoped token isolation (session A tokens cannot be used by session B)"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 8,
+    "project": "aes-encryption-mode-comparison",
+    "title": "AES Encryption Mode Comparison",
+    "description": "Encrypts identical plaintext with AES in ECB, CBC, CTR, and GCM modes. Visually demonstrates why ECB is insecure (pattern preservation). Demo server has encrypt/decrypt endpoints for each mode.",
+    "category": "cryptography",
+    "repo": "cyberlab-aes-encryption-mode-comparison",
+    "date": "2026-06-16T05:09:04.552Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built an AES mode comparison tool with an Express demo server exposing ECB (vulnerable), CBC (legacy), CTR (unauthenticated), and GCM (recommended) encrypt endpoints. A scanner detects determinism in ECB, missing auth tags in CBC/CTR, and confirms GCM is clean. All 22 node:test tests passed on the first run.",
+    "tests_passed": 22,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "ECB mode determinism — identical plaintext blocks produce identical ciphertext blocks, leaking data structure",
+      "CBC padding oracle vulnerability — unauthenticated mode susceptible to bit-flipping and padding attacks",
+      "CTR mode as unauthenticated encryption — no integrity protection despite a random IV",
+      "AES-GCM as authenticated encryption — combines confidentiality and integrity in one pass",
+      "IV uniqueness requirements — IV reuse under CTR/GCM enables plaintext XOR recovery"
+    ],
+    "failure_reason": null
+  }
+]

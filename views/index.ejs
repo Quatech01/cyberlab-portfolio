@@ -1,0 +1,17 @@
+<%- include('partials/header', { title: 'CyberLab — Security Tooling Portfolio' }) %>
+
+<p class="muted">A collection of small, tested cybersecurity tools — each pairs a demo
+vulnerable server with a scanner that detects the issue and confirms the fix.</p>
+
+<div class="grid">
+  <% projects.forEach(p => { %>
+    <a class="card" href="/project/<%= p.slug %>">
+      <span class="badge"><%= p.category.replace(/_/g, ' ') %></span>
+      <h2><%= p.title %></h2>
+      <p><%= p.summary %></p>
+      <div class="tests-pass">&#10003; <%= p.testsPassed %> tests passing</div>
+    </a>
+  <% }) %>
+</div>
+
+<%- include('partials/footer') %>

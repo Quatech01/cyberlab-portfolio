@@ -1,0 +1,26 @@
+{
+  "target": "http://localhost:4477",
+  "scannedAt": "2026-06-17T20:56:58.515Z",
+  "findings": [
+    {
+      "endpoint": "/login/vulnerable",
+      "vulnerability": "Missing Rate Limiting",
+      "evidence": "Completed 10 consecutive failed login attempts without triggering any rate limit or lockout.",
+      "severity": "HIGH",
+      "detail": "This endpoint accepts an unlimited number of failed login attempts, enabling automated password guessing (brute-force) attacks. An attacker can try thousands of passwords per second until the correct one is found."
+    }
+  ],
+  "securePaths": [
+    {
+      "endpoint": "/login/protected",
+      "protection": "Rate Limiting Active",
+      "detail": "Rate limit triggered after 5 attempt(s). Subsequent requests correctly receive HTTP 429."
+    }
+  ],
+  "summary": {
+    "endpointsTested": 2,
+    "vulnerableEndpoints": 1,
+    "rateLimitingDetected": true,
+    "recommendation": "Implement rate limiting on ALL authentication endpoints. Use a sliding-window counter keyed by IP (and optionally by username) with exponential backoff or a fixed lockout period after threshold failures."
+  }
+}

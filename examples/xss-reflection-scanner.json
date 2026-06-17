@@ -1,0 +1,28 @@
+{
+  "target": "http://localhost:4145",
+  "scanned_at": "2026-06-17T20:56:54.477Z",
+  "endpoints_tested": [
+    "/search",
+    "/search-escaped",
+    "/search-csp"
+  ],
+  "findings": [
+    {
+      "endpoint": "/search",
+      "vulnerability": "XSS Reflection",
+      "evidence": "Payload reflected without HTML encoding: <script>alert(1)</script>",
+      "severity": "HIGH",
+      "payload": "<script>alert(1)</script>",
+      "csp_present": false
+    },
+    {
+      "endpoint": "/search-csp",
+      "vulnerability": "XSS Reflection",
+      "evidence": "Payload reflected without HTML encoding: <script>alert(1)</script>",
+      "severity": "MEDIUM",
+      "payload": "<script>alert(1)</script>",
+      "csp_present": true
+    }
+  ],
+  "summary": "Found 2 XSS reflection issue(s) across 3 endpoints"
+}

@@ -1,0 +1,68 @@
+{
+  "target": "http://localhost:4134",
+  "timestamp": "2026-06-17T20:57:00.144Z",
+  "findings": [
+    {
+      "endpoint": "/api/vulnerable/encrypt",
+      "mode": "ECB",
+      "severity": "HIGH",
+      "vulnerable": true,
+      "uses_iv": false,
+      "authenticated": false,
+      "deterministic": true,
+      "issues": [
+        "No IV — identical plaintext always produces identical ciphertext, leaking data patterns"
+      ],
+      "evidence": "Same plaintext encrypted twice produced identical ciphertext: 894be58a27549e0799a5c4aa198e1e68..."
+    },
+    {
+      "endpoint": "/api/deprecated/encrypt",
+      "mode": "CBC",
+      "severity": "MEDIUM",
+      "vulnerable": true,
+      "uses_iv": true,
+      "authenticated": false,
+      "deterministic": false,
+      "issues": [
+        "No authentication tag — susceptible to padding oracle attacks and ciphertext bit-flipping"
+      ],
+      "evidence": "Random IV per encryption: first=b3dcb9baf19d6dce... second=990a0cbe44ebae7d..."
+    },
+    {
+      "endpoint": "/api/acceptable/encrypt",
+      "mode": "CTR",
+      "severity": "LOW",
+      "vulnerable": true,
+      "uses_iv": true,
+      "authenticated": false,
+      "deterministic": false,
+      "issues": [
+        "No authentication tag — ciphertext integrity is not verified (unauthenticated encryption)"
+      ],
+      "evidence": "Random IV per encryption: first=91730e247b9d041d... second=7d3afeb33751850d..."
+    },
+    {
+      "endpoint": "/api/secure/encrypt",
+      "mode": "GCM",
+      "severity": "NONE",
+      "vulnerable": false,
+      "uses_iv": true,
+      "authenticated": true,
+      "deterministic": false,
+      "issues": [],
+      "evidence": "Random IV per encryption: first=36e6730e470116d9... second=3a7e0ba86bfead63..."
+    }
+  ],
+  "pattern_test": {
+    "endpoint": "/demo/ecb-weakness",
+    "ecb_blocks_identical": true,
+    "evidence": "ECB block1 === block2 (2dfade543d594b4b03b5a723b0c07b4b): repeated plaintext blocks reveal structure"
+  },
+  "summary": {
+    "total_modes_tested": 4,
+    "vulnerable_modes": 3,
+    "secure_modes": 1,
+    "risk_score": "HIGH",
+    "recommendation": "Use AES-GCM (authenticated encryption) for all new implementations"
+  }
+}

@@ -1,0 +1,16 @@
+<%- include('partials/header', { title: 'Login — CyberLab' }) %>
+
+<h1>Live Scan Login</h1>
+<p class="muted">Live scanning against real targets is restricted to the project owner.</p>
+
+<% if (error) { %>
+  <p class="error"><%= error %></p>
+<% } %>
+
+<form method="POST" action="/login">
+  <label for="password">Password</label>
+  <input type="password" id="password" name="password" required autofocus>
+  <button type="submit">Log in</button>
+</form>
+
+<%- include('partials/footer') %>

@@ -1,0 +1,69 @@
+<%- include('partials/header', { title: 'Live Scan — CyberLab' }) %>
+
+<h1>Live Scan</h1>
+<p class="muted">
+  Run a tool against any target you're authorized to test. Tools that probe
+  specific demo-server paths (e.g. the XSS or SQLi scanners) will likely report
+  no findings against a system that doesn't expose those exact endpoints —
+  that's expected behavior, not a bug.
+</p>
+
+<form id="scan-form">
+  <label for="project">Project</label>
+  <select id="project" name="project" required>
+    <% projects.forEach(p => { %>
+      <option value="<%= p.slug %>"><%= p.title %></option>
+    <% }) %>
+  </select>
+
+  <label for="target">Target (http:// or https://)</label>
+  <input type="text" id="target" name="target" placeholder="http://192.168.1.50:3000" required>
+
+  <button type="submit">Run scan</button>
+</form>
+
+<p id="status" class="muted"></p>
+<pre id="result" style="display:none"></pre>
+
+<form method="POST" action="/logout" style="margin-top: 2rem;">
+  <button type="submit" style="background: transparent; color: var(--muted); border: 1px solid var(--border);">Log out</button>
+</form>
+
+<script>
+  const form = document.getElementById('scan-form');
+  const statusEl = document.getElementById('status');
+  const resultEl = document.getElementById('result');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    resultEl.style.display = 'none';
+    statusEl.textContent = 'Running scan...';
+
+    const body = {
+      project: document.getElementById('project').value,
+      target: document.getElementById('target').value,
+    };
+
+    try {
+      const res = await fetch('/api/scan', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(body),
+      });
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        statusEl.textContent = 'Error: ' + (data.error || 'Scan failed');
+        return;
+      }
+
+      statusEl.textContent = 'Done.';
+      resultEl.textContent = JSON.stringify(data.result, null, 2);
+      resultEl.style.display = 'block';
+    } catch (err) {
+      statusEl.textContent = 'Error: ' + err.message;
+    }
+  });
+</script>
+
+<%- include('partials/footer') %>

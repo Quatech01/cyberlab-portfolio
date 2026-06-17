@@ -1,0 +1,35 @@
+<%- include('partials/header', { title: project.title + ' — CyberLab' }) %>
+
+<p><a href="/">&larr; All projects</a></p>
+
+<span class="badge"><%= project.category.replace(/_/g, ' ') %></span>
+<h1><%= project.title %></h1>
+<p class="muted"><%= project.description %></p>
+<p>
+  <a href="https://github.com/Quatech01/<%= project.repo %>" target="_blank" rel="noopener">View on GitHub</a>
+  &middot; <span class="tests-pass"><%= project.testsPassed %> tests passing</span>
+</p>
+
+<h2>Concepts demonstrated</h2>
+<ul>
+  <% project.conceptsDemonstrated.forEach(c => { %>
+    <li><%= c %></li>
+  <% }) %>
+</ul>
+
+<h2>Recorded example output</h2>
+<% if (exampleOutput) { %>
+  <p class="muted">Captured by running this project's tool against its own bundled demo server.</p>
+  <pre><%= JSON.stringify(exampleOutput, null, 2) %></pre>
+<% } else { %>
+  <p class="muted">No example captured yet. Run <code>npm run capture-examples</code> in the portfolio app.</p>
+<% } %>
+
+<h2>README</h2>
+<% if (readmeHtml) { %>
+  <div class="readme"><%- readmeHtml %></div>
+<% } else { %>
+  <p class="muted">No README found for this project.</p>
+<% } %>
+
+<%- include('partials/footer') %>

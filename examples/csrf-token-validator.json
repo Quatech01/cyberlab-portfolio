@@ -1,0 +1,37 @@
+{
+  "target": "http://localhost:4134",
+  "session": "scanner-1781729819346-q4krsr",
+  "findings": [
+    {
+      "endpoint": "/transfer/vulnerable",
+      "vulnerability": "MISSING_CSRF_PROTECTION",
+      "evidence": "Cross-origin POST succeeded without any CSRF token (HTTP 200)",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/account/insecure-cookie",
+      "vulnerability": "MISSING_SAMESITE_ATTRIBUTE",
+      "evidence": "Set-Cookie header is missing SameSite — value: \"session=abc123; HttpOnly; Path=/\"",
+      "severity": "MEDIUM"
+    }
+  ],
+  "checks": {
+    "vulnerable_transfer_flagged": true,
+    "protected_transfer_blocked": true,
+    "csrf_token_rotation_works": true,
+    "insecure_cookie_flagged": true,
+    "secure_cookie_passed": true
+  },
+  "summary": {
+    "total_endpoints_tested": 6,
+    "vulnerabilities_found": 2,
+    "endpoints_tested": [
+      "/transfer/vulnerable",
+      "/transfer/protected (no token)",
+      "/transfer/protected (with token)",
+      "/transfer/protected (token replay)",
+      "/account/insecure-cookie",
+      "/account/secure-cookie"
+    ]
+  }
+}

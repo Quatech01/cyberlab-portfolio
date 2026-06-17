@@ -1,0 +1,51 @@
+{
+  "target": "http://localhost:4355",
+  "host": "localhost",
+  "portRange": "4355-4365",
+  "scanTime": "2026-06-17T20:56:55.017Z",
+  "findings": [
+    {
+      "endpoint": "localhost:4355",
+      "port": 4355,
+      "state": "open",
+      "vulnerability_type": "exposed-service",
+      "service": "http",
+      "version": "DemoApp/1.0 (Node.js/Express)",
+      "evidence": "HTTP/1.1 200 OK\\r\\nX-Powered-By: Express\\r\\nServer: DemoApp/1.0 (Node.js/Express)\\r\\nContent-Type: application/json; charset=utf-8\\r\\nContent-Length: 67\\r\\nETag: W/\"43-ARKBP2ETmqAp82rqmrXrt2FgaOU\"\\r\\nDate: Wed, 1",
+      "confidence": "HIGH",
+      "severity": "INFO"
+    },
+    {
+      "endpoint": "localhost:4356",
+      "port": 4356,
+      "state": "open",
+      "vulnerability_type": "exposed-service",
+      "service": "echo",
+      "version": "TCP echo (raw)",
+      "evidence": "HEAD / HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n",
+      "confidence": "HIGH",
+      "severity": "INFO"
+    },
+    {
+      "endpoint": "localhost:4357",
+      "port": 4357,
+      "state": "open",
+      "vulnerability_type": "exposed-service",
+      "service": "smtp",
+      "version": "mail.demo.local ESMTP DemoSMTP 1.0 Ready",
+      "evidence": "220 mail.demo.local ESMTP DemoSMTP 1.0 Ready\\r\\n500 Unknown command\\r\\n",
+      "confidence": "HIGH",
+      "severity": "MEDIUM"
+    }
+  ],
+  "summary": {
+    "openPorts": 3,
+    "closedPorts": 8,
+    "servicesDetected": [
+      "http",
+      "echo",
+      "smtp"
+    ],
+    "riskLevel": "MEDIUM"
+  }
+}

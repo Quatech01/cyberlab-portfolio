@@ -1,0 +1,95 @@
+{
+  "target": "http://localhost:4126",
+  "scanTime": "2026-06-17T20:56:57.848Z",
+  "findings": [
+    {
+      "endpoint": "/algorithms",
+      "vulnerability": "Cryptographically broken hash algorithm: MD5",
+      "evidence": "MD5 (128-bit) — Practical collisions demonstrated by Wang et al. (2004); avoid for all security uses",
+      "severity": "critical",
+      "algorithm": "md5",
+      "birthdayBound": 18446744073709552000
+    },
+    {
+      "endpoint": "/algorithms",
+      "vulnerability": "Deprecated hash algorithm in use: SHA1",
+      "evidence": "SHA1 (160-bit) — SHAttered attack (2017) produced the first practical SHA-1 collision; deprecated by NIST",
+      "severity": "high",
+      "algorithm": "sha1",
+      "birthdayBound": 1.2089258196146292e+24
+    },
+    {
+      "endpoint": "/verify-vulnerable",
+      "vulnerability": "Hash verification uses MD5 — susceptible to collision forgery",
+      "evidence": "MD5 is cryptographically broken — collisions are practical to compute",
+      "severity": "critical",
+      "algorithm": "md5"
+    },
+    {
+      "endpoint": "/birthday-demo",
+      "vulnerability": "Birthday attack collision proven on MD5 (32-bit prefix)",
+      "evidence": "Two distinct inputs (\"probe-26232\" and \"probe-89261\") share MD5 prefix 7ba43180 after 89261 attempts. Birthday bound for full 128-bit MD5 is ~2^64 operations.",
+      "severity": "critical",
+      "algorithm": "md5",
+      "collisionProven": true,
+      "attempts": 89261
+    }
+  ],
+  "algorithmSummary": [
+    {
+      "name": "md5",
+      "bits": 128,
+      "status": "broken",
+      "deprecated": true,
+      "birthdayBound": 18446744073709552000,
+      "reason": "Practical collisions demonstrated by Wang et al. (2004); avoid for all security uses"
+    },
+    {
+      "name": "sha1",
+      "bits": 160,
+      "status": "deprecated",
+      "deprecated": true,
+      "birthdayBound": 1.2089258196146292e+24,
+      "reason": "SHAttered attack (2017) produced the first practical SHA-1 collision; deprecated by NIST"
+    },
+    {
+      "name": "sha256",
+      "bits": 256,
+      "status": "secure",
+      "deprecated": false,
+      "birthdayBound": 3.402823669209385e+38,
+      "reason": "No known practical attacks; current NIST recommendation"
+    }
+  ],
+  "collisionDemo": {
+    "inputA": "probe-26232",
+    "inputB": "probe-89261",
+    "truncatedBits": 32,
+    "truncatedHash": "7ba43180",
+    "fullMd5A": "7ba431801c12348084ceba61f64a0f5b",
+    "fullMd5B": "7ba4318018189e6ce7097d887baadd12",
+    "fullHashesMatch": false,
+    "attempts": 89261,
+    "explanation": "Birthday attack on 32-bit MD5 prefix: two distinct inputs sharing the same 4-byte hash prefix. Full MD5 hashes differ here, but the same math applies to the full 128-bit space — Wang et al. (2004) exploited MD5's internal structure to achieve full collisions."
+  },
+  "safeEndpointResult": {
+    "algorithm": "sha256",
+    "match": true,
+    "hash": "d757afa8f14ef7434c81a75fd826537c6b13a8dadd65363b0fd10f1ec2cb211f"
+  },
+  "summary": {
+    "totalFindings": 4,
+    "critical": 3,
+    "high": 1,
+    "collisionProven": true,
+    "safeAlgorithmsDetected": [
+      "sha256"
+    ],
+    "weakAlgorithmsDetected": [
+      "md5",
+      "sha1",
+      "md5",
+      "md5"
+    ]
+  }
+}

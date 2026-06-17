@@ -1,0 +1,19 @@
+{
+  "name": "cyberlab-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Public showcase and gated live-scan dashboard for CyberLab projects",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "sync-content": "node scripts/sync-content.js",
+    "capture-examples": "node scripts/capture-examples.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
+    "express": "^4.18.2",
+    "express-session": "^1.18.0",
+    "marked": "^12.0.2"
+  }
+}
