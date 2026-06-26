@@ -196,5 +196,27 @@
       "True positive detection and false positive suppression in a security scanner"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 10,
+    "project": "log-file-anomaly-detector",
+    "title": "Log File Anomaly Detector",
+    "description": "Parses server access logs and detects anomalies: SQL injection attempts in URLs, directory traversal sequences, suspicious scanner user agents, request-rate spikes via sliding-window analysis, and consecutive server error bursts. Demo server pre-seeds logs with all five anomaly types alongside clean baseline traffic.",
+    "category": "malware_analysis_and_forensics",
+    "repo": "cyberlab-log-file-anomaly-detector",
+    "date": "2026-06-27T00:00:00.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built a rule-based log anomaly detector with an Express demo server that seeds realistic access logs containing five injected attack patterns. The tool fetches logs over HTTP, applies five detection rules, and emits structured JSON findings with HIGH/MEDIUM severity ratings. All 23 node:test tests passed on the first run.",
+    "tests_passed": 23,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "URL-decode-before-match to catch %2e%2e and other encoded traversal evasions",
+      "Sliding-window rate analysis to detect brute-force login bursts",
+      "Consecutive 5xx error tracking as an error-spike indicator",
+      "Known scanner user-agent fingerprinting (sqlmap, Nikto, masscan, WPScan)",
+      "True positive vs false positive separation in rule-based detection"
+    ],
+    "failure_reason": null
   }
 ]

@@ -1,0 +1,113 @@
+{
+  "target": "http://localhost:4964",
+  "findings": [
+    {
+      "type": "sql_injection_attempt",
+      "endpoint": "/api/users?id=1' OR '1'='1",
+      "evidence": "SQL keyword or injection pattern detected in URL",
+      "severity": "HIGH",
+      "ip": "198.51.100.5",
+      "timestamp": "2026-06-26T22:38:12.314Z"
+    },
+    {
+      "type": "sql_injection_attempt",
+      "endpoint": "/search?q=1' UNION SELECT null,username,password FROM users--",
+      "evidence": "SQL keyword or injection pattern detected in URL",
+      "severity": "HIGH",
+      "ip": "198.51.100.5",
+      "timestamp": "2026-06-26T22:38:12.314Z"
+    },
+    {
+      "type": "sql_injection_attempt",
+      "endpoint": "/login?user=admin'--&pass=x",
+      "evidence": "SQL keyword or injection pattern detected in URL",
+      "severity": "HIGH",
+      "ip": "198.51.100.5",
+      "timestamp": "2026-06-26T22:38:12.314Z"
+    },
+    {
+      "type": "directory_traversal_attempt",
+      "endpoint": "/../../../etc/passwd",
+      "evidence": "Path traversal sequence (../ or URL-encoded equivalent) detected",
+      "severity": "HIGH",
+      "ip": "198.51.100.6",
+      "timestamp": "2026-06-26T22:43:12.314Z"
+    },
+    {
+      "type": "directory_traversal_attempt",
+      "endpoint": "/files/..%2F..%2F..%2Fetc%2Fshadow",
+      "evidence": "Path traversal sequence (../ or URL-encoded equivalent) detected",
+      "severity": "HIGH",
+      "ip": "198.51.100.6",
+      "timestamp": "2026-06-26T22:43:12.314Z"
+    },
+    {
+      "type": "directory_traversal_attempt",
+      "endpoint": "/static/%2e%2e/%2e%2e/config.json",
+      "evidence": "Path traversal sequence (../ or URL-encoded equivalent) detected",
+      "severity": "HIGH",
+      "ip": "198.51.100.6",
+      "timestamp": "2026-06-26T22:43:12.314Z"
+    },
+    {
+      "type": "suspicious_user_agent",
+      "endpoint": "/api/users",
+      "evidence": "Known scanner or attack tool: sqlmap/1.0-dev-fffb696 (https://sqlmap.org)",
+      "severity": "MEDIUM",
+      "ip": "198.51.100.7",
+      "timestamp": "2026-06-26T22:48:12.314Z"
+    },
+    {
+      "type": "suspicious_user_agent",
+      "endpoint": "/api/users",
+      "evidence": "Known scanner or attack tool: Nikto/2.1.6",
+      "severity": "MEDIUM",
+      "ip": "198.51.100.7",
+      "timestamp": "2026-06-26T22:48:12.314Z"
+    },
+    {
+      "type": "suspicious_user_agent",
+      "endpoint": "/api/users",
+      "evidence": "Known scanner or attack tool: masscan/1.3.2",
+      "severity": "MEDIUM",
+      "ip": "198.51.100.7",
+      "timestamp": "2026-06-26T22:48:12.314Z"
+    },
+    {
+      "type": "suspicious_user_agent",
+      "endpoint": "/api/users",
+      "evidence": "Known scanner or attack tool: WPScan v3.8.25",
+      "severity": "MEDIUM",
+      "ip": "198.51.100.7",
+      "timestamp": "2026-06-26T22:48:12.314Z"
+    },
+    {
+      "type": "unusual_request_rate",
+      "endpoint": "*",
+      "evidence": "60 requests within 60 s from 198.51.100.8 (threshold: 30)",
+      "severity": "MEDIUM",
+      "ip": "198.51.100.8",
+      "timestamp": "2026-06-26T22:53:03.464Z"
+    },
+    {
+      "type": "error_spike",
+      "endpoint": "/api/data",
+      "evidence": "10 consecutive 5xx errors from 203.0.113.99",
+      "severity": "MEDIUM",
+      "ip": "203.0.113.99",
+      "timestamp": "2026-06-26T22:57:45.314Z"
+    }
+  ],
+  "summary": {
+    "total_entries": 120,
+    "anomalies_found": 12,
+    "risk": "HIGH",
+    "breakdown": {
+      "sql_injection": 3,
+      "directory_traversal": 3,
+      "suspicious_ua": 4,
+      "rate_anomaly": 1,
+      "error_spike": 1
+    }
+  }
+}
