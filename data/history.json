@@ -174,5 +174,27 @@
       "IV uniqueness requirements — IV reuse under CTR/GCM enables plaintext XOR recovery"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 9,
+    "project": "input-sanitization-library",
+    "title": "Input Sanitization Library",
+    "description": "A comprehensive input sanitization module that handles HTML escaping, SQL parameterization, path normalization, and command injection prevention. Demo server has endpoints that use the library and endpoints that don't. Tests prove the difference.",
+    "category": "secure_coding",
+    "repo": "cyberlab-input-sanitization-library",
+    "date": "2026-06-26T17:05:00.000Z",
+    "status": "success",
+    "server_framework": "express",
+    "summary": "Built an input sanitization library with an Express demo server exposing three vulnerable/safe endpoint pairs (HTML escaping, path normalization, command injection). The scanner tool sends attack payloads to all six endpoints and reports findings as structured JSON. All 20 node:test tests passed on the first run.",
+    "tests_passed": 20,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "HTML entity encoding to prevent cross-site scripting (XSS)",
+      "Path normalization using path.resolve + startsWith to prevent directory traversal",
+      "Shell metacharacter rejection to prevent command injection",
+      "Sanitize-at-output vs sanitize-at-input — applying the right layer for each vector",
+      "True positive detection and false positive suppression in a security scanner"
+    ],
+    "failure_reason": null
   }
 ]

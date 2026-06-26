@@ -1,0 +1,30 @@
+{
+  "target": "http://localhost:4499",
+  "timestamp": "2026-06-26T17:08:07.135Z",
+  "findings": [
+    {
+      "endpoint": "/vuln/html",
+      "vulnerability": "Cross-Site Scripting (XSS) — unescaped HTML output",
+      "evidence": "Payload \"<script>alert(\"xss\")</script>\" reflected verbatim in output field",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/vuln/path",
+      "vulnerability": "Path Traversal — unsanitized file parameter",
+      "evidence": "Payload \"../../../etc/passwd\" produced: ./files/../../../etc/passwd",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/vuln/command",
+      "vulnerability": "Command Injection — shell metacharacters accepted",
+      "evidence": "Payload \"127.0.0.1; cat /etc/passwd\" embedded in: ping -c 1 127.0.0.1; cat /etc/passwd",
+      "severity": "CRITICAL"
+    }
+  ],
+  "summary": {
+    "endpoints_scanned": 6,
+    "vulnerable": 3,
+    "safe": 3,
+    "vulnerabilities_found": 3
+  }
+}
