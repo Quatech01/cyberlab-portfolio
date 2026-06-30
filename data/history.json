@@ -218,5 +218,28 @@
       "True positive vs false positive separation in rule-based detection"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 11,
+    "project": "jwt-vulnerability-scanner",
+    "title": "JWT Vulnerability Scanner",
+    "description": "Tests JWT tokens for common vulnerabilities: none algorithm acceptance, weak HMAC secrets, algorithm confusion (RS256 to HS256), expired token acceptance, missing claims validation. Demo server has a protected API using JWT auth with intentional flaws.",
+    "category": "cryptography",
+    "repo": "cyberlab-jwt-vulnerability-scanner",
+    "date": "2026-06-30T06:03:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a JWT vulnerability scanner with a FastAPI demo server exposing three attack surfaces: alg=none acceptance, HS256 with a weak crackable secret, and missing expiry validation. The scanner probes all three, cracks the secret via dictionary attack, forges an expired token, and verifies the safe endpoint rejects unsigned tokens. All 27 pytest tests passed on first run after fixing an httpx edge case with trailing-space header values.",
+    "tests_passed": 27,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT none-algorithm attack — unsigned tokens accepted when alg=none is not explicitly rejected",
+      "Weak HS256 secret cracking via offline dictionary attack against the HMAC-SHA256 signature",
+      "Expired JWT acceptance — missing exp claim validation allows indefinitely valid stolen tokens",
+      "Constant-time comparison (hmac.compare_digest) to prevent timing side-channels in secret cracking detection",
+      "Strict algorithm allowlist as the correct mitigation for alg=none and algorithm confusion"
+    ],
+    "failure_reason": null
   }
 ]

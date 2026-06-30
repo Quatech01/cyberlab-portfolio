@@ -31,9 +31,12 @@ function main() {
       path.join(srcDir, 'README.md'),
       path.join(destDir, 'README.md')
     );
+
+    // Support both Node.js (tool/index.js) and Python (tool/main.py) projects
+    const toolFile = entry.language === 'python' ? 'main.py' : 'index.js';
     fs.copyFileSync(
-      path.join(srcDir, 'tool', 'index.js'),
-      path.join(destDir, 'tool', 'index.js')
+      path.join(srcDir, 'tool', toolFile),
+      path.join(destDir, 'tool', toolFile)
     );
 
     console.log(`synced: ${slug}`);
