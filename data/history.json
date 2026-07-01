@@ -241,5 +241,29 @@
       "Strict algorithm allowlist as the correct mitigation for alg=none and algorithm confusion"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 12,
+    "project": "http-security-header-auditor",
+    "title": "HTTP Security Header Auditor",
+    "description": "Scans response headers for security best practices: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy, Referrer-Policy, Permissions-Policy. Grades the endpoint A–F. Demo server has three routes with different header configurations.",
+    "category": "web_security",
+    "repo": "cyberlab-http-security-header-auditor",
+    "date": "2026-07-01T05:06:21.948Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built an HTTP security header auditor with an Express demo server exposing three endpoints at different security levels (no headers, partial headers, full headers). A weighted scoring system converts the six-header check into an A–F grade; only endpoints below grade A appear in findings. All 27 node:test tests passed on the first run.",
+    "tests_passed": 27,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Strict-Transport-Security (HSTS) preventing SSL-stripping and HTTP downgrade attacks",
+      "Content-Security-Policy as the primary XSS execution control",
+      "X-Frame-Options and CSP frame-ancestors blocking clickjacking via iframe embedding",
+      "X-Content-Type-Options nosniff preventing MIME-type confusion attacks",
+      "Referrer-Policy limiting information leakage in the Referer header",
+      "Weighted A–F grading to prioritise remediation by impact"
+    ],
+    "failure_reason": null
   }
 ]
