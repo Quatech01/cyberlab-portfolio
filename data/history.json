@@ -265,5 +265,28 @@
       "Weighted A–F grading to prioritise remediation by impact"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 13,
+    "project": "keylogger-detection-and-flagging",
+    "title": "Keylogger Detection and Flagging",
+    "description": "A defensive tool that detects behavioural and artefact-based indicators of keylogger activity. Demo server exposes API endpoints that simulate a process list, a registry key scan, a suspicious file path scan, and a network connection report — some endpoints return clean data, others return data seeded with known keylogger indicators (e.g. suspicious process names like 'hook32.dll', registry autorun keys at HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run, files in %TEMP% with keyboard-capture naming patterns, unexpected outbound connections on port 443 to unknown IPs). The detection tool queries all four endpoints, cross-references findings against a rule set, assigns severity (HIGH/MEDIUM/LOW), and outputs a structured JSON threat report. Safe endpoints return only legitimate system artefacts and must not be flagged.",
+    "category": "malware_analysis_and_forensics",
+    "repo": "cyberlab-keylogger-detection-and-flagging",
+    "date": "2026-07-04T10:00:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a layered keylogger detection tool with a FastAPI demo server exposing eight scan endpoints (four seeded with indicators, four clean baselines). The tool cross-references process names, registry autorun keys, temp-directory files, and network connections against a rule set to produce a structured JSON threat report with HIGH/MEDIUM severity ratings. All 39 pytest tests passed on the first run after a one-line fix for a Python 3.14 subprocess handle-inheritance issue on Windows.",
+    "tests_passed": 39,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Behavioural detection: matching running process names against a known-keylogger signature list",
+      "Registry persistence via HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run autorun keys",
+      "Artefact-based detection: keyboard-capture naming patterns in temp-directory files",
+      "Network indicator analysis: unknown IPs and non-standard ports as C2 channel signals",
+      "Layered multi-surface detection and severity triage (HIGH / MEDIUM / LOW)"
+    ],
+    "failure_reason": null
   }
 ]

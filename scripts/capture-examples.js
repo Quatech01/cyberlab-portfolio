@@ -55,23 +55,12 @@ async function capturePythonProject(project) {
   const toolPath = projects.getToolPath(project.slug);
   const port = 4100 + Math.floor(Math.random() * 900);
 
-  const proc = spawn('python', ['main.py'], {
-    cwd: serverDir,
-    env: { ...process.env, PORT: String(port) },
-    stdio: 'ignore',
-  });
-
-  // Override port via uvicorn args — run main.py with --port flag if supported,
-  // otherwise rely on the start() function; here we patch env and args.
-  // Simpler: use the start() pattern by running the module directly.
-  proc.kill('SIGKILL'); // kill the naive spawn above
-
-  // Use python -c to call start() directly with our chosen port
+  const pyExe = process.platform === 'win32' ? 'py' : 'python3';
   const startCmd = [
     '-c',
     `import sys; sys.path.insert(0, '.'); from main import start; import time; s = start(${port}); time.sleep(60)`,
   ];
-  const serverProc = spawn('python', startCmd, {
+  const serverProc = spawn(pyExe, startCmd, {
     cwd: serverDir,
     stdio: 'ignore',
   });

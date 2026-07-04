@@ -1,13 +1,13 @@
 {
-  "target": "http://localhost:4718",
-  "timestamp": "2026-07-01T05:06:52.454Z",
+  "target": "http://localhost:4711",
+  "timestamp": "2026-07-04T04:37:44.087Z",
   "findings": [
     {
       "endpoint": "/files/high",
       "vulnerability_type": "high_entropy_content",
-      "evidence": "entropy 7.9830 bits/byte exceeds threshold 6.0 — file: random.bin",
+      "evidence": "entropy 7.9813 bits/byte exceeds threshold 6.0 — file: random.bin",
       "severity": "HIGH",
-      "entropy": 7.983,
+      "entropy": 7.9813,
       "classification": "encrypted_or_packed",
       "size_bytes": 10240,
       "filename": "random.bin"
@@ -15,9 +15,9 @@
     {
       "endpoint": "/files/encrypted",
       "vulnerability_type": "high_entropy_content",
-      "evidence": "entropy 7.9824 bits/byte exceeds threshold 6.0 — file: vault.enc",
+      "evidence": "entropy 7.9830 bits/byte exceeds threshold 6.0 — file: vault.enc",
       "severity": "HIGH",
-      "entropy": 7.9824,
+      "entropy": 7.983,
       "classification": "encrypted_or_packed",
       "size_bytes": 10240,
       "filename": "vault.enc"

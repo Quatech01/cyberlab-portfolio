@@ -1,0 +1,54 @@
+{
+  "target": "http://127.0.0.1:4522",
+  "findings": [
+    {
+      "endpoint": "/scan/processes",
+      "vulnerability_type": "known_keylogger_process",
+      "evidence": "Process 'hook32.dll' (PID 3120) matches a known keylogger signature",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/scan/processes",
+      "vulnerability_type": "known_keylogger_process",
+      "evidence": "Process 'ardamax.exe' (PID 3244) matches a known keylogger signature",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/scan/registry",
+      "vulnerability_type": "keylogger_autorun_registry",
+      "evidence": "Autorun key 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\KeyCapture' value 'KeyCapture' → 'C:\\Users\\Public\\kc.exe --silent' contains a keyboard-capture naming pattern",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/scan/registry",
+      "vulnerability_type": "suspicious_autorun_location",
+      "evidence": "Autorun key 'HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run\\Updater' → 'C:\\Temp\\kl_service.exe' launches an executable from a suspicious temporary directory",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/scan/files",
+      "vulnerability_type": "keylogger_artefact_file",
+      "evidence": "File 'C:\\Users\\Public\\AppData\\Local\\Temp\\kl_capture.dat' has a keyboard-capture naming pattern indicative of a keystroke log or capture dump",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/scan/files",
+      "vulnerability_type": "keylogger_artefact_file",
+      "evidence": "File 'C:\\Users\\Public\\AppData\\Local\\Temp\\keystrokes.log' has a keyboard-capture naming pattern indicative of a keystroke log or capture dump",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/scan/connections",
+      "vulnerability_type": "unknown_outbound_connection",
+      "evidence": "Outbound connection to 198.51.100.77:443 — IP does not match any recognised cloud-provider range",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/scan/connections",
+      "vulnerability_type": "suspicious_c2_connection",
+      "evidence": "Outbound connection to 203.0.113.42:4444 — unknown destination on a non-standard port (possible C2 channel)",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "8 keylogger indicator(s) detected (4 HIGH, 4 MEDIUM, 0 LOW)"
+}

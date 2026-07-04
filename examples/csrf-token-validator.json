@@ -1,6 +1,6 @@
 {
-  "target": "http://localhost:4559",
-  "session": "scanner-1782882413244-5ztfso",
+  "target": "http://localhost:4246",
+  "session": "scanner-1783139864512-cgj6ue",
   "findings": [
     {
       "endpoint": "/transfer/vulnerable",
