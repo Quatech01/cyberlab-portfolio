@@ -1,0 +1,36 @@
+{
+  "target": "http://localhost:4143",
+  "findings": [
+    {
+      "endpoint": "/dns?domain=vulnerable.example.com&type=TXT",
+      "vulnerability_type": "permissive_spf_record",
+      "evidence": "SPF record for vulnerable.example.com uses +all, permitting any server to send mail: \"v=spf1 +all\"",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/dns?domain=vulnerable.example.com&type=TXT",
+      "vulnerability_type": "missing_dmarc_record",
+      "evidence": "No DMARC TXT record found for vulnerable.example.com — SPF/DKIM results are not enforced",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/dns?domain=noauth.example.com&type=TXT",
+      "vulnerability_type": "missing_spf_record",
+      "evidence": "No SPF TXT record found for noauth.example.com — any mail server can send on its behalf",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/dns?domain=noauth.example.com&type=TXT",
+      "vulnerability_type": "missing_dmarc_record",
+      "evidence": "No DMARC TXT record found for noauth.example.com — SPF/DKIM results are not enforced",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/dns?domain=partial.example.com&type=TXT",
+      "vulnerability_type": "dmarc_policy_none",
+      "evidence": "DMARC for partial.example.com uses p=none (monitoring only, no enforcement): \"v=DMARC1; p=none; rua=mailto:reports@partial.example.com\"",
+      "severity": "MEDIUM"
+    }
+  ],
+  "summary": "Analyzed 4 domain(s): 5 issue(s) found — 4 HIGH, 1 MEDIUM"
+}

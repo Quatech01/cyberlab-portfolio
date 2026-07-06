@@ -288,5 +288,28 @@
       "Layered multi-surface detection and severity triage (HIGH / MEDIUM / LOW)"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 14,
+    "project": "dns-record-analyzer",
+    "title": "DNS Record Analyzer",
+    "description": "Performs DNS lookups using a mock HTTP API and audits email authentication records: SPF and DMARC. Detects missing SPF records, permissive +all SPF qualifiers, absent DMARC records, and DMARC p=none monitoring-only policies. Demo server exposes four domains at varying security levels alongside clean and misconfigured endpoints.",
+    "category": "network_security",
+    "repo": "cyberlab-dns-record-analyzer",
+    "date": "2026-07-06T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a DNS record analyzer with an Express demo server exposing four mock domains at different email authentication security levels (strict, permissive SPF, no auth, monitoring-only DMARC). The tool queries the server's DNS API, parses SPF and DMARC records from TXT entries, and reports misconfigurations as structured JSON findings. All 20 node:test tests passed on the first run.",
+    "tests_passed": 20,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "SPF (Sender Policy Framework) — TXT record listing authorised mail servers to prevent domain spoofing",
+      "Permissive SPF +all qualifier — nullifies the record by permitting any server to send as the domain",
+      "DMARC (Domain-based Message Authentication, Reporting & Conformance) — enforces SPF/DKIM policy at receiving servers",
+      "DMARC p=none — monitoring-only mode that collects reports but never quarantines or rejects spoofed mail",
+      "Mock DNS API pattern — serving structured DNS record data over HTTP to keep the tool localhost-only"
+    ],
+    "failure_reason": null
   }
 ]
