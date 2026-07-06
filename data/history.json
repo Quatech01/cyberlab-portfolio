@@ -311,5 +311,28 @@
       "Mock DNS API pattern — serving structured DNS record data over HTTP to keep the tool localhost-only"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 15,
+    "project": "email-header-analyzer",
+    "title": "Email Header Analyzer",
+    "description": "Parses raw email headers to trace the delivery path, extract originating IPs, check SPF/DKIM/DMARC alignment, and detect spoofing indicators. Demo server provides sample email headers via API. Tool produces a structured analysis report.",
+    "category": "osint_and_recon",
+    "repo": "cyberlab-email-header-analyzer",
+    "date": "2026-07-07T00:01:14.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built an email header analyzer with a FastAPI demo server serving four header samples (clean, spoofed sender, missing auth, DMARC p=none). The tool fetches each sample over HTTP, parses Authentication-Results with Python's email module and regex, and reports SPF failures, email spoofing, DMARC failures, and monitoring-only policies as structured JSON findings. All 21 pytest tests passed on the first run.",
+    "tests_passed": 21,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "SPF (Sender Policy Framework) — DNS-based authorisation list for mail servers; spf=fail means the envelope sender is not permitted",
+      "DMARC alignment — links SPF/DKIM results to the From: domain; p=reject is the only policy that blocks spoofed mail",
+      "DMARC p=none — monitoring-only mode that generates reports but delivers every spoofed message unchanged",
+      "Email spoofing detection — From domain vs envelope sender mismatch as a phishing indicator",
+      "Authentication-Results header parsing — the receiving server's tamper-resistant stamp of SPF/DKIM/DMARC outcome"
+    ],
+    "failure_reason": null
   }
 ]

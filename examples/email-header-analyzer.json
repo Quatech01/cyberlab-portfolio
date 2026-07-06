@@ -1,0 +1,36 @@
+{
+  "target": "http://127.0.0.1:4764",
+  "findings": [
+    {
+      "endpoint": "/samples/spoofed_sender",
+      "vulnerability_type": "spf_failure",
+      "evidence": "SPF result: fail. Envelope sender <attacker@evil.example> is not authorised to send on behalf of the From domain (trusted-bank.example).",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/samples/spoofed_sender",
+      "vulnerability_type": "email_spoofing",
+      "evidence": "From domain (trusted-bank.example) does not match envelope sender (evil.example) and DMARC did not pass.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/samples/spoofed_sender",
+      "vulnerability_type": "dmarc_failure",
+      "evidence": "DMARC validation failed for header.from=trusted-bank.example. Mail bypasses the domain owner's enforcement policy.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/samples/missing_auth",
+      "vulnerability_type": "missing_email_authentication",
+      "evidence": "No Authentication-Results header present. SPF, DKIM, and DMARC cannot be verified for mail claiming to be from <Billing Department <billing@unknown-domain.example>>.",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/samples/dmarc_monitoring",
+      "vulnerability_type": "dmarc_policy_none",
+      "evidence": "DMARC policy is p=none (monitoring only). Spoofed emails from this domain are reported but never quarantined or rejected by receiving servers.",
+      "severity": "MEDIUM"
+    }
+  ],
+  "summary": "Analysed 4 email header samples; 3/4 had findings. 5 total finding(s) detected."
+}
