@@ -334,5 +334,28 @@
       "Authentication-Results header parsing — the receiving server's tamper-resistant stamp of SPF/DKIM/DMARC outcome"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 16,
+    "project": "oauth-pkce-flow-analyzer",
+    "title": "OAuth 2.0 PKCE Flow Analyzer",
+    "description": "Simulates the OAuth 2.0 authorization code flow and demonstrates two critical misconfigurations: missing PKCE code_verifier enforcement (any party that intercepts an authorization code can exchange it for tokens) and unvalidated redirect_uri (authorization codes can be sent to attacker-controlled endpoints). Demo server exposes both a vulnerable and a safe authorization flow. Scanner probes for both issues and reports structured JSON findings.",
+    "category": "authentication_and_access",
+    "repo": "cyberlab-oauth-pkce-flow-analyzer",
+    "date": "2026-07-07T10:30:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built an OAuth 2.0 PKCE vulnerability scanner with an Express demo server exposing vulnerable (no PKCE, any redirect_uri) and safe (PKCE required, allowlisted redirect_uri) authorization flows. The scanner detects missing code_verifier enforcement and open redirect_uri acceptance. All 24 node:test tests passed on the first run.",
+    "tests_passed": 24,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "PKCE (RFC 7636) — code_verifier and SHA-256 code_challenge bind an authorization code to the legitimate client",
+      "Missing PKCE enforcement — token endpoint accepting exchanges without code_verifier makes PKCE voluntary and ineffective",
+      "Unvalidated redirect_uri — accepting any URI enables authorization code theft via crafted phishing links",
+      "Authorization code single-use enforcement — codes deleted on first exchange to prevent replay attacks",
+      "redirect_uri allowlist exact-match validation — the only safe approach per RFC 6749 and OAuth 2.1"
+    ],
+    "failure_reason": null
   }
 ]

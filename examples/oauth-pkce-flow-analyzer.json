@@ -1,0 +1,22 @@
+{
+  "target": "http://localhost:4885",
+  "findings": [
+    {
+      "endpoint": "/auth/token",
+      "vulnerability_type": "missing_pkce_verification",
+      "evidence": "Server issued an access token without a code_verifier — any party that intercepts the authorization code can exchange it for tokens without knowledge of the original verifier secret",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/auth/authorize",
+      "vulnerability_type": "unvalidated_redirect_uri",
+      "evidence": "Server accepted an unregistered redirect_uri (http://evil.example.com/steal-code) and directed the authorization code to it — enables authorization code theft via crafted phishing links",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": {
+    "checks_run": 2,
+    "vulnerabilities_found": 2,
+    "high_severity": 2
+  }
+}
