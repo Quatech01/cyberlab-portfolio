@@ -1,5 +1,5 @@
 {
-  "target": "http://localhost:4888",
+  "target": "http://localhost:4673",
   "findings": [
     {
       "endpoint": "/headers/none",

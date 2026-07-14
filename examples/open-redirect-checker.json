@@ -1,0 +1,27 @@
+{
+  "target": "http://localhost:4983",
+  "findings": [
+    {
+      "endpoint": "/redirect/unsafe",
+      "vulnerability_type": "open_redirect",
+      "evidence": "HTTP 302 Location: https://evil.example.com/phish",
+      "severity": "HIGH",
+      "payload": "https://evil.example.com/phish"
+    },
+    {
+      "endpoint": "/redirect/partial",
+      "vulnerability_type": "open_redirect_weak_validation",
+      "evidence": "Bypass succeeded: payload contained trusted domain in query string. HTTP 302",
+      "severity": "HIGH",
+      "payload": "https://evil-trusted.example.org/?q=trusted.example.org"
+    },
+    {
+      "endpoint": "/login",
+      "vulnerability_type": "open_redirect",
+      "evidence": "Absolute URL in returnTo was not rejected (HTTP 200)",
+      "severity": "MEDIUM",
+      "payload": "https://evil.example.com"
+    }
+  ],
+  "summary": "Detected 3 open redirect vulnerability/vulnerabilities. Unvalidated redirect endpoints allow attackers to craft phishing links that appear to originate from a trusted domain."
+}

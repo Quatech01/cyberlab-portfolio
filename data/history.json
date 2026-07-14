@@ -380,5 +380,28 @@
       "Secret comparison best practices — constant-time functions as the mitigation for token, HMAC, and API key checks"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 18,
+    "project": "open-redirect-checker",
+    "title": "Open Redirect Checker",
+    "description": "Tests URL redirect parameters for open redirect vulnerabilities. Checks if the server validates redirect destinations against a whitelist. Demo server has a /redirect?url= endpoint — one validates, one doesn't.",
+    "category": "web_security",
+    "repo": "cyberlab-open-redirect-checker",
+    "date": "2026-07-15T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built an open redirect vulnerability scanner with an Express demo server exposing three redirect patterns: no validation (vulnerable), substring check (bypassable with trusted domain in query string), and strict allowlist validation (safe). The scanner probes all endpoints with attacker payloads, detects both the unvalidated redirect and the substring-check bypass, and confirms the allowlist endpoint is clean. All 32 node:test tests passed on the first run.",
+    "tests_passed": 32,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Open redirect attack — attacker-controlled redirect parameter forwards victims to phishing pages via a trusted domain URL",
+      "Substring-based bypass — checking if the URL contains a trusted domain fails when the attacker embeds it in a query string",
+      "Allowlist validation — parse the full URL, extract origin (scheme + host + port), compare against a strict list",
+      "Relative-path-only login returnTo — rejecting http:// and // prefixes prevents off-domain redirects without an allowlist",
+      "Scanner detection via raw 301/302 response — follow-redirect mode masks open redirects; inspect Location header directly"
+    ],
+    "failure_reason": null
   }
 ]
