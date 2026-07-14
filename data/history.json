@@ -357,5 +357,28 @@
       "redirect_uri allowlist exact-match validation — the only safe approach per RFC 6749 and OAuth 2.1"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 17,
+    "project": "timing-attack-demonstrator",
+    "title": "Timing Attack Demonstrator",
+    "description": "Shows how naive string comparison for secrets leaks information through response timing. Demo server has two token-check endpoints — one using naive char-by-char comparison with early exit (vulnerable), one using hmac.compare_digest (constant-time, safe). Tool measures timing distributions across prefix-match lengths and reports a Pearson correlation coefficient to quantify the leak.",
+    "category": "cryptography",
+    "repo": "cyberlab-timing-attack-demonstrator",
+    "date": "2026-07-14T18:03:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a timing side-channel demonstrator with a FastAPI demo server exposing a vulnerable char-by-char token comparison endpoint (amplified with 5ms per matching character) and a safe hmac.compare_digest endpoint. The scanner probes both, measures Pearson correlation between prefix-match length and latency, and flags the naive endpoint as HIGH severity. All 24 pytest tests passed on the first run.",
+    "tests_passed": 24,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Timing side-channel attacks — short-circuit string comparison leaks secret length via response latency",
+      "Pearson correlation as a statistical measure of timing oracle strength",
+      "hmac.compare_digest for constant-time comparison — always processes every byte regardless of mismatch position",
+      "Amplification vs real-world attacks — nanosecond-scale leaks require statistical analysis over thousands of samples",
+      "Secret comparison best practices — constant-time functions as the mitigation for token, HMAC, and API key checks"
+    ],
+    "failure_reason": null
   }
 ]
