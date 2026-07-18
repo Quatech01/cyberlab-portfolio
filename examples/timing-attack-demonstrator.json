@@ -1,29 +1,29 @@
 {
-  "target": "http://127.0.0.1:4229",
+  "target": "http://127.0.0.1:4201",
   "findings": [
     {
       "endpoint": "/api/check-naive",
       "vulnerability_type": "timing_side_channel",
       "evidence": {
         "correlation": 1,
-        "delta_ms": 88.03,
+        "delta_ms": 80.85,
         "measurements": [
           {
             "prefix_match": 0,
-            "median_ms": 1.98
+            "median_ms": 2.21
           },
           {
             "prefix_match": 8,
-            "median_ms": 50.91
+            "median_ms": 45.64
           },
           {
             "prefix_match": 15,
-            "median_ms": 90.01
+            "median_ms": 83.06
           }
         ]
       },
       "severity": "HIGH"
     }
   ],
-  "summary": "/api/check-naive: VULNERABLE — timing correlation r=1.0, delta=88.03ms across prefix lengths | /api/check-safe: constant-time — no timing signal (safe)"
+  "summary": "/api/check-naive: VULNERABLE — timing correlation r=1.0, delta=80.85ms across prefix lengths | /api/check-safe: constant-time — no timing signal (safe)"
 }

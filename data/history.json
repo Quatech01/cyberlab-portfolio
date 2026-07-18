@@ -403,5 +403,28 @@
       "Scanner detection via raw 301/302 response — follow-redirect mode masks open redirects; inspect Location header directly"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 19,
+    "project": "soc-tier1-alert-triage-simulator",
+    "title": "SOC Tier 1 Alert Triage Simulator",
+    "description": "A full-stack SOC Tier 1 training simulator using Elastic Common Schema (ECS) alert format. FastAPI backend generates realistic ECS-formatted security alerts across five categories (brute_force, port_scan, lateral_movement, privilege_escalation, malware_beacon), serves them via REST API, and supports SSE streaming. A self-contained HTML/CSS/JS dashboard displays a live alert feed with triage actions, stats cards, a Canvas severity bar chart, and category breakdown. A CLI pre-triage tool fetches open alerts, deduplicates by source IP + rule, scores false positive likelihood, and recommends escalation actions.",
+    "category": "malware_analysis_and_forensics",
+    "repo": "cyberlab-soc-tier1-alert-triage-simulator",
+    "date": "2026-07-18T21:30:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a full-stack SOC Tier 1 triage simulator with a FastAPI server generating ECS alerts, a self-contained live HTML dashboard with SSE streaming and Canvas chart, and a CLI pre-triage tool that deduplicates and scores alerts. All 33 pytest tests passed on the first run.",
+    "tests_passed": 33,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Elastic Common Schema (ECS) alert format — standard field naming used by Kibana SIEM",
+      "SOC Tier 1 triage workflow — Escalate / Investigate / Close as False Positive state transitions",
+      "Pre-triage automation — deduplication by (source_ip, rule_name) and false positive scoring",
+      "SSE (Server-Sent Events) for real-time alert streaming without WebSockets",
+      "Alert fatigue mitigation — frequency-based false positive scoring suppresses scanner noise"
+    ],
+    "failure_reason": null
   }
 ]
