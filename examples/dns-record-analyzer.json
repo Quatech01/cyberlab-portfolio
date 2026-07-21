@@ -1,5 +1,5 @@
 {
-  "target": "http://localhost:4787",
+  "target": "http://localhost:4568",
   "findings": [
     {
       "endpoint": "/dns?domain=vulnerable.example.com&type=TXT",

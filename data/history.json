@@ -426,5 +426,28 @@
       "Alert fatigue mitigation — frequency-based false positive scoring suppresses scanner noise"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 20,
+    "project": "directory-traversal-detector",
+    "title": "Directory Traversal Detector",
+    "description": "Sends path traversal payloads (../, ..%2f, ..%252f) to file-serving endpoints and checks if files outside the intended directory are accessible. Demo server serves static files from a specific directory with one safe and one vulnerable handler.",
+    "category": "web_security",
+    "repo": "cyberlab-directory-traversal-detector",
+    "date": "2026-07-21T05:07:58.271Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a path traversal scanner with an Express demo server exposing a vulnerable endpoint (path.join with no boundary check) and a safe endpoint (path.resolve + startsWith guard). The scanner probes both with basic and URL-encoded traversal payloads, confirms the unsafe endpoint discloses secret file content, and correctly produces no finding for the safe endpoint. All 20 node:test tests passed on the first run.",
+    "tests_passed": 20,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "path.join does not enforce directory boundaries — it normalises ../ sequences but never verifies the result stays within the intended base directory",
+      "path.resolve + startsWith as the correct mitigation — canonical path is computed first, then checked to be a descendant of the allowed base",
+      "URL-encoded traversal (%2F as /) — Express decodes query parameters before they reach the handler, so encoding does not bypass path.resolve-based guards",
+      "Secret marker detection — scanning response bodies for a known sentinel to confirm actual file disclosure rather than relying on status codes alone",
+      "Least-privilege principle — limiting the server process to read-only access on the public subtree as a complementary OS-layer defence"
+    ],
+    "failure_reason": null
   }
 ]

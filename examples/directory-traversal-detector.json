@@ -1,0 +1,12 @@
+{
+  "target": "http://localhost:4736",
+  "findings": [
+    {
+      "endpoint": "/files/unsafe",
+      "vulnerability_type": "path_traversal",
+      "evidence": "Payload '../secret/config.txt' returned HTTP 200 with secret file content",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "Found 1 path traversal vulnerability/vulnerabilities. Affected endpoint(s): /files/unsafe"
+}
