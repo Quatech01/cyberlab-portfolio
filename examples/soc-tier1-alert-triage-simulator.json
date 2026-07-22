@@ -1,16 +1,16 @@
 {
-  "target": "http://127.0.0.1:4975",
+  "target": "http://127.0.0.1:4383",
   "findings": [
     {
       "endpoint": "/api/alerts",
       "vulnerability_type": "brute_force",
       "evidence": {
-        "alert_id": "23f2a662-1497-4a91-b7ae-354ee288e734",
+        "alert_id": "e3724e90-9f0c-40c8-967c-20906f916062",
         "rule": "RDP Password Spray",
-        "host": "jumpbox-04",
-        "source_ip": "10.0.0.111",
+        "host": "workstation-05",
+        "source_ip": "10.0.0.104",
         "severity": "critical",
-        "timestamp": "2026-07-21T05:08:51.100997+00:00",
+        "timestamp": "2026-07-22T23:08:25.451200+00:00",
         "fp_score": 0.3
       },
       "severity": "CRITICAL",
@@ -20,12 +20,12 @@
       "endpoint": "/api/alerts",
       "vulnerability_type": "brute_force",
       "evidence": {
-        "alert_id": "88743256-86d7-473d-b193-18445b12a220",
-        "rule": "SSH Brute Force Detected",
-        "host": "db-02",
+        "alert_id": "7c61cfea-d905-4a93-b604-290844d80876",
+        "rule": "RDP Password Spray",
+        "host": "fileserver-06",
         "source_ip": "10.0.0.113",
         "severity": "high",
-        "timestamp": "2026-07-21T05:08:51.101079+00:00",
+        "timestamp": "2026-07-22T23:08:25.451232+00:00",
         "fp_score": 0.3
       },
       "severity": "HIGH",
@@ -35,12 +35,12 @@
       "endpoint": "/api/alerts",
       "vulnerability_type": "port_scan",
       "evidence": {
-        "alert_id": "1e60e5a0-e739-4841-acea-5a6b06d5748a",
+        "alert_id": "ef5766d5-5757-452c-b95e-d849149c0055",
         "rule": "Vertical Port Scan",
-        "host": "db-02",
-        "source_ip": "10.0.0.102",
+        "host": "jumpbox-04",
+        "source_ip": "10.0.0.107",
         "severity": "critical",
-        "timestamp": "2026-07-21T05:08:51.101094+00:00",
+        "timestamp": "2026-07-22T23:08:25.451246+00:00",
         "fp_score": 0
       },
       "severity": "CRITICAL",
@@ -50,13 +50,13 @@
       "endpoint": "/api/alerts",
       "vulnerability_type": "port_scan",
       "evidence": {
-        "alert_id": "71c88b7f-eccf-4ce8-9914-ab6cca343c81",
-        "rule": "Horizontal Port Scan",
+        "alert_id": "775972fb-e61c-443c-8fa8-e5e4991ba6c4",
+        "rule": "Vertical Port Scan",
         "host": "fileserver-06",
         "source_ip": "10.0.0.104",
         "severity": "high",
-        "timestamp": "2026-07-21T05:08:51.101109+00:00",
-        "fp_score": 0.3
+        "timestamp": "2026-07-22T23:08:25.451254+00:00",
+        "fp_score": 0
       },
       "severity": "HIGH",
       "recommended_action": "investigate"
@@ -65,12 +65,12 @@
       "endpoint": "/api/alerts",
       "vulnerability_type": "lateral_movement",
       "evidence": {
-        "alert_id": "01023777-8299-402b-8cf6-80e62f492182",
-        "rule": "Pass-the-Hash Detected",
-        "host": "fileserver-06",
-        "source_ip": "10.0.0.110",
+        "alert_id": "53b87964-3381-4225-9db7-044c180003e7",
+        "rule": "SMB Lateral Movement",
+        "host": "workstation-05",
+        "source_ip": "10.0.0.106",
         "severity": "critical",
-        "timestamp": "2026-07-21T05:08:51.101120+00:00",
+        "timestamp": "2026-07-22T23:08:25.451263+00:00",
         "fp_score": 0
       },
       "severity": "CRITICAL",
@@ -80,12 +80,102 @@
       "endpoint": "/api/alerts",
       "vulnerability_type": "lateral_movement",
       "evidence": {
-        "alert_id": "39bdf860-5b8a-48b6-892c-49ccf0656859",
-        "rule": "Pass-the-Hash Detected",
+        "alert_id": "2228ca67-d4d9-4e2c-b353-e6c0f85150e0",
+        "rule": "SMB Lateral Movement",
+        "host": "db-02",
+        "source_ip": "10.0.0.102",
+        "severity": "high",
+        "timestamp": "2026-07-22T23:08:25.451273+00:00",
+        "fp_score": 0
+      },
+      "severity": "HIGH",
+      "recommended_action": "escalate"
+    },
+    {
+      "endpoint": "/api/alerts",
+      "vulnerability_type": "privilege_escalation",
+      "evidence": {
+        "alert_id": "4f15b101-7ab4-4bcf-8c84-b2f296d0afa6",
+        "rule": "Sudo Abuse Detected",
+        "host": "db-02",
+        "source_ip": "10.0.0.108",
+        "severity": "critical",
+        "timestamp": "2026-07-22T23:08:25.451280+00:00",
+        "fp_score": 0
+      },
+      "severity": "CRITICAL",
+      "recommended_action": "escalate"
+    },
+    {
+      "endpoint": "/api/alerts",
+      "vulnerability_type": "privilege_escalation",
+      "evidence": {
+        "alert_id": "606cd0d5-91a7-43d6-b54d-75444a8598a5",
+        "rule": "Sudo Abuse Detected",
+        "host": "fileserver-06",
+        "source_ip": "10.0.0.112",
+        "severity": "high",
+        "timestamp": "2026-07-22T23:08:25.451288+00:00",
+        "fp_score": 0
+      },
+      "severity": "HIGH",
+      "recommended_action": "escalate"
+    },
+    {
+      "endpoint": "/api/alerts",
+      "vulnerability_type": "malware_beacon",
+      "evidence": {
+        "alert_id": "574e9ea4-165e-4816-aef3-ca5821968ab7",
+        "rule": "DNS Tunneling Suspected",
+        "host": "fileserver-06",
+        "source_ip": "10.0.0.111",
+        "severity": "critical",
+        "timestamp": "2026-07-22T23:08:25.451296+00:00",
+        "fp_score": 0
+      },
+      "severity": "CRITICAL",
+      "recommended_action": "escalate"
+    },
+    {
+      "endpoint": "/api/alerts",
+      "vulnerability_type": "malware_beacon",
+      "evidence": {
+        "alert_id": "343c401e-6fc3-4147-bd2d-a2792230a70e",
+        "rule": "DNS Tunneling Suspected",
+        "host": "fileserver-06",
+        "source_ip": "10.0.0.100",
+        "severity": "high",
+        "timestamp": "2026-07-22T23:08:25.451304+00:00",
+        "fp_score": 0
+      },
+      "severity": "HIGH",
+      "recommended_action": "escalate"
+    },
+    {
+      "endpoint": "/api/alerts",
+      "vulnerability_type": "privilege_escalation",
+      "evidence": {
+        "alert_id": "7a776354-69ea-4d02-813d-fee6d0802b47",
+        "rule": "Token Impersonation",
+        "host": "fileserver-06",
+        "source_ip": "10.0.0.110",
+        "severity": "high",
+        "timestamp": "2026-07-22T23:08:25.451313+00:00",
+        "fp_score": 0
+      },
+      "severity": "HIGH",
+      "recommended_action": "escalate"
+    },
+    {
+      "endpoint": "/api/alerts",
+      "vulnerability_type": "privilege_escalation",
+      "evidence": {
+        "alert_id": "00ddbc09-2455-40d1-9a92-9de7a139fbda",
+        "rule": "Sudo Abuse Detected",
         "host": "db-02",
         "source_ip": "10.0.0.105",
         "severity": "high",
-        "timestamp": "2026-07-21T05:08:51.101130+00:00",
+        "timestamp": "2026-07-22T23:08:25.451325+00:00",
         "fp_score": 0
       },
       "severity": "HIGH",
@@ -95,27 +185,12 @@
       "endpoint": "/api/alerts",
       "vulnerability_type": "privilege_escalation",
       "evidence": {
-        "alert_id": "60251a1e-336a-4f0d-8e7c-af68d8484d1e",
+        "alert_id": "99e12bb2-8ed5-4eab-ae68-55823be9ad7a",
         "rule": "Token Impersonation",
-        "host": "fileserver-06",
-        "source_ip": "10.0.0.101",
-        "severity": "critical",
-        "timestamp": "2026-07-21T05:08:51.101136+00:00",
-        "fp_score": 0
-      },
-      "severity": "CRITICAL",
-      "recommended_action": "escalate"
-    },
-    {
-      "endpoint": "/api/alerts",
-      "vulnerability_type": "privilege_escalation",
-      "evidence": {
-        "alert_id": "9054bcbf-0cec-4288-8e04-aa13f3b6fef6",
-        "rule": "Token Impersonation",
-        "host": "fileserver-06",
-        "source_ip": "10.0.0.103",
+        "host": "db-02",
+        "source_ip": "10.0.0.109",
         "severity": "high",
-        "timestamp": "2026-07-21T05:08:51.101142+00:00",
+        "timestamp": "2026-07-22T23:08:25.451334+00:00",
         "fp_score": 0
       },
       "severity": "HIGH",
@@ -125,113 +200,38 @@
       "endpoint": "/api/alerts",
       "vulnerability_type": "malware_beacon",
       "evidence": {
-        "alert_id": "a52e606a-d0c3-4594-9c21-788dc9ddfc6a",
-        "rule": "DNS Tunneling Suspected",
-        "host": "auth-03",
-        "source_ip": "10.0.0.100",
-        "severity": "critical",
-        "timestamp": "2026-07-21T05:08:51.101149+00:00",
-        "fp_score": 0
-      },
-      "severity": "CRITICAL",
-      "recommended_action": "escalate"
-    },
-    {
-      "endpoint": "/api/alerts",
-      "vulnerability_type": "malware_beacon",
-      "evidence": {
-        "alert_id": "231019c5-93c7-4009-a530-9314b81c9ea9",
-        "rule": "DNS Tunneling Suspected",
-        "host": "workstation-05",
-        "source_ip": "10.0.0.111",
-        "severity": "high",
-        "timestamp": "2026-07-21T05:08:51.101156+00:00",
-        "fp_score": 0
-      },
-      "severity": "HIGH",
-      "recommended_action": "escalate"
-    },
-    {
-      "endpoint": "/api/alerts",
-      "vulnerability_type": "brute_force",
-      "evidence": {
-        "alert_id": "dd378d74-ba3b-40bb-958f-8d76ec087e33",
-        "rule": "RDP Password Spray",
-        "host": "auth-03",
-        "source_ip": "10.0.0.110",
-        "severity": "high",
-        "timestamp": "2026-07-21T05:08:51.101167+00:00",
-        "fp_score": 0.3
-      },
-      "severity": "HIGH",
-      "recommended_action": "investigate"
-    },
-    {
-      "endpoint": "/api/alerts",
-      "vulnerability_type": "malware_beacon",
-      "evidence": {
-        "alert_id": "e22b1350-0a55-4ad7-aa34-390722865545",
+        "alert_id": "b27b1912-1765-42bc-bdb2-6451c24a82b2",
         "rule": "C2 Beacon Interval Detected",
-        "host": "fileserver-06",
-        "source_ip": "10.0.0.114",
-        "severity": "medium",
-        "timestamp": "2026-07-21T05:08:51.101176+00:00",
-        "fp_score": 0.1
-      },
-      "severity": "MEDIUM",
-      "recommended_action": "investigate"
-    },
-    {
-      "endpoint": "/api/alerts",
-      "vulnerability_type": "port_scan",
-      "evidence": {
-        "alert_id": "22d2e5ec-edb6-457b-8e0d-826b1ebe9fef",
-        "rule": "Horizontal Port Scan",
-        "host": "jumpbox-04",
-        "source_ip": "10.0.0.101",
+        "host": "auth-03",
+        "source_ip": "10.0.0.105",
         "severity": "low",
-        "timestamp": "2026-07-21T05:08:51.101183+00:00",
-        "fp_score": 0.5
+        "timestamp": "2026-07-22T23:08:25.451341+00:00",
+        "fp_score": 0.2
       },
       "severity": "LOW",
       "recommended_action": "investigate"
     },
     {
       "endpoint": "/api/alerts",
-      "vulnerability_type": "privilege_escalation",
+      "vulnerability_type": "lateral_movement",
       "evidence": {
-        "alert_id": "58fc4dd9-baac-4d42-9927-a3dce764b3a7",
-        "rule": "Token Impersonation",
-        "host": "workstation-05",
-        "source_ip": "10.0.0.100",
-        "severity": "critical",
-        "timestamp": "2026-07-21T05:08:51.101189+00:00",
-        "fp_score": 0
+        "alert_id": "d14489f7-b8f9-4537-a166-8ee71f34fb45",
+        "rule": "Pass-the-Hash Detected",
+        "host": "db-02",
+        "source_ip": "10.0.0.106",
+        "severity": "medium",
+        "timestamp": "2026-07-22T23:08:25.451349+00:00",
+        "fp_score": 0.1
       },
-      "severity": "CRITICAL",
-      "recommended_action": "escalate"
-    },
-    {
-      "endpoint": "/api/alerts",
-      "vulnerability_type": "malware_beacon",
-      "evidence": {
-        "alert_id": "d359101a-8e18-4314-99bc-dadb39f29cd6",
-        "rule": "C2 Beacon Interval Detected",
-        "host": "jumpbox-04",
-        "source_ip": "10.0.0.107",
-        "severity": "high",
-        "timestamp": "2026-07-21T05:08:51.101195+00:00",
-        "fp_score": 0
-      },
-      "severity": "HIGH",
-      "recommended_action": "escalate"
+      "severity": "MEDIUM",
+      "recommended_action": "investigate"
     }
   ],
   "summary": {
     "total_open": 15,
     "after_dedup": 15,
-    "recommended_escalate": 8,
-    "recommended_investigate": 7,
+    "recommended_escalate": 9,
+    "recommended_investigate": 6,
     "recommended_close_fp": 0
   }
 }

@@ -1,6 +1,6 @@
 {
-  "target": "http://localhost:4735",
-  "timestamp": "2026-07-21T05:08:31.322Z",
+  "target": "http://localhost:4215",
+  "timestamp": "2026-07-22T23:08:08.991Z",
   "findings": [
     {
       "endpoint": "/vuln/html",

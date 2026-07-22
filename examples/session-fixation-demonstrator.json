@@ -1,0 +1,12 @@
+{
+  "target": "http://127.0.0.1:4548",
+  "findings": [
+    {
+      "endpoint": "/login/vulnerable",
+      "vulnerability_type": "SESSION_FIXATION",
+      "evidence": "Session ID unchanged after successful login (id prefix: ff1335c4…). An attacker who plants a known session ID before login gains authenticated access once the victim logs in.",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "Found 1 session fixation issue(s). The vulnerable login endpoint does not regenerate the session ID after authentication, allowing an attacker to fix the session ID before login and gain access once the victim authenticates."
+}
