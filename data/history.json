@@ -499,5 +499,29 @@
       "Audit log recording every data access with user ID, action, and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 23,
+    "project_type": "security_tool",
+    "project": "subdomain-enumerator",
+    "title": "Subdomain Enumerator",
+    "description": "Uses wordlist-based enumeration to discover subdomains. Demo server acts as a mock DNS-over-HTTP resolver that responds to known subdomains and returns NXDOMAIN for unknown ones. Tool probes a 60-label wordlist, classifies discovered subdomains by sensitivity (HIGH for management/infrastructure labels, MEDIUM for API gateways, LOW for generic services), and emits structured JSON findings.",
+    "category": "osint_and_recon",
+    "repo": "cyberlab-subdomain-enumerator",
+    "date": "2026-07-29T00:00:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a wordlist-based subdomain enumerator with a FastAPI mock DNS-over-HTTP resolver exposing 10 configured subdomains (www, mail, api, admin, dev, staging, db, internal, vpn, test) and NXDOMAIN for all others. The tool probes a 60-label wordlist, correctly discovers all 10 subdomains, classifies each by severity, and handles unreachable servers gracefully. All 33 pytest tests passed on the first run.",
+    "tests_passed": 33,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Subdomain enumeration as a reconnaissance technique — wordlist probing to map an organisation's external attack surface",
+      "DNS-over-HTTP mock resolver — serving structured resolution data over HTTP to keep the tool localhost-only",
+      "Severity classification by subdomain name — management panels and dev environments are HIGH, API gateways are MEDIUM, generic services are LOW",
+      "NXDOMAIN handling — 404 response means the subdomain does not exist; tool correctly suppresses it from findings",
+      "Graceful degradation — ConnectError caught on first probe, enumeration halted, empty findings returned without crashing"
+    ],
+    "failure_reason": null
   }
 ]

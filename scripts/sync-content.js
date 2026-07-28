@@ -25,6 +25,7 @@ function main() {
     const srcDir = path.join(projects.REPOS_DIR, slug);
     const destDir = path.join(projects.DATA_DIR, slug);
 
+    fs.mkdirSync(destDir, { recursive: true });
     fs.copyFileSync(
       path.join(srcDir, 'README.md'),
       path.join(destDir, 'README.md')

@@ -1,12 +1,12 @@
 {
-  "target": "http://localhost:4133",
+  "target": "http://localhost:4827",
   "host": "localhost",
-  "portRange": "4133-4143",
-  "scanTime": "2026-07-28T11:16:18.455Z",
+  "portRange": "4827-4837",
+  "scanTime": "2026-07-28T23:09:10.138Z",
   "findings": [
     {
-      "endpoint": "localhost:4133",
-      "port": 4133,
+      "endpoint": "localhost:4827",
+      "port": 4827,
       "state": "open",
       "vulnerability_type": "exposed-service",
       "service": "http",
@@ -16,8 +16,8 @@
       "severity": "INFO"
     },
     {
-      "endpoint": "localhost:4134",
-      "port": 4134,
+      "endpoint": "localhost:4828",
+      "port": 4828,
       "state": "open",
       "vulnerability_type": "exposed-service",
       "service": "echo",
@@ -27,8 +27,8 @@
       "severity": "INFO"
     },
     {
-      "endpoint": "localhost:4135",
-      "port": 4135,
+      "endpoint": "localhost:4829",
+      "port": 4829,
       "state": "open",
       "vulnerability_type": "exposed-service",
       "service": "smtp",

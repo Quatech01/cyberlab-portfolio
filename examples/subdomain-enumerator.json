@@ -1,0 +1,78 @@
+{
+  "target": "http://127.0.0.1:4819",
+  "domain": "example.com",
+  "words_probed": 88,
+  "findings": [
+    {
+      "endpoint": "www.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.1 (TTL 300s)",
+      "severity": "LOW",
+      "address": "127.0.0.1"
+    },
+    {
+      "endpoint": "mail.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.2 (TTL 300s)",
+      "severity": "LOW",
+      "address": "127.0.0.2"
+    },
+    {
+      "endpoint": "api.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.3 (TTL 300s)",
+      "severity": "MEDIUM",
+      "address": "127.0.0.3"
+    },
+    {
+      "endpoint": "admin.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.4 (TTL 300s)",
+      "severity": "HIGH",
+      "address": "127.0.0.4"
+    },
+    {
+      "endpoint": "dev.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.5 (TTL 300s)",
+      "severity": "HIGH",
+      "address": "127.0.0.5"
+    },
+    {
+      "endpoint": "staging.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.6 (TTL 300s)",
+      "severity": "HIGH",
+      "address": "127.0.0.6"
+    },
+    {
+      "endpoint": "test.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.10 (TTL 300s)",
+      "severity": "HIGH",
+      "address": "127.0.0.10"
+    },
+    {
+      "endpoint": "db.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.7 (TTL 300s)",
+      "severity": "HIGH",
+      "address": "127.0.0.7"
+    },
+    {
+      "endpoint": "internal.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.8 (TTL 300s)",
+      "severity": "HIGH",
+      "address": "127.0.0.8"
+    },
+    {
+      "endpoint": "vpn.example.com",
+      "vulnerability_type": "subdomain_discovered",
+      "evidence": "Resolved to 127.0.0.9 (TTL 300s)",
+      "severity": "HIGH",
+      "address": "127.0.0.9"
+    }
+  ],
+  "summary": "Discovered 10 subdomain(s) for example.com: 7 HIGH, 1 MEDIUM, 2 LOW severity."
+}

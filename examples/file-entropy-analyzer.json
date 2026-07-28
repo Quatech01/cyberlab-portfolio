@@ -1,13 +1,13 @@
 {
-  "target": "http://localhost:4216",
-  "timestamp": "2026-07-28T11:16:26.425Z",
+  "target": "http://localhost:4800",
+  "timestamp": "2026-07-28T23:09:15.538Z",
   "findings": [
     {
       "endpoint": "/files/high",
       "vulnerability_type": "high_entropy_content",
-      "evidence": "entropy 7.9831 bits/byte exceeds threshold 6.0 — file: random.bin",
+      "evidence": "entropy 7.9833 bits/byte exceeds threshold 6.0 — file: random.bin",
       "severity": "HIGH",
-      "entropy": 7.9831,
+      "entropy": 7.9833,
       "classification": "encrypted_or_packed",
       "size_bytes": 10240,
       "filename": "random.bin"
