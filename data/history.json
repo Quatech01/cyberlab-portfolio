@@ -472,5 +472,32 @@
       "Scanner detection method — compare the session cookie before and after login; unchanged ID confirms the vulnerability"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 22,
+    "project_type": "fullstack_app",
+    "project": "student-information-management-system",
+    "title": "Student Information Management System",
+    "description": "A secure full-stack web application for managing student records in a UK educational institution. Backend: Express REST API with JWT authentication, role-based access (admin, teacher, student, parent), and SQLite database via node:sqlite. Features: student enrollment with UK-specific fields (UPN, year group, form group, SEN status, FSM eligibility), profile management, emergency contacts, and GDPR-compliant data handling. Frontend: responsive self-contained SPA dashboard with role-specific views — admin sees all students with search/filter, teachers see their form group, students and parents see only their own records. DevSecOps: all inputs validated with express-validator, parameterised queries throughout, bcrypt password hashing (cost 12), JWT with refresh tokens and server-side revocation, CSRF protection via JWT jti double-submit, rate limiting on auth endpoints, security headers via Helmet, audit log of all data access.",
+    "category": "education_platforms",
+    "repo": "cyberlab-student-information-management-system",
+    "date": "2026-07-28T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack student information management system with Express, node:sqlite, and a self-contained SPA frontend. Implements JWT auth (access + refresh tokens), four-role RBAC (admin/teacher/student/parent) with row-level data filtering, CSRF protection via JWT jti, Helmet security headers, and input validation. All 36 node:test tests passed on the first run.",
+    "tests_passed": 36,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with short-lived access tokens (15 min) and revocable refresh tokens stored in SQLite",
+      "CSRF protection via JWT jti double-submit — the token's unique ID serves as the CSRF token echoed in X-CSRF-Token header",
+      "Role-based access control with row-level SQL filtering — each role receives a different query, not client-side filtering",
+      "Parameterised queries preventing SQL injection — injection strings stored safely or rejected by format validation",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "UK Unique Pupil Number (UPN) format validation as business rule enforcement",
+      "SEN status and FSM eligibility as sensitive fields restricted to admin-only writes",
+      "Audit log recording every data access with user ID, action, and IP address"
+    ],
+    "failure_reason": null
   }
 ]

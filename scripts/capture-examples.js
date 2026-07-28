@@ -77,6 +77,13 @@ async function capturePythonProject(project) {
 }
 
 async function captureOne(project) {
+  // Fullstack apps don't have a standalone tool/ to run; skip capture
+  if (project.project_type === 'fullstack_app') {
+    const outPath = path.join(projects.EXAMPLES_DIR, `${project.slug}.json`);
+    fs.writeFileSync(outPath, JSON.stringify({ type: 'fullstack_app', message: 'Interactive web application — no standalone tool output' }, null, 2));
+    console.log(`captured: ${project.slug}`);
+    return;
+  }
   if (project.language === 'python') {
     await capturePythonProject(project);
   } else {

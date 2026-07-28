@@ -25,19 +25,21 @@ function main() {
     const srcDir = path.join(projects.REPOS_DIR, slug);
     const destDir = path.join(projects.DATA_DIR, slug);
 
-    fs.mkdirSync(path.join(destDir, 'tool'), { recursive: true });
-
     fs.copyFileSync(
       path.join(srcDir, 'README.md'),
       path.join(destDir, 'README.md')
     );
 
-    // Support both Node.js (tool/index.js) and Python (tool/main.py) projects
-    const toolFile = entry.language === 'python' ? 'main.py' : 'index.js';
-    fs.copyFileSync(
-      path.join(srcDir, 'tool', toolFile),
-      path.join(destDir, 'tool', toolFile)
-    );
+    // Security tools have a tool/ directory; fullstack apps do not
+    const isFullstack = entry.project_type === 'fullstack_app';
+    if (!isFullstack) {
+      fs.mkdirSync(path.join(destDir, 'tool'), { recursive: true });
+      const toolFile = entry.language === 'python' ? 'main.py' : 'index.js';
+      const toolSrc = path.join(srcDir, 'tool', toolFile);
+      if (fs.existsSync(toolSrc)) {
+        fs.copyFileSync(toolSrc, path.join(destDir, 'tool', toolFile));
+      }
+    }
 
     console.log(`synced: ${slug}`);
   }
