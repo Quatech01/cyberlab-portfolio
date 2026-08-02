@@ -523,5 +523,32 @@
       "Graceful degradation — ConnectError caught on first probe, enumeration halted, empty findings returned without crashing"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 24,
+    "project_type": "fullstack_app",
+    "project": "gp-appointment-booking-system",
+    "title": "GP Appointment Booking System",
+    "description": "A secure full-stack NHS-style GP appointment booking platform. Backend: Express REST API with JWT authentication, role-based access (admin, gp, patient), and SQLite database via node:sqlite. Features: patients browse GPs and available slots, book and cancel appointments with 24-hour cancellation policy, GPs view their daily schedules and add consultation notes, admin manages all appointments and views the audit log. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with revocable refresh tokens. UK-specific: NHS number field, GMC number for GPs, NHS-styled frontend.",
+    "category": "uk_applications",
+    "repo": "cyberlab-gp-appointment-booking-system",
+    "date": "2026-08-02T06:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack GP appointment booking system with Express, node:sqlite, and a self-contained NHS-styled SPA frontend. Implements JWT auth with refresh tokens, three-role RBAC (admin/gp/patient), CSRF double-submit cookie protection, Helmet headers, rate limiting, and input validation. All 31 node:test tests passed on the first run.",
+    "tests_passed": 31,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with short-lived access tokens (15 min) and SHA-256 hashed revocable refresh tokens in SQLite",
+      "CSRF double-submit cookie pattern — matching X-CSRF-Token header and csrf_token cookie required on all state-changing requests",
+      "Role-based access control with ownership checks — patients can only cancel their own appointments, GPs see only their own schedules",
+      "Parameterised queries preventing SQL injection — no user input ever touches SQL string construction",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Rate limiting on auth (20 req/15 min) and general API (100 req/min) routes",
+      "Audit log recording every login, booking, and cancellation with user ID and IP address"
+    ],
+    "failure_reason": null
   }
 ]
