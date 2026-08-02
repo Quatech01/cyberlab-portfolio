@@ -1,0 +1,18 @@
+{
+  "target": "http://127.0.0.1:4415",
+  "findings": [
+    {
+      "endpoint": "/search/unsafe",
+      "vulnerability_type": "sql_injection",
+      "evidence": "Payload '' OR '1'='1' returned 4 row(s); baseline was 0",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/login/unsafe",
+      "vulnerability_type": "sql_injection_auth_bypass",
+      "evidence": "Authenticated without valid credentials using username='admin'--'",
+      "severity": "CRITICAL"
+    }
+  ],
+  "summary": "Found 2 SQL injection issue(s). String-concatenated endpoints are exploitable; parameterized endpoints correctly reject all injection payloads."
+}

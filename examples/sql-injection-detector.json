@@ -1,6 +1,6 @@
 {
-  "target": "http://localhost:4449",
-  "scan_duration_ms": 43,
+  "target": "http://localhost:4555",
+  "scan_duration_ms": 44,
   "endpoints_tested": 4,
   "findings": [
     {

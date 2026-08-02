@@ -550,5 +550,29 @@
       "Audit log recording every login, booking, and cancellation with user ID and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 25,
+    "project_type": "security_tool",
+    "project": "parameterized-query-comparison",
+    "title": "Parameterized Query vs Raw Query Comparison",
+    "description": "Side-by-side comparison of parameterized queries and string-concatenated queries against SQLite. Demo server has twin endpoints for each operation — search and login — one using raw f-string concatenation (vulnerable) and one using bound parameters (safe). Tool sends boolean-OR and comment-injection payloads to both sets of endpoints and reports which are exploitable.",
+    "category": "secure_coding",
+    "repo": "cyberlab-parameterized-query-comparison",
+    "date": "2026-08-02T10:00:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a SQL injection comparison tool with a FastAPI demo server exposing vulnerable (string-concatenated) and safe (parameterized) search and login endpoints backed by SQLite. The scanner probes both pairs with boolean-OR and comment-injection payloads, confirms the unsafe endpoints are exploitable, and correctly produces no findings for the parameterized endpoints. All 28 pytest tests passed on the first run.",
+    "tests_passed": 28,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "String concatenation in SQL queries enables injection — user input becomes SQL syntax rather than a literal value",
+      "Boolean-OR injection — payload ' OR '1'='1' bypasses WHERE filters by adding an always-true condition",
+      "Comment injection auth bypass — admin'-- strips the password check from the query entirely",
+      "Parameterized queries as the complete mitigation — the database driver separates code from data at the protocol level",
+      "False positive suppression — parameterized endpoints return zero findings under the same payloads"
+    ],
+    "failure_reason": null
   }
 ]
