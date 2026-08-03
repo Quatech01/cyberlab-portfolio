@@ -1,0 +1,30 @@
+{
+  "target": "http://127.0.0.1:4894",
+  "findings": [
+    {
+      "endpoint": "http://127.0.0.1:4894/certificates/expired",
+      "vulnerability_type": "EXPIRED_CERTIFICATE",
+      "evidence": "Certificate expired 30 day(s) ago on 2026-07-04",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "http://127.0.0.1:4894/certificates/self_signed",
+      "vulnerability_type": "SELF_SIGNED_CERTIFICATE",
+      "evidence": "Issuer and subject are identical: 'CN=selfsigned.example.local'. Browsers and clients reject self-signed certificates as untrusted.",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "http://127.0.0.1:4894/certificates/self_signed",
+      "vulnerability_type": "MISSING_SUBJECT_ALTERNATIVE_NAME",
+      "evidence": "Certificate has no Subject Alternative Names (SAN) extension. RFC 2818 §3.1 requires SANs; CN-only matching was deprecated in Chrome 58 (2017).",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "http://127.0.0.1:4894/certificates/weak_key",
+      "vulnerability_type": "WEAK_RSA_KEY",
+      "evidence": "RSA key is 1024 bits. The minimum recommended size is 2048 bits (NIST SP 800-131A, 2015).",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "Analyzed 4 certificate(s). Found 4 issue(s): 2 HIGH, 2 MEDIUM."
+}

@@ -601,5 +601,29 @@
       "Audit log recording every login, attendance mark, and data access with user ID and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 27,
+    "project_type": "security_tool",
+    "project": "tls-certificate-analyzer",
+    "title": "TLS Certificate Analyzer",
+    "description": "Fetches X.509 certificates from a demo server over HTTP and flags common PKI security misconfigurations: expired certificates, self-signed issuers, undersized RSA keys (below 2048-bit), and missing Subject Alternative Names. Demo server uses Python's cryptography library to generate four certificates at startup — expired, self-signed (no SAN), weak 1024-bit RSA key, and a correctly configured baseline. The tool parses each PEM with cryptography.x509, runs four checks, and reports structured JSON findings. The valid certificate produces zero findings, confirming false positive suppression.",
+    "category": "network_security",
+    "repo": "cyberlab-tls-certificate-analyzer",
+    "date": "2026-08-04T00:00:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a TLS certificate analyzer with a FastAPI demo server generating four X.509 certificates (expired, self-signed/no-SAN, 1024-bit RSA weak key, and a valid baseline). The tool fetches each PEM over HTTP, parses it with cryptography.x509, and flags EXPIRED_CERTIFICATE (HIGH), SELF_SIGNED_CERTIFICATE (MEDIUM), WEAK_RSA_KEY (HIGH), and MISSING_SUBJECT_ALTERNATIVE_NAME (MEDIUM). All 37 pytest tests passed on the first run.",
+    "tests_passed": 37,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "X.509 certificate validity periods — not_valid_after as the hard expiry boundary rejected by all TLS clients",
+      "Self-signed certificate risk — without a CA chain, a MITM can present their own self-signed cert; clients cannot distinguish legitimate from forged",
+      "RSA key size requirements — NIST SP 800-131A deprecated 1024-bit RSA in 2015; 2048 bits is the current minimum for new issuance",
+      "Subject Alternative Names (SAN) — RFC 2818 §3.1 requires hostnames in the SAN extension; CN-only matching deprecated in Chrome 58 (2017)",
+      "Certificate chain of trust — CA-signed certs link identity to a trusted root; tool distinguishes CA-signed from self-signed by comparing issuer and subject DNs"
+    ],
+    "failure_reason": null
   }
 ]
