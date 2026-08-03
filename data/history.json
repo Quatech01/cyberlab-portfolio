@@ -574,5 +574,32 @@
       "False positive suppression — parameterized endpoints return zero findings under the same payloads"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 26,
+    "project_type": "fullstack_app",
+    "project": "digital-attendance-tracking-system",
+    "title": "Digital Attendance Tracking System",
+    "description": "A full-stack attendance management system for UK schools and colleges. Backend: Express REST API with SQLite storing attendance records per student per lesson/period. Features: mark attendance (present/late/absent/authorised absence), bulk mark entire classes, view attendance percentage per student, trigger alerts when attendance drops below 90% (UK statutory threshold), generate class reports, audit log of all data access. Frontend: teacher dashboard showing class register with one-click marking, student portal showing own attendance history with percentage. DevSecOps: JWT auth with teacher/admin/student roles, CSRF double-submit cookie protection, Helmet security headers, express-validator input validation, rate limiting on auth and API routes, parameterized queries throughout, bcrypt password hashing.",
+    "category": "education_platforms",
+    "repo": "cyberlab-digital-attendance-tracking-system",
+    "date": "2026-08-03T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK school attendance tracking system with Express, node:sqlite, and a self-contained SPA frontend. Implements JWT auth (access + refresh tokens), three-role RBAC (admin/teacher/student) with SQL-level row filtering, CSRF double-submit cookie protection, Helmet headers, rate limiting, and express-validator input validation. All 35 node:test tests passed on the first run.",
+    "tests_passed": 35,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with short-lived access tokens (15 min) and revocable refresh tokens stored in SQLite",
+      "CSRF double-submit cookie pattern — matching X-CSRF-Token header against csrf_token cookie on all state-changing requests",
+      "Role-based access control with SQL-level row filtering — teachers see only their own class data, students see only their own records",
+      "UK DfE 90% persistent absence threshold enforced server-side with low_attendance flag in attendance summary",
+      "Parameterized queries preventing SQL injection — no user input concatenated into SQL strings",
+      "bcrypt password hashing at cost factor 12",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Audit log recording every login, attendance mark, and data access with user ID and IP address"
+    ],
+    "failure_reason": null
   }
 ]
