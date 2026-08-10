@@ -652,5 +652,31 @@
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes with RFC-standard headers"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 29,
+    "project_type": "security_tool",
+    "project": "http-technology-fingerprinter",
+    "title": "HTTP Technology Fingerprinter",
+    "description": "Identifies web frameworks and platforms from passive HTTP response analysis. Demo server mimics five tech stacks (WordPress, React, Django, Ruby on Rails, Next.js) plus a clean baseline endpoint, each exposing the headers, cookies, and HTML patterns their framework adds by default. The tool fetches /targets to discover probe endpoints, then analyzes Server and X-Powered-By headers, framework-specific cookie names, meta generator tags, and asset path conventions. Each rule requires at least two independent indicators before reporting a finding, preventing false positives from coincidental header matches. Safe baseline endpoint produces zero findings.",
+    "category": "osint_and_recon",
+    "repo": "cyberlab-http-technology-fingerprinter",
+    "date": "2026-08-11T00:06:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built an HTTP technology fingerprinter with a FastAPI demo server exposing five tech-stack simulations (WordPress, React, Django, Rails, Next.js) and a clean baseline. The tool analyzes response headers, cookies, and HTML patterns against a rule set requiring ≥2 indicators per technology. All 36 pytest tests passed on the first run.",
+    "tests_passed": 36,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Server and X-Powered-By headers as primary framework disclosure vectors — Apache, gunicorn, Express, and Next.js announce themselves by default",
+      "Framework-specific cookie names — csrftoken (Django), wordpress_logged_in_* (WordPress), _<app>_session (Rails) are hardcoded into the framework",
+      "HTML meta generator tag — WordPress embeds its version string in every page until explicitly disabled",
+      "Asset path conventions as fingerprints — /wp-content/, /_next/static/, and /static/js/*.chunk.js are deterministic build outputs",
+      "Rails diagnostic middleware headers — X-Runtime (response time) and X-Request-Id (UUID) are enabled by default via Rack::Runtime and ActionDispatch::RequestId",
+      "Two-indicator minimum to suppress false positives — a single matching header or cookie name is insufficient evidence",
+      "Clean baseline validation — the safe endpoint exposes none of the above signals and produces zero findings"
+    ],
+    "failure_reason": null
   }
 ]

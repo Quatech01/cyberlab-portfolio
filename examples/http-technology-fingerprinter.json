@@ -1,0 +1,41 @@
+{
+  "target": "http://127.0.0.1:4102",
+  "findings": [
+    {
+      "endpoint": "/site/wordpress",
+      "vulnerability_type": "technology_disclosure",
+      "evidence": "X-Powered-By header reveals PHP runtime: PHP/8.1.29; Server header reveals Apache httpd: uvicorn, Apache/2.4.57 (Ubuntu); Cookie 'wordpress_logged_in' is WordPress's default authenticated session cookie; Meta generator tag explicitly identifies WordPress CMS version; Path '/wp-content/' is exclusive to WordPress plugin and theme assets",
+      "severity": "MEDIUM",
+      "technology": "WordPress"
+    },
+    {
+      "endpoint": "/site/react",
+      "vulnerability_type": "technology_disclosure",
+      "evidence": "X-Powered-By: Express is the default Express.js server header; Attribute 'data-reactroot' is injected by React's server-side renderer; Script path '/static/js/*.chunk.js' matches Create React App's code-split output",
+      "severity": "LOW",
+      "technology": "React"
+    },
+    {
+      "endpoint": "/site/django",
+      "vulnerability_type": "technology_disclosure",
+      "evidence": "Server header reveals gunicorn WSGI server, commonly deployed with Django: uvicorn, gunicorn/20.1.0; X-Frame-Options: SAMEORIGIN is set by Django's XFrameOptionsMiddleware by default; Cookie named 'csrftoken' is Django's default CSRF cookie name (set by CsrfViewMiddleware); Hidden field 'csrfmiddlewaretoken' is Django's default CSRF form field name",
+      "severity": "MEDIUM",
+      "technology": "Django"
+    },
+    {
+      "endpoint": "/site/rails",
+      "vulnerability_type": "technology_disclosure",
+      "evidence": "X-Runtime header (response time in seconds) is added by Rails' Rack::Runtime middleware: 0.032s; X-Request-Id UUID header is added by Rails' ActionDispatch::RequestId middleware; Cookie name matching '_<app>_session' follows Rails' default session cookie naming convention; Hidden field 'authenticity_token' is Rails' CSRF token field name (set by form_with helper)",
+      "severity": "MEDIUM",
+      "technology": "Ruby on Rails"
+    },
+    {
+      "endpoint": "/site/nextjs",
+      "vulnerability_type": "technology_disclosure",
+      "evidence": "X-Powered-By header explicitly identifies Next.js framework; Path '/_next/static/' is Next.js's reserved static asset namespace; Script tag id='__NEXT_DATA__' is Next.js's server-side props injection mechanism",
+      "severity": "LOW",
+      "technology": "Next.js"
+    }
+  ],
+  "summary": "Detected technology fingerprints on 5 endpoint(s): Django, Next.js, React, Ruby on Rails, WordPress. 1 endpoint(s) revealed no identifying information."
+}
