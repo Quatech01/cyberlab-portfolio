@@ -625,5 +625,32 @@
       "Certificate chain of trust — CA-signed certs link identity to a trusted root; tool distinguishes CA-signed from self-signed by comparing issuer and subject DNs"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 28,
+    "project_type": "fullstack_app",
+    "project": "council-tax-payment-portal",
+    "title": "Council Tax Payment Portal",
+    "description": "A secure full-stack UK council tax management and payment portal. Backend: Express REST API with JWT authentication, role-based access (admin, finance, resident), and SQLite database via node:sqlite. Features: residents link their property by council reference number, view their band-based annual bill, apply for discounts (single person 25%, student 25%, disabled 12%, severe mental impairment 50%), view a 10-instalment payment schedule, and make mock payments via Direct Debit or card. Finance officers view all payments and generate arrears reports. Admins manage property records, approve or reject discount applications, and monitor arrears. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and general API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens.",
+    "category": "uk_applications",
+    "repo": "cyberlab-council-tax-payment-portal",
+    "date": "2026-08-10T06:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK council tax payment portal with Express, node:sqlite, and a self-contained NHS-styled SPA frontend. Implements JWT auth (access + refresh tokens with SHA-256 hashed storage and server-side revocation), three-role RBAC (admin/finance/resident), CSRF double-submit cookie protection, Helmet security headers, rate limiting, express-validator input validation, and UK council tax band calculations with discount stacking. All 33 node:test tests passed on the first run.",
+    "tests_passed": 33,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with 15-minute access tokens and SHA-256 hashed refresh tokens stored in SQLite for server-side revocation",
+      "CSRF double-submit cookie pattern — UUID token set as a readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware — resident/admin/finance roles with SQL-level row isolation, not client-side filtering",
+      "Parameterized queries preventing SQL injection — no user input concatenated into SQL strings throughout all route handlers",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "UK council tax band (A-H) annual charge calculation with stackable discount types (single person, student, disabled, SMI)",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes with RFC-standard headers"
+    ],
+    "failure_reason": null
   }
 ]

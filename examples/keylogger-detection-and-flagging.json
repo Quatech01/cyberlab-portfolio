@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4326",
+  "target": "http://127.0.0.1:4944",
   "findings": [
     {
       "endpoint": "/scan/processes",
