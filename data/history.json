@@ -678,5 +678,34 @@
       "Clean baseline validation — the safe endpoint exposes none of the above signals and produces zero findings"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 30,
+    "project_type": "fullstack_app",
+    "project": "grade-and-results-portal",
+    "title": "Grade and Results Portal",
+    "description": "A secure full-stack results management system for UK schools. Backend: Express REST API managing subjects, assessments, and grades with SQLite via node:sqlite. Features: teachers enter grades for assignments, tests, and exams; system calculates running average and predicted grade; supports UK grading scales (GCSE 9-1 and A-Level A*-U); generates student progress reports with at-risk detection (students more than one grade below their target); tracks grade trajectory with previous_marks audit trail. Frontend: teacher grade entry form with class overview table, student/parent portal showing results table and Canvas bar chart, admin view with subject management. DevSecOps: JWT auth (access + refresh tokens with SHA-256 hashed revocable refresh tokens), four-role RBAC (admin/teacher/student/parent) with SQL-level row isolation, CSRF double-submit cookie protection, Helmet security headers, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, express-validator input validation, bcrypt password hashing at cost 12, parameterized queries throughout, audit log of all grade access and changes.",
+    "category": "education_platforms",
+    "repo": "cyberlab-grade-and-results-portal",
+    "date": "2026-08-17T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK school grade and results portal with Express, node:sqlite, and a self-contained SPA frontend. Implements JWT auth (access + refresh tokens), four-role RBAC (admin/teacher/student/parent) with SQL-level row isolation, CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. UK grade schemes (GCSE 9-1 and A-Level A*-U) computed server-side from raw marks. All 40 node:test tests passed on the first run after fixing SQLite string literal quoting.",
+    "tests_passed": 40,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with short-lived access tokens (15 min) and SHA-256 hashed revocable refresh tokens stored in SQLite",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Four-role RBAC with SQL-level row isolation — teachers see only their subject data, students see only their own grades, parents see only their linked child's data",
+      "UK GCSE 9-1 grading — server-side percentage-to-grade conversion; 85%+ = 9, 75%+ = 8, down to U below 5%",
+      "UK A-Level A*-U grading — 90%+ = A*, 80%+ = A, down to U below 40%",
+      "At-risk detection — students whose current average falls more than one grade below their target are flagged server-side",
+      "Grade audit trail — previous_marks stored on every grade update for full change history",
+      "Parameterized queries preventing SQL injection — all node:sqlite operations use prepared statements with bound parameters",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response"
+    ],
+    "failure_reason": null
   }
 ]
