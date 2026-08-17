@@ -1,5 +1,5 @@
 {
-  "target": "http://localhost:4366",
+  "target": "http://localhost:4878",
   "findings": [
     {
       "endpoint": "/auth/token",

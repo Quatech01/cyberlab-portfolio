@@ -707,5 +707,29 @@
       "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 31,
+    "project_type": "security_tool",
+    "project": "totp-mfa-demo",
+    "title": "TOTP Multi-Factor Authentication",
+    "description": "Implements TOTP (RFC 6238) generation and verification. Demo server has a login that requires TOTP after password. Tool generates valid and invalid codes, tests time-window tolerance, and replay protection. Demo server exposes a vulnerable endpoint (±5-minute acceptance window, no replay protection) and a safe endpoint (±30-second window with per-code de-duplication). The scanner probes both, demonstrating that a replayed code and a 3-minute-old code are both accepted by the vulnerable endpoint and rejected by the safe one.",
+    "category": "authentication_and_access",
+    "repo": "cyberlab-totp-mfa-demo",
+    "date": "2026-08-17T17:12:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a TOTP MFA vulnerability scanner with a FastAPI demo server exposing a vulnerable TOTP endpoint (±5-minute window, no replay protection) and a safe endpoint (±30-second window, code de-duplication). Tool implements the RFC 6238 HOTP/TOTP algorithm from stdlib and probes both endpoints. All 24 pytest tests passed on the first run.",
+    "tests_passed": 24,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "RFC 6238 TOTP algorithm — HMAC-SHA1 over a time-step counter, dynamic truncation to 6 digits",
+      "TOTP replay attack — without per-code de-duplication, a valid code can be submitted multiple times within the 30-second window",
+      "Wide time-window acceptance — servers using ±10 steps (±5 minutes) extend the attack window far beyond RFC 6238's ±1-step recommendation",
+      "Constant-time code tracking — used codes stored as (username, code) tuples; O(1) lookup prevents replay",
+      "TOTP as a shared secret — security depends entirely on the TOTP secret never being disclosed; replay and wide-window flaws both erode the time-limited protection"
+    ],
+    "failure_reason": null
   }
 ]
