@@ -731,5 +731,34 @@
       "TOTP as a shared secret — security depends entirely on the TOTP secret never being disclosed; replay and wide-window flaws both erode the time-limited protection"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 32,
+    "project_type": "fullstack_app",
+    "project": "right-to-rent-verification-system",
+    "title": "Right to Rent Verification System",
+    "description": "A secure full-stack UK Right to Rent compliance management system for landlords. Backend: Express REST API with JWT authentication, role-based access (landlord, admin), and SQLite database via node:sqlite. Features: landlords register tenants per property, record which documents were checked (passport, BRP, share code, EEA identity card, ILR, certificate of right of abode), record check date and permission type, system auto-calculates follow-up date as 28 days before permission expiry, alerts for checks expiring within 28 days, generates compliance certificates per tenant confirming right to rent status. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with jti-randomised revocable refresh tokens, role-based access control. UK compliance: Immigration Act 2014, Home Office Right to Rent Code of Practice.",
+    "category": "uk_applications",
+    "repo": "cyberlab-right-to-rent-verification-system",
+    "date": "2026-08-22T00:09:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK Right to Rent compliance system with Express, node:sqlite, and a self-contained NHS-styled SPA frontend. Implements JWT auth (access + refresh tokens with jti-randomised hashes for collision-safe revocation), two-role RBAC (landlord/admin), CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation including UK postcode regex. Follow-up dates auto-computed 28 days before permission expiry. Compliance certificates show live status (compliant/expiring_soon/expired). All 32 node:test tests passed.",
+    "tests_passed": 32,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with 15-minute access tokens and jti-randomised SHA-256 hashed refresh tokens stored in SQLite for collision-safe revocation",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Role-based access control enforced in middleware — landlords see only their own properties and tenants, SQL-level row isolation not client-side filtering",
+      "UK Right to Rent compliance workflow — follow-up date auto-computed as permission_expiry_date minus 28 days per Home Office guidance",
+      "Server-side status computation — compliant/expiring_soon/expired derived fresh on each API response, never stored or trusted from client",
+      "Parameterized queries preventing SQL injection throughout all route handlers",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "UK postcode format validation via regex (express-validator) as business rule enforcement",
+      "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
+    ],
+    "failure_reason": null
   }
 ]
