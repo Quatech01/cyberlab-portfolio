@@ -784,5 +784,34 @@
       "CORS as a browser control — curl and httpx bypass it freely; authentication must still be enforced server-side regardless of CORS policy"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 34,
+    "project_type": "fullstack_app",
+    "project": "fee-and-payment-management-system",
+    "title": "Fee and Payment Management System",
+    "description": "A full-stack school fee management system tailored to UK independent schools and colleges. Backend: Express REST API with JWT authentication, role-based access (admin, finance, parent), and SQLite database via node:sqlite. Features: create and assign fee schedules to students (tuition, meals, trips, uniform), generate invoices per student per term with automatic sibling discount application (10% tuition discount for second and subsequent siblings), track outstanding balances, record mock payments via card, Direct Debit, or bank transfer. Payment endpoint uses idempotency keys to prevent double-charging. Frontend: self-contained SPA dashboard with role-specific views — admin manages fee schedules, students, and generates invoices; finance views all invoices and payments; parents see only their own child's invoices and payment history. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens, audit log of all financial data access.",
+    "category": "education_platforms",
+    "repo": "cyberlab-fee-and-payment-management-system",
+    "date": "2026-08-24T08:30:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK school fee and payment management system with Express, node:sqlite, and a self-contained SPA frontend. Implements JWT auth (access + refresh tokens with SHA-256 hashed revocable storage), three-role RBAC (admin/finance/parent) with SQL-level row isolation, CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. Invoice generation applies sibling discounts server-side; payments use idempotency keys to prevent duplicate charges. All 34 node:test tests passed on the first run.",
+    "tests_passed": 34,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in SQLite",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Role-based access control with SQL-level row isolation — parents see only their own student data, finance sees all, admin has full control",
+      "Payment idempotency keys — UNIQUE constraint on idempotency_key prevents duplicate charges; repeat requests return the original payment",
+      "Server-side sibling discount computation — 10% tuition discount applied during invoice generation, not client-supplied",
+      "Parameterized queries preventing SQL injection throughout all route handlers",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes",
+      "Audit log recording every login, invoice generation, and payment with user ID and IP address"
+    ],
+    "failure_reason": null
   }
 ]

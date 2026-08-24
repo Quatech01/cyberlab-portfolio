@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4408",
+  "target": "http://127.0.0.1:4307",
   "findings": [
     {
       "endpoint": "/api/unsafe/data",
@@ -20,5 +20,5 @@
       "severity": "HIGH"
     }
   ],
-  "summary": "Found 3 CORS misconfiguration(s) across http://127.0.0.1:4408 — 2 HIGH severity. Reflected-origin + credentials and null-origin + credentials allow attacker-controlled pages to silently read authenticated API responses."
+  "summary": "Found 3 CORS misconfiguration(s) across http://127.0.0.1:4307 — 2 HIGH severity. Reflected-origin + credentials and null-origin + credentials allow attacker-controlled pages to silently read authenticated API responses."
 }

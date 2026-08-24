@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4983",
+  "target": "http://127.0.0.1:4613",
   "findings": [
     {
       "endpoint": "/site/wordpress",
