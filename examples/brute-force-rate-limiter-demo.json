@@ -1,6 +1,6 @@
 {
-  "target": "http://localhost:4782",
-  "scannedAt": "2026-08-21T23:29:03.593Z",
+  "target": "http://localhost:4975",
+  "scannedAt": "2026-08-24T05:09:26.614Z",
   "findings": [
     {
       "endpoint": "/login/vulnerable",

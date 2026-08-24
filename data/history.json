@@ -760,5 +760,29 @@
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 33,
+    "project_type": "security_tool",
+    "project": "cors-misconfiguration-scanner",
+    "title": "CORS Misconfiguration Scanner",
+    "description": "Detects dangerous Cross-Origin Resource Sharing policies: wildcard ACAO (any origin can read responses), reflected origin with credentials (server echoes back attacker Origin + ACAC: true, allowing any page to make credentialed cross-origin requests), and null origin with credentials (sandboxed iframes can steal authenticated responses). Demo server exposes three vulnerable endpoints at different CORS misconfiguration levels and one safe strict-allowlist endpoint. Tool probes each with attacker and null origins and reports structured JSON findings with severity ratings.",
+    "category": "web_security",
+    "repo": "cyberlab-cors-misconfiguration-scanner",
+    "date": "2026-08-24T05:08:53.883Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a CORS misconfiguration scanner with a FastAPI demo server exposing three vulnerable CORS policies (wildcard, reflected-origin-with-credentials, null-origin-with-credentials) and one safe strict-allowlist endpoint. The scanner probes each with attacker and null origins, correctly identifies all three misconfigurations, and produces zero findings for the allowlist endpoint. All 33 pytest tests passed on the first run.",
+    "tests_passed": 33,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "CORS wildcard (Access-Control-Allow-Origin: *) — any origin can read the response; harmless for public APIs but dangerous if auth is later added",
+      "Reflected origin with credentials — echoing the incoming Origin header verbatim plus ACAC: true allows any attacker page to make credentialed cross-origin requests",
+      "Null origin acceptance — sandboxed iframes (data: URIs, srcdoc) send Origin: null; accepting it with credentials permits those contexts to read authenticated responses",
+      "Strict allowlist validation — only origins on a pre-approved list receive the ACAO header; the Vary: Origin header is required to prevent CDN caching issues",
+      "CORS as a browser control — curl and httpx bypass it freely; authentication must still be enforced server-side regardless of CORS policy"
+    ],
+    "failure_reason": null
   }
 ]

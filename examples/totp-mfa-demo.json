@@ -1,18 +1,18 @@
 {
-  "target": "http://127.0.0.1:4665",
+  "target": "http://127.0.0.1:4260",
   "findings": [
     {
       "endpoint": "/auth/totp/vulnerable",
       "vulnerability_type": "TOTP_REPLAY_ATTACK",
-      "evidence": "Code 404029 was accepted twice in succession — server has no per-code de-duplication",
+      "evidence": "Code 732937 was accepted twice in succession — server has no per-code de-duplication",
       "severity": "HIGH"
     },
     {
       "endpoint": "/auth/totp/vulnerable",
       "vulnerability_type": "WIDE_TOTP_WINDOW",
-      "evidence": "Code 200367 generated 180 seconds ago was accepted — RFC 6238 recommends ±30 s tolerance; this server accepts ±5 minutes",
+      "evidence": "Code 878057 generated 180 seconds ago was accepted — RFC 6238 recommends ±30 s tolerance; this server accepts ±5 minutes",
       "severity": "MEDIUM"
     }
   ],
-  "summary": "Found 2 TOTP vulnerability/vulnerabilities on http://127.0.0.1:4665. Vulnerable endpoint lacks replay protection and uses an excessive time window. Safe endpoint enforces RFC 6238 constraints correctly."
+  "summary": "Found 2 TOTP vulnerability/vulnerabilities on http://127.0.0.1:4260. Vulnerable endpoint lacks replay protection and uses an excessive time window. Safe endpoint enforces RFC 6238 constraints correctly."
 }

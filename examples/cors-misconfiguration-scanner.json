@@ -1,0 +1,24 @@
+{
+  "target": "http://127.0.0.1:4408",
+  "findings": [
+    {
+      "endpoint": "/api/unsafe/data",
+      "vulnerability_type": "CORS_WILDCARD",
+      "evidence": "Access-Control-Allow-Origin: * — any origin can read this response. Harmless for fully public data, but becomes critical if authentication is ever added.",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/api/leak/profile",
+      "vulnerability_type": "CORS_REFLECTED_ORIGIN_WITH_CREDENTIALS",
+      "evidence": "Access-Control-Allow-Origin: http://evil.attacker.com (reflected), Access-Control-Allow-Credentials: true — any attacker page can make credentialed cross-origin requests and read the full response including session cookies.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/api/null/upload",
+      "vulnerability_type": "CORS_NULL_ORIGIN_WITH_CREDENTIALS",
+      "evidence": "Access-Control-Allow-Origin: null, Access-Control-Allow-Credentials: true — sandboxed iframes (data: URIs, srcdoc) send Origin: null and can therefore read credentialed responses.",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "Found 3 CORS misconfiguration(s) across http://127.0.0.1:4408 — 2 HIGH severity. Reflected-origin + credentials and null-origin + credentials allow attacker-controlled pages to silently read authenticated API responses."
+}
