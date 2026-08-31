@@ -1,6 +1,6 @@
 {
-  "target": "http://localhost:4976",
-  "scanTime": "2026-08-24T17:14:33.701Z",
+  "target": "http://localhost:4119",
+  "scanTime": "2026-08-31T05:08:11.413Z",
   "findings": [
     {
       "endpoint": "/algorithms",

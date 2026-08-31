@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4855",
+  "target": "http://127.0.0.1:4553",
   "domain": "example.com",
   "words_probed": 88,
   "findings": [

@@ -1,0 +1,18 @@
+{
+  "target": "http://127.0.0.1:4773",
+  "findings": [
+    {
+      "endpoint": "/file/auth.py",
+      "vulnerability_type": "INTEGRITY_VIOLATION",
+      "evidence": "File 'auth.py' has been modified. Baseline SHA-256: 8aff88701a10d1d14ce29e2a..., Current SHA-256: c29e07716313b2a340ae7d4f...",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/file/db_connector.py",
+      "vulnerability_type": "INTEGRITY_VIOLATION",
+      "evidence": "File 'db_connector.py' has been modified. Baseline SHA-256: 29cd9c62b1d9fc67ad913d01..., Current SHA-256: 4401352e5d3bb71b79246016...",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "2 integrity violation(s) detected in 6 files checked (4 file(s) verified clean)."
+}

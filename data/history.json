@@ -813,5 +813,29 @@
       "Audit log recording every login, invoice generation, and payment with user ID and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 35,
+    "project_type": "security_tool",
+    "project": "file-integrity-checker",
+    "title": "File Integrity Checker",
+    "description": "Computes SHA-256 hashes of files, stores a baseline, then detects modifications by comparing current hashes against the baseline. Demo server serves a set of files via API — four files remain unchanged (clean) and two have been silently tampered with: auth.py has its password verification replaced with a backdoor that always returns True, and db_connector.py has a reverse-shell subprocess injected alongside the legitimate database code. The tool fetches the integrity manifest from /files (filename + baseline hash), re-hashes each file's current content, and reports mismatches as INTEGRITY_VIOLATION findings.",
+    "category": "malware_analysis_and_forensics",
+    "repo": "cyberlab-file-integrity-checker",
+    "date": "2026-08-31T06:10:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a file integrity monitoring tool with a FastAPI demo server serving six files (four clean, two tampered — a backdoored auth handler and a reverse-shell injected database connector). The tool fetches an integrity manifest, re-hashes current file content, and flags any SHA-256 mismatch as a HIGH-severity INTEGRITY_VIOLATION. All 27 pytest tests passed on the first run.",
+    "tests_passed": 27,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "SHA-256 as a cryptographic integrity primitive — any byte change produces a completely different hash (avalanche property)",
+      "Baseline hash manifest pattern — storing known-good hashes separately from the files being monitored, so tampering is detectable even after the fact",
+      "Post-exploitation persistence detection — FIM catches attacker modifications to auth handlers and database connectors that establish backdoors or C2 channels",
+      "False positive suppression — unchanged files produce zero findings, confirming the tool only alerts on genuine mismatches",
+      "Graceful degradation — unreachable server returns empty findings and a descriptive summary without crashing"
+    ],
+    "failure_reason": null
   }
 ]

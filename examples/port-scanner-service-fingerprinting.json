@@ -1,23 +1,23 @@
 {
-  "target": "http://localhost:4102",
+  "target": "http://localhost:4543",
   "host": "localhost",
-  "portRange": "4102-4112",
-  "scanTime": "2026-08-24T17:14:30.346Z",
+  "portRange": "4543-4553",
+  "scanTime": "2026-08-31T05:08:05.798Z",
   "findings": [
     {
-      "endpoint": "localhost:4102",
-      "port": 4102,
+      "endpoint": "localhost:4543",
+      "port": 4543,
       "state": "open",
       "vulnerability_type": "exposed-service",
       "service": "http",
       "version": "DemoApp/1.0 (Node.js/Express)",
-      "evidence": "HTTP/1.1 200 OK\\r\\nX-Powered-By: Express\\r\\nServer: DemoApp/1.0 (Node.js/Express)\\r\\nContent-Type: application/json; charset=utf-8\\r\\nContent-Length: 67\\r\\nETag: W/\"43-ARKBP2ETmqAp82rqmrXrt2FgaOU\"\\r\\nDate: Mon, 2",
+      "evidence": "HTTP/1.1 200 OK\\r\\nX-Powered-By: Express\\r\\nServer: DemoApp/1.0 (Node.js/Express)\\r\\nContent-Type: application/json; charset=utf-8\\r\\nContent-Length: 67\\r\\nETag: W/\"43-ARKBP2ETmqAp82rqmrXrt2FgaOU\"\\r\\nDate: Mon, 3",
       "confidence": "HIGH",
       "severity": "INFO"
     },
     {
-      "endpoint": "localhost:4103",
-      "port": 4103,
+      "endpoint": "localhost:4544",
+      "port": 4544,
       "state": "open",
       "vulnerability_type": "exposed-service",
       "service": "echo",
@@ -27,8 +27,8 @@
       "severity": "INFO"
     },
     {
-      "endpoint": "localhost:4104",
-      "port": 4104,
+      "endpoint": "localhost:4545",
+      "port": 4545,
       "state": "open",
       "vulnerability_type": "exposed-service",
       "service": "smtp",
