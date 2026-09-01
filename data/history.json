@@ -837,5 +837,34 @@
       "Graceful degradation — unreachable server returns empty findings and a descriptive summary without crashing"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 36,
+    "project_type": "fullstack_app",
+    "project": "planning-permission-application-tracker",
+    "title": "Planning Permission Application Tracker",
+    "description": "A secure full-stack UK planning permission tracking and management system. Backend: Express REST API with JWT authentication, role-based access (applicant, officer, admin), and SQLite database via node:sqlite. Features: applicants submit planning applications (householder, full planning, listed building consent, prior approval) with UK postcode validation, officers review applications and add consultee responses and internal/public notes, issue decision notices, track 8-week statutory determination deadlines per Town and Country Planning Act 1990. Decision notices are publicly accessible without authentication; applicant personal details are restricted to officers and admins via SQL-level row projection. Frontend: self-contained responsive SPA with role-specific dashboards — applicant portal, officer case management dashboard with status filter, admin dashboard with stats and audit log. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens.",
+    "category": "uk_applications",
+    "repo": "cyberlab-planning-permission-application-tracker",
+    "date": "2026-09-02T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK planning permission tracker with Express, node:sqlite, and a self-contained SPA frontend. Implements JWT auth (access + refresh tokens with SHA-256 hashed revocable storage), three-role RBAC (applicant/officer/admin) with SQL-level row isolation, CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation including UK postcode regex. Decision notices are served publicly; personal details are stripped from unauthenticated responses. All 28 node:test tests passed on the first run after a one-line SQL string-literal fix.",
+    "tests_passed": 28,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in SQLite",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Role-based access control with SQL-level field projection — unauthenticated requests receive public fields only; personal details returned only to officers and admins",
+      "UK Town and Country Planning Act 1990 — 8-week determination deadline computed server-side at submission time, never trusted from client",
+      "Public register requirement — decision notices served without authentication to mirror statutory planning register obligation",
+      "Parameterized queries preventing SQL injection — all node:sqlite operations use prepared statements with bound parameters",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "UK postcode format validation via regex (express-validator) as business rule enforcement",
+      "Audit log recording every login, application submission, status change, and decision with user ID and IP address"
+    ],
+    "failure_reason": null
   }
 ]
