@@ -866,5 +866,29 @@
       "Audit log recording every login, application submission, status change, and decision with user ID and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 37,
+    "project_type": "security_tool",
+    "project": "rate-limit-bypass-tester",
+    "title": "Rate Limit Bypass Tester",
+    "description": "Detects HTTP rate limiting implementations that can be circumvented by rotating the X-Forwarded-For header. Demo server exposes two login endpoints with identical business logic but different rate limiting strategies: one keys by X-Forwarded-For header value (spoofable), the other by actual TCP connection IP (safe). The scanner exhausts the limit under one fake IP, rotates the header, and reports whether the limit is bypassed. Safe endpoint produces zero findings.",
+    "category": "network_security",
+    "repo": "cyberlab-rate-limit-bypass-tester",
+    "date": "2026-09-05T06:10:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a rate limit bypass scanner with a FastAPI demo server exposing a vulnerable endpoint (keyed by X-Forwarded-For header) and a safe endpoint (keyed by TCP connection IP). The tool exhausts the limit, rotates the X-Forwarded-For header, and confirms whether the bypass succeeds. All 24 pytest tests passed after disabling uvicorn's built-in proxy header trust (proxy_headers=False) to ensure accurate TCP-IP keying in tests.",
+    "tests_passed": 24,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "X-Forwarded-For header spoofing — any HTTP client can set this header to an arbitrary value, defeating rate limits keyed by it",
+      "TCP connection IP as the only unforgeable client identifier at the HTTP layer",
+      "uvicorn proxy_headers setting — by default uvicorn trusts X-Forwarded-For from 127.0.0.1 and overwrites scope client; proxy_headers=False disables this",
+      "Rate limit bypass as a brute-force enabler — unlimited credential guessing when the limit key can be rotated",
+      "Trusted proxy configuration — correct approach is to strip/overwrite X-Forwarded-For at the ingress proxy, not in application code"
+    ],
+    "failure_reason": null
   }
 ]
