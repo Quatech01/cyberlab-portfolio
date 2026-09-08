@@ -1,0 +1,18 @@
+{
+  "target": "http://127.0.0.1:4600",
+  "findings": [
+    {
+      "endpoint": "/api/no-limit",
+      "vulnerability_type": "MISSING_RATE_LIMITING",
+      "evidence": "Sent 15 rapid requests; all returned HTTP 200 — endpoint applies no rate limit whatsoever",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/api/fixed-window",
+      "vulnerability_type": "FIXED_WINDOW_BURST",
+      "evidence": "5 requests succeeded at the end of window 1; after 2.0s reset, 5 more succeeded immediately at the start of window 2 — 10 requests processed in ~2.0s (2× the configured limit of 5/window). An attacker can time requests to straddle the boundary and effectively double their throughput.",
+      "severity": "MEDIUM"
+    }
+  ],
+  "summary": "Found 2 issue(s): /api/no-limit: no rate limiting (HIGH); /api/fixed-window: boundary burst 10 req in ~2.0s (MEDIUM). Token bucket and sliding window correctly enforce their limits."
+}

@@ -921,5 +921,29 @@
       "Audit log recording every login, enrolment, withdrawal, and waitlist event with user ID and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 39,
+    "project_type": "security_tool",
+    "project": "rate-limiting-middleware",
+    "title": "Rate Limiting Middleware",
+    "description": "Implements three rate limiting algorithms from scratch — token bucket, fixed window, and sliding window — and demonstrates the fixed-window boundary-burst vulnerability. Demo server exposes an unprotected endpoint (no rate limiting) and three protected endpoints (one per algorithm), all with the same nominal limit. The scanner fires rapid request batches to detect MISSING_RATE_LIMITING on unprotected endpoints and FIXED_WINDOW_BURST on fixed-window endpoints (by firing max_requests at the end of a window, waiting for reset, then firing max_requests again — demonstrating 2× the configured limit in a single window_seconds period). Token bucket and sliding window produce zero findings.",
+    "category": "secure_coding",
+    "repo": "cyberlab-rate-limiting-middleware",
+    "date": "2026-09-08T10:00:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a rate limiting algorithm comparison tool with a FastAPI demo server exposing token bucket (capacity 5, slow refill), fixed window (5 req/2 sec), and sliding window (5 req/10 sec) endpoints alongside an unprotected baseline. The scanner detects MISSING_RATE_LIMITING (HIGH) on the unprotected endpoint and FIXED_WINDOW_BURST (MEDIUM) on the fixed-window endpoint by exploiting the window boundary. All 27 pytest tests passed on the first run after tuning the token bucket refill rate and sliding window duration to be robust at typical localhost HTTP latency.",
+    "tests_passed": 27,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Token bucket algorithm — allows bursts up to configured capacity, then refills at a steady rate; no fixed boundary to exploit",
+      "Fixed-window rate limiting boundary burst — at each window reset, a full new quota becomes available instantly, allowing 2× the limit in rapid succession",
+      "Sliding window rate limiting — tracks individual request timestamps in a rolling window; no fixed boundary means no burst opportunity",
+      "MISSING_RATE_LIMITING detection — endpoint that never returns 429 regardless of request rate is HIGH severity for brute-force exposure",
+      "Refill rate calibration — token bucket refill_rate must be much lower than 1/request_latency or rapid-fire tests can consume and refill the bucket in the same pass"
+    ],
+    "failure_reason": null
   }
 ]

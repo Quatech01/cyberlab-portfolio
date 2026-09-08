@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4807",
+  "target": "http://127.0.0.1:4376",
   "findings": [
     {
       "endpoint": "/samples/spoofed_sender",
