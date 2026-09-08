@@ -890,5 +890,36 @@
       "Trusted proxy configuration — correct approach is to strip/overwrite X-Forwarded-For at the ingress proxy, not in application code"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 38,
+    "project_type": "fullstack_app",
+    "project": "course-module-registration-system",
+    "title": "Course and Module Registration System",
+    "description": "A full-stack course registration platform for UK sixth forms, colleges, and universities. Backend: Express REST API with JWT authentication, role-based access (admin, staff, student), and SQLite database via node:sqlite. Features: students browse and register for modules within their programme, system enforces prerequisites (students must be enrolled/completed in prerequisite modules), credit limits (120 credits per year per UK credit framework), clash detection (no two registered modules at same day/period), and waitlist management with automatic promotion when a spot opens. Frontend: responsive self-contained SPA with module catalogue (search/filter by subject, level, semester), student registration dashboard with credit bar, admin enrollment overview, and waitlist management. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (100 req/15 min) and API (200 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens, audit log of all enrollments and withdrawals. UK-specific: QCF/RQF level labels, 120-credit annual limit per UK credit framework.",
+    "category": "education_platforms",
+    "repo": "cyberlab-course-module-registration-system",
+    "date": "2026-09-08T06:08:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK course and module registration system with Express, node:sqlite, and a self-contained SPA frontend. Implements JWT auth (access + refresh tokens), three-role RBAC (admin/staff/student), CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. Business logic enforces prerequisites, 120-credit annual limit, timetable clash detection, and waitlist auto-promotion via SQL transactions. All 27 node:test tests passed on the first run after fixing a body-already-read error in two assert messages.",
+    "tests_passed": 27,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with short-lived access tokens (15 min) and SHA-256 hashed revocable refresh tokens stored in node:sqlite",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware — students see only their own registrations; admin/staff see all via SQL JOINs",
+      "Prerequisite enforcement at the API layer — parameterised query checks enrolment in prerequisite modules before permitting registration",
+      "UK credit framework 120-credit annual limit — SUM(credits) WHERE status='enrolled' checked server-side before each registration",
+      "Timetable clash detection — day_of_week + period overlap checked against active enrolments before inserting a new one",
+      "Waitlist auto-promotion in a SQL transaction — withdrawal and waitlist promotion are atomic to prevent inconsistent state",
+      "Parameterised queries preventing SQL injection — all node:sqlite operations use bound parameters",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "express-rate-limit on auth and API routes",
+      "Audit log recording every login, enrolment, withdrawal, and waitlist event with user ID and IP address"
+    ],
+    "failure_reason": null
   }
 ]

@@ -1,6 +1,6 @@
 {
-  "target": "http://localhost:4268",
-  "scanned_at": "2026-09-05T05:15:02.317Z",
+  "target": "http://localhost:4126",
+  "scanned_at": "2026-09-08T05:19:36.930Z",
   "endpoints_tested": [
     "/search",
     "/search-escaped",

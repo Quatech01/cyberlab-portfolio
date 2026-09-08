@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4875",
+  "target": "http://127.0.0.1:4749",
   "findings": [
     {
       "endpoint": "/api/vulnerable/login",
