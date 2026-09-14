@@ -945,5 +945,35 @@
       "Refill rate calibration — token bucket refill_rate must be much lower than 1/request_latency or rapid-fire tests can consume and refill the bucket in the same pass"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 40,
+    "project_type": "fullstack_app",
+    "project": "universal-credit-eligibility-calculator",
+    "title": "Universal Credit Eligibility Calculator",
+    "description": "A secure full-stack UK Universal Credit eligibility assessment and calculation tool. Backend: Express REST API with JWT authentication, role-based access (admin, user), and SQLite database via node:sqlite. Features: users complete a multi-step assessment covering household composition, housing situation, employment and earnings, health conditions (LCWRA), carer status, and savings; system calculates UC entitlement using current DWP rates (2024/25) — standard allowance, child elements, disabled child elements, LCWRA element, carer element, housing cost element, childcare element, 55% taper on earnings above work allowance, tariff income on savings between £6,000–£16,000, and benefit cap (London/national × family/single); capital limit of £16,000 enforced. Frontend: self-contained SPA styled after GOV.UK Design System with multi-step assessment wizard, GOV.UK-branded results page with full calculation breakdown, assessment history, and admin dashboard. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with random-jti revocable refresh tokens stored as SHA-256 hashes in SQLite.",
+    "category": "uk_applications",
+    "repo": "cyberlab-universal-credit-eligibility-calculator",
+    "date": "2026-09-15T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK Universal Credit eligibility calculator with Express, node:sqlite, and a self-contained GOV.UK-styled SPA frontend. Implements the full DWP UC calculation engine (standard allowances, 7 UC elements, 55% taper, tariff income, benefit cap) entirely server-side. JWT auth with jti-randomised SHA-256 hashed revocable refresh tokens, two-role RBAC, CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. All 32 node:test tests passed.",
+    "tests_passed": 32,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with 15-minute access tokens and jti-randomised SHA-256 hashed refresh tokens stored in SQLite for collision-safe revocation",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware — users see only their own assessments via SQL-level WHERE user_id = ? filtering",
+      "Server-side benefit calculation — all DWP UC rate logic runs on validated inputs; users cannot submit manipulated entitlement figures",
+      "UK Universal Credit 55% taper rate — earnings above the work allowance reduce UC by 55p per £1 earned",
+      "Capital limit and tariff income — savings above £6,000 generate tariff income (£4.35/£250 above threshold); savings above £16,000 disqualify entirely",
+      "Benefit cap application — UC capped at DWP national/London rates for families and singles; LCWRA exempts claimants from the cap",
+      "Parameterised queries preventing SQL injection — all node:sqlite operations use bound parameters",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
+    ],
+    "failure_reason": null
   }
 ]
