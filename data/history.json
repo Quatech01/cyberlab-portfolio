@@ -975,5 +975,30 @@
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 41,
+    "project_type": "security_tool",
+    "project": "password-hashing-benchmark",
+    "title": "Password Hashing Benchmark",
+    "description": "Benchmarks bcrypt, scrypt, argon2id, and plain SHA-256 for password hashing. Measures time per hash at various cost factors. Demonstrates why fast cryptographic hashes are dangerously unsuitable for password storage. Demo server pre-computes hashes of a known weak password using each algorithm, exposes a /benchmark endpoint reporting timing and a safe flag for each algorithm, and provides a /crack endpoint for dictionary attacks. The tool fetches benchmark timings, identifies algorithms marked safe:false (SHA-256), attempts a dictionary attack to recover the stored password, and reports FAST_HASH_ALGORITHM findings with cracked-password evidence.",
+    "category": "cryptography",
+    "repo": "cyberlab-password-hashing-benchmark",
+    "date": "2026-09-15T10:00:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a password hashing algorithm benchmark with a FastAPI demo server exposing SHA-256, bcrypt (cost 12), scrypt, and argon2id hash/verify/crack endpoints. The scanner fetches benchmark timings, identifies SHA-256 as unsafe (safe:false), cracks the stored SHA-256 hash via dictionary attack in milliseconds, and produces zero findings for bcrypt, scrypt, and argon2. All 30 pytest tests passed on the first run.",
+    "tests_passed": 30,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "SHA-256 as an unsafe password hash — no work factor enables billions of guesses per second on GPU hardware",
+      "bcrypt adaptive cost factor — serial Feistel design prevents GPU parallelism; cost 12 ≈ 300ms per hash",
+      "scrypt memory-hardness — n=16384 requires ~128 MiB per hash, defeating ASIC and GPU parallel attacks",
+      "argon2id as the modern recommendation — winner of the 2015 Password Hashing Competition, combines time-hardness and memory-hardness",
+      "Dictionary attack demonstration — SHA-256 hash of 'password123' cracked in <1ms; bcrypt and argon2 resist the same wordlist",
+      "Work factor benchmarking — timing comparison shows safe algorithms are 5000–150000× slower than SHA-256 per hash"
+    ],
+    "failure_reason": null
   }
 ]
