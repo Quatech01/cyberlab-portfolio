@@ -1000,5 +1000,35 @@
       "Work factor benchmarking — timing comparison shows safe algorithms are 5000–150000× slower than SHA-256 per hash"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 42,
+    "project_type": "fullstack_app",
+    "project": "online-examination-platform",
+    "title": "Online Examination and Assessment Platform",
+    "description": "A secure full-stack online exam platform for UK educational institutions. Backend: Express REST API with JWT authentication, role-based access (admin, teacher, student), and SQLite database via node:sqlite. Features: teachers create and publish MCQ exams with configurable duration and attempt limits; students sit exams in a timed browser session; auto-marked on submission with pass/fail status. Server-side exam gating: questions hidden until a sitting is started, is_correct flags stripped from all student responses. Frontend: self-contained SPA with student exam dashboard and results history, teacher exam builder with question entry, admin overview with user list and audit log. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (150 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens, audit log of all exam access and submissions.",
+    "category": "education_platforms",
+    "repo": "cyberlab-online-examination-platform",
+    "date": "2026-09-21T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack online exam platform with Express, node:sqlite, and a self-contained SPA frontend. Implements server-side exam gating (questions withheld until active sitting exists; answer keys never sent to student clients), JWT auth (access + refresh tokens with SHA-256 hashed revocable storage), three-role RBAC (admin/teacher/student), CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. All 35 node:test tests passed on the first run.",
+    "tests_passed": 35,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Server-side exam gating — questions included in API responses only when an active sitting exists; never pre-loaded to the client",
+      "Answer key stripping — is_correct field removed from all student-facing choice objects at the API layer",
+      "Attempt limit enforcement — SELECT COUNT(*) server-side check; cannot be bypassed by client manipulation",
+      "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in node:sqlite",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware — students see only published exams and their own sittings; teachers see only their own exams",
+      "Parameterised queries preventing SQL injection throughout all route handlers",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "express-rate-limit on auth (20 req/15 min) and API (150 req/min) routes",
+      "Audit log recording every exam view, sitting start, and submission with user ID and IP address"
+    ],
+    "failure_reason": null
   }
 ]
