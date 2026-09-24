@@ -1030,5 +1030,29 @@
       "Audit log recording every exam view, sitting start, and submission with user ID and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 43,
+    "project_type": "security_tool",
+    "project": "robots-txt-sitemap-analyzer",
+    "title": "Robots.txt and Sitemap Analyzer",
+    "description": "Parses robots.txt for disallowed paths (potential sensitive directories), crawl-delay settings, and sitemap references. Parses sitemaps for page structure. Demo server has a robots.txt with intentionally revealing disallow entries alongside a safe configuration. Tool detects HIGH-severity disclosures (.git, phpmyadmin), MEDIUM-severity paths (/admin, /backup, /config, /staging, /api/internal), and follows Sitemap: directives to flag sensitive URLs in sitemap.xml.",
+    "category": "osint_and_recon",
+    "repo": "cyberlab-robots-txt-sitemap-analyzer",
+    "date": "2026-09-24T10:00:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a robots.txt and sitemap reconnaissance tool with a FastAPI demo server exposing a revealing robots.txt (7 sensitive Disallow entries plus a sitemap reference with 3 sensitive URLs) and a safe configuration (empty Disallow, clean sitemap). All 32 pytest tests passed on the first run.",
+    "tests_passed": 32,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "robots.txt as an unintentional attack-surface map — Disallow entries reveal sensitive paths to any reader, not just crawlers",
+      "Sitemap information disclosure — development and staging URLs included in sitemap.xml can be indexed by search engines",
+      "Severity classification — /.git and /phpmyadmin are HIGH (direct access = critical compromise), /admin and /backup are MEDIUM, /dev paths are LOW",
+      "robots.txt is not a security control — it is advisory only; any client can ignore it",
+      "Defence-in-depth remediation — remove sensitive paths from robots.txt AND protect them with authentication server-side"
+    ],
+    "failure_reason": null
   }
 ]
