@@ -1,5 +1,5 @@
 {
-  "target": "http://localhost:4631",
+  "target": "http://localhost:4262",
   "findings": [
     {
       "endpoint": "/redirect/unsafe",

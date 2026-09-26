@@ -1,64 +1,64 @@
 {
-  "target": "http://127.0.0.1:4708",
+  "target": "http://127.0.0.1:4539",
   "findings": [
     {
-      "endpoint": "http://127.0.0.1:4708/robots.txt",
+      "endpoint": "http://127.0.0.1:4539/robots.txt",
       "vulnerability_type": "SENSITIVE_PATH_DISCLOSED",
       "evidence": "Disallow: /admin (pattern: /admin(?:/|$))",
       "severity": "MEDIUM"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/robots.txt",
+      "endpoint": "http://127.0.0.1:4539/robots.txt",
       "vulnerability_type": "SENSITIVE_PATH_DISCLOSED",
       "evidence": "Disallow: /backup (pattern: /backup)",
       "severity": "MEDIUM"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/robots.txt",
+      "endpoint": "http://127.0.0.1:4539/robots.txt",
       "vulnerability_type": "SENSITIVE_PATH_DISCLOSED",
       "evidence": "Disallow: /.git (pattern: \\.git)",
       "severity": "HIGH"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/robots.txt",
+      "endpoint": "http://127.0.0.1:4539/robots.txt",
       "vulnerability_type": "SENSITIVE_PATH_DISCLOSED",
       "evidence": "Disallow: /config (pattern: /config)",
       "severity": "MEDIUM"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/robots.txt",
+      "endpoint": "http://127.0.0.1:4539/robots.txt",
       "vulnerability_type": "SENSITIVE_PATH_DISCLOSED",
       "evidence": "Disallow: /api/internal (pattern: /api/internal)",
       "severity": "MEDIUM"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/robots.txt",
+      "endpoint": "http://127.0.0.1:4539/robots.txt",
       "vulnerability_type": "SENSITIVE_PATH_DISCLOSED",
       "evidence": "Disallow: /staging (pattern: /staging)",
       "severity": "MEDIUM"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/robots.txt",
+      "endpoint": "http://127.0.0.1:4539/robots.txt",
       "vulnerability_type": "SENSITIVE_PATH_DISCLOSED",
       "evidence": "Disallow: /phpmyadmin (pattern: phpmyadmin)",
       "severity": "HIGH"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/sitemap.xml",
+      "endpoint": "http://127.0.0.1:4539/sitemap.xml",
       "vulnerability_type": "SITEMAP_PATH_DISCLOSED",
-      "evidence": "http://127.0.0.1:4708/dev/notes (path: /dev/notes, pattern: /dev(?:/|$))",
+      "evidence": "http://127.0.0.1:4539/dev/notes (path: /dev/notes, pattern: /dev(?:/|$))",
       "severity": "LOW"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/sitemap.xml",
+      "endpoint": "http://127.0.0.1:4539/sitemap.xml",
       "vulnerability_type": "SITEMAP_PATH_DISCLOSED",
-      "evidence": "http://127.0.0.1:4708/test/data (path: /test/data, pattern: /test(?:/|$))",
+      "evidence": "http://127.0.0.1:4539/test/data (path: /test/data, pattern: /test(?:/|$))",
       "severity": "LOW"
     },
     {
-      "endpoint": "http://127.0.0.1:4708/sitemap.xml",
+      "endpoint": "http://127.0.0.1:4539/sitemap.xml",
       "vulnerability_type": "SITEMAP_PATH_DISCLOSED",
-      "evidence": "http://127.0.0.1:4708/staging/preview (path: /staging/preview, pattern: /staging)",
+      "evidence": "http://127.0.0.1:4539/staging/preview (path: /staging/preview, pattern: /staging)",
       "severity": "MEDIUM"
     }
   ],

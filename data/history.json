@@ -1054,5 +1054,36 @@
       "Defence-in-depth remediation — remove sensitive paths from robots.txt AND protect them with authentication server-side"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 44,
+    "project_type": "fullstack_app",
+    "project": "social-housing-application-portal",
+    "title": "Social Housing Application Portal",
+    "description": "A secure full-stack UK social housing application and allocation management system. Backend: Express REST API with JWT authentication, role-based access (admin, officer, applicant), and SQLite database via node:sqlite. Features: applicants submit housing needs assessments covering homelessness, domestic abuse, overcrowding, and medical need; system calculates housing band (A–D) server-side per Housing Act 1996 Part VI; officers manage property listings, open bidding cycles, view priority-ranked bids, and award properties to the highest-priority applicant; applicants browse available properties matching their bedroom need and place bids; two refusals triggers a suspension flag. Frontend: responsive self-contained SPA styled after GOV.UK Design System with applicant and officer dashboards. DevSecOps: Helmet security headers (CSP, HSTS, X-Frame-Options DENY), CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens.",
+    "category": "uk_applications",
+    "repo": "cyberlab-social-housing-application-portal",
+    "date": "2026-09-26T00:00:00.000Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK social housing application portal with Express, node:sqlite, and a self-contained GOV.UK-styled SPA frontend. Implements server-side band calculation (A–D) from assessed needs, JWT auth (access + refresh tokens with SHA-256 hashed revocable storage), three-role RBAC (admin/officer/applicant) with SQL-level row isolation, CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. All 36 node:test tests passed after fixing SQLite datetime() quoting and Helmet frameguard config.",
+    "tests_passed": 36,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in node:sqlite",
+      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Server-side housing band calculation — Band A (homeless/DA), Band B (overcrowded + medical), Band D (standard); band cannot be client-supplied",
+      "Role-based access control enforced in middleware — applicants see only their own data via SQL-level WHERE filtering, officers see all rows via JOIN",
+      "Choice-Based Lettings model — applicants bid on available properties; officer awards to highest-priority band with earliest application date as tiebreak",
+      "Refusal tracking with suspension — two refused offers triggers suspension_flag, blocking further bids as per CBL policy",
+      "Housing Act 1996 Part VI allocation bands — A (urgent), B (high), D (standard) implemented server-side from assessed need flags",
+      "Parameterised queries preventing SQL injection — all node:sqlite operations use bound parameters",
+      "bcrypt password hashing at cost factor 12 with constant-time comparison",
+      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options DENY on every response",
+      "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes",
+      "Audit log recording every login, application submission, bid, and allocation with user ID and IP address"
+    ],
+    "failure_reason": null
   }
 ]
