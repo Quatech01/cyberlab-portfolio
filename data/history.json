@@ -1085,5 +1085,30 @@
       "Audit log recording every login, application submission, bid, and allocation with user ID and IP address"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 45,
+    "project_type": "security_tool",
+    "project": "cookie-security-analyzer",
+    "title": "Cookie Security Analyzer",
+    "description": "Inspects HTTP Set-Cookie response headers and flags missing or misconfigured security attributes. Demo server exposes six FastAPI endpoints each setting a session cookie with a different security configuration: bare (no flags), HttpOnly only, HttpOnly + Secure, fully hardened (HttpOnly + Secure + SameSite=Strict), SameSite=Lax, and SameSite=None without Secure. The scanner fetches /targets to discover endpoints, probes each one, parses the raw Set-Cookie header, and reports four vulnerability types: MISSING_HTTPONLY (HIGH — JS can steal the token via XSS), MISSING_SECURE (HIGH — cookie travels over plain HTTP), MISSING_SAMESITE (MEDIUM — CSRF exposure), and INSECURE_SAMESITE_NONE (HIGH — SameSite=None without Secure is rejected by Chrome 80+/Firefox/Safari, breaking authentication). The two fully hardened endpoints produce zero findings, confirming false positive suppression.",
+    "category": "web_security",
+    "repo": "cyberlab-cookie-security-analyzer",
+    "date": "2026-09-28T12:08:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a cookie security analyzer with a FastAPI demo server exposing six cookie configurations (bare, HttpOnly-only, HttpOnly+Secure, fully hardened, SameSite=Lax, SameSite=None-without-Secure). The scanner probes each endpoint, parses Set-Cookie directives, and flags MISSING_HTTPONLY, MISSING_SECURE, MISSING_SAMESITE, and INSECURE_SAMESITE_NONE. All 42 pytest tests passed after fixing a test assertion that matched 'secure' inside the cookie value string.",
+    "tests_passed": 42,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "HttpOnly flag — prevents JavaScript from reading the cookie via document.cookie, blocking session theft through XSS",
+      "Secure flag — restricts cookie transmission to HTTPS connections only, preventing network interception over plain HTTP",
+      "SameSite attribute — controls whether cookies are sent with cross-origin requests; absence leaves sessions open to CSRF attacks",
+      "SameSite=Lax vs SameSite=Strict — Lax allows cookies on top-level navigations (safe for most apps), Strict blocks them entirely (strongest CSRF protection)",
+      "SameSite=None without Secure (RFC 6265bis §8.8) — invalid configuration; Chrome 80+, Firefox, and Safari silently reject the cookie, breaking authentication",
+      "Cookie flag parsing — inspecting Set-Cookie directives programmatically to audit security posture without authentication"
+    ],
+    "failure_reason": null
   }
 ]

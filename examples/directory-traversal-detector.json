@@ -1,5 +1,5 @@
 {
-  "target": "http://localhost:4370",
+  "target": "http://localhost:4906",
   "findings": [
     {
       "endpoint": "/files/unsafe",

@@ -1,0 +1,60 @@
+{
+  "target": "http://127.0.0.1:4101",
+  "findings": [
+    {
+      "endpoint": "/set-cookie/bare",
+      "vulnerability_type": "MISSING_HTTPONLY",
+      "evidence": "Cookie 'session' does not have the HttpOnly flag. JavaScript executing on the page — including injected scripts from XSS — can read this cookie via document.cookie and exfiltrate the session token.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/set-cookie/bare",
+      "vulnerability_type": "MISSING_SECURE",
+      "evidence": "Cookie 'session' does not have the Secure flag. The cookie will be sent over plain HTTP connections as well as HTTPS, making it readable to any network observer on the same path.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/set-cookie/bare",
+      "vulnerability_type": "MISSING_SAMESITE",
+      "evidence": "Cookie 'session' has no SameSite attribute. Without SameSite, the browser includes this cookie in all cross-site requests, leaving the session exposed to cross-site request forgery (CSRF) attacks.",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/set-cookie/httponly-only",
+      "vulnerability_type": "MISSING_SECURE",
+      "evidence": "Cookie 'session' does not have the Secure flag. The cookie will be sent over plain HTTP connections as well as HTTPS, making it readable to any network observer on the same path.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/set-cookie/httponly-only",
+      "vulnerability_type": "MISSING_SAMESITE",
+      "evidence": "Cookie 'session' has no SameSite attribute. Without SameSite, the browser includes this cookie in all cross-site requests, leaving the session exposed to cross-site request forgery (CSRF) attacks.",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/set-cookie/httponly-secure",
+      "vulnerability_type": "MISSING_SAMESITE",
+      "evidence": "Cookie 'session' has no SameSite attribute. Without SameSite, the browser includes this cookie in all cross-site requests, leaving the session exposed to cross-site request forgery (CSRF) attacks.",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/set-cookie/none-no-secure",
+      "vulnerability_type": "MISSING_HTTPONLY",
+      "evidence": "Cookie 'session' does not have the HttpOnly flag. JavaScript executing on the page — including injected scripts from XSS — can read this cookie via document.cookie and exfiltrate the session token.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/set-cookie/none-no-secure",
+      "vulnerability_type": "MISSING_SECURE",
+      "evidence": "Cookie 'session' does not have the Secure flag. The cookie will be sent over plain HTTP connections as well as HTTPS, making it readable to any network observer on the same path.",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/set-cookie/none-no-secure",
+      "vulnerability_type": "INSECURE_SAMESITE_NONE",
+      "evidence": "Cookie 'session' sets SameSite=None without the Secure flag. RFC 6265bis §8.8 requires that SameSite=None cookies always carry the Secure attribute. Modern browsers (Chrome 80+, Firefox, Safari) silently reject this cookie, meaning it will never be stored — a misconfiguration that breaks authentication.",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "Found 9 cookie security issue(s) across 6 endpoint(s): 6 HIGH, 3 MEDIUM. Issues: 2× MISSING_HTTPONLY, 3× MISSING_SECURE, 3× MISSING_SAMESITE, 1× INSECURE_SAMESITE_NONE."
+}
