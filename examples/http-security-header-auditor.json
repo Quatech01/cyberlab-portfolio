@@ -1,58 +1,10 @@
 {
-  "target": "http://localhost:4894",
-  "findings": [
-    {
-      "endpoint": "/headers/none",
-      "vulnerability_type": "missing_security_headers",
-      "evidence": {
-        "grade": "F",
-        "missing_headers": [
-          "strict-transport-security",
-          "x-content-type-options",
-          "x-frame-options",
-          "content-security-policy",
-          "referrer-policy",
-          "permissions-policy"
-        ],
-        "present_headers": []
-      },
-      "severity": "HIGH"
-    },
-    {
-      "endpoint": "/headers/partial",
-      "vulnerability_type": "missing_security_headers",
-      "evidence": {
-        "grade": "D",
-        "missing_headers": [
-          "strict-transport-security",
-          "content-security-policy",
-          "referrer-policy",
-          "permissions-policy"
-        ],
-        "present_headers": [
-          "x-content-type-options",
-          "x-frame-options"
-        ]
-      },
-      "severity": "MEDIUM"
-    }
-  ],
+  "target": "http://localhost:4643",
+  "findings": [],
   "summary": {
-    "endpoints_scanned": 3,
-    "total_findings": 2,
-    "grades": [
-      {
-        "endpoint": "/headers/none",
-        "grade": "F"
-      },
-      {
-        "endpoint": "/headers/partial",
-        "grade": "D"
-      },
-      {
-        "endpoint": "/headers/full",
-        "grade": "A"
-      }
-    ]
+    "endpoints_scanned": 0,
+    "total_findings": 0,
+    "grades": [],
+    "error": "server unreachable"
   }
 }

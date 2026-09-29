@@ -1,51 +1,13 @@
 {
-  "target": "http://localhost:4644",
+  "target": "http://localhost:4868",
   "host": "localhost",
-  "portRange": "4644-4654",
-  "scanTime": "2026-09-28T11:23:45.236Z",
-  "findings": [
-    {
-      "endpoint": "localhost:4644",
-      "port": 4644,
-      "state": "open",
-      "vulnerability_type": "exposed-service",
-      "service": "http",
-      "version": "DemoApp/1.0 (Node.js/Express)",
-      "evidence": "HTTP/1.1 200 OK\\r\\nX-Powered-By: Express\\r\\nServer: DemoApp/1.0 (Node.js/Express)\\r\\nContent-Type: application/json; charset=utf-8\\r\\nContent-Length: 67\\r\\nETag: W/\"43-ARKBP2ETmqAp82rqmrXrt2FgaOU\"\\r\\nDate: Mon, 2",
-      "confidence": "HIGH",
-      "severity": "INFO"
-    },
-    {
-      "endpoint": "localhost:4645",
-      "port": 4645,
-      "state": "open",
-      "vulnerability_type": "exposed-service",
-      "service": "echo",
-      "version": "TCP echo (raw)",
-      "evidence": "HEAD / HTTP/1.0\\r\\nHost: localhost\\r\\n\\r\\n",
-      "confidence": "HIGH",
-      "severity": "INFO"
-    },
-    {
-      "endpoint": "localhost:4646",
-      "port": 4646,
-      "state": "open",
-      "vulnerability_type": "exposed-service",
-      "service": "smtp",
-      "version": "mail.demo.local ESMTP DemoSMTP 1.0 Ready",
-      "evidence": "220 mail.demo.local ESMTP DemoSMTP 1.0 Ready\\r\\n500 Unknown command\\r\\n",
-      "confidence": "HIGH",
-      "severity": "MEDIUM"
-    }
-  ],
+  "portRange": "4868-4878",
+  "scanTime": "2026-09-29T18:20:53.821Z",
+  "findings": [],
   "summary": {
-    "openPorts": 3,
-    "closedPorts": 8,
-    "servicesDetected": [
-      "http",
-      "echo",
-      "smtp"
-    ],
-    "riskLevel": "MEDIUM"
+    "openPorts": 0,
+    "closedPorts": 11,
+    "servicesDetected": [],
+    "riskLevel": "LOW"
   }
 }
