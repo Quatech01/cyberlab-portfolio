@@ -1140,5 +1140,32 @@
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 47,
+    "project_type": "security_tool",
+    "project": "password-strength-analyzer",
+    "title": "Password Strength Analyzer",
+    "description": "A Python security tool that evaluates password policy enforcement by probing registration endpoints, calculating Shannon entropy, detecting common patterns (dictionary words, keyboard walks, leetspeak substitutions), and comparing what a vulnerable server accepts versus what a hardened one rejects. The demo server exposes two registration paths: one with no policy that accepts any password including '123456', and one that enforces minimum 12 characters, uppercase, lowercase, digit, special character, entropy above 50 bits, and bcrypt hashing.",
+    "category": "authentication_and_access",
+    "repo": "cyberlab-password-strength-analyzer",
+    "date": "2026-10-05T00:09:32.4863546+01:00",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a Password Strength Analyzer with FastAPI demo server exposing vulnerable and hardened registration endpoints; 31/31 pytest tests passed covering server health, true positive detection, false positive checks, output format validation, and edge cases.",
+    "tests_passed": 31,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Shannon entropy calculation",
+      "password policy enforcement testing",
+      "dictionary word detection",
+      "keyboard walk pattern detection",
+      "leetspeak substitution analysis",
+      "bcrypt vs MD5 password hashing",
+      "black-box API policy probing",
+      "NIST SP 800-63B password guidelines"
+    ],
+    "failure_reason": null
   }
 ]
