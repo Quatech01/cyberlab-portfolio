@@ -1,0 +1,24 @@
+{
+  "target": "http://127.0.0.1:4140",
+  "findings": [
+    {
+      "endpoint": "/files/suspicious_script.bin",
+      "vulnerability_type": "embedded_script",
+      "evidence": "Found '<script' at offset 0x0030 in suspicious_script.bin",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/files/suspicious_shell.bin",
+      "vulnerability_type": "shell_command",
+      "evidence": "Found '/bin/bash' at offset 0x0028 in suspicious_shell.bin",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/files/high_entropy.bin",
+      "vulnerability_type": "high_entropy",
+      "evidence": "Shannon entropy 7.80 >= 7.5 in high_entropy.bin (possible encryption or packing)",
+      "severity": "MEDIUM"
+    }
+  ],
+  "summary": "Analysed 6 file(s). Found 3 suspicious pattern(s) across 3 file(s)."
+}

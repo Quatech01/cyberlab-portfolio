@@ -47,7 +47,7 @@
     "id": 3,
     "project": "sql-injection-detector",
     "title": "SQL Injection Detector",
-    "description": "Sends parameterized and unparameterized queries to endpoints backed by SQLite. Detects error-based, union-based, and boolean-based blind SQLi. Demo server has a login form and search endpoint Ã¢â‚¬â€ one using raw string concatenation, one using parameterized queries.",
+    "description": "Sends parameterized and unparameterized queries to endpoints backed by SQLite. Detects error-based, union-based, and boolean-based blind SQLi. Demo server has a login form and search endpoint ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â one using raw string concatenation, one using parameterized queries.",
     "category": "web_security",
     "repo": "cyberlab-sql-injection-detector",
     "date": "2026-06-01T00:00:00.000Z",
@@ -135,7 +135,7 @@
     "id": 7,
     "project": "csrf-token-validator",
     "title": "CSRF Token Validator",
-    "description": "Tests form endpoints for CSRF protection. Checks for token presence, token rotation on each request, SameSite cookie attributes, and referer header validation. Demo server has a funds transfer form Ã¢â‚¬â€ one protected, one unprotected.",
+    "description": "Tests form endpoints for CSRF protection. Checks for token presence, token rotation on each request, SameSite cookie attributes, and referer header validation. Demo server has a funds transfer form ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â one protected, one unprotected.",
     "category": "web_security",
     "repo": "cyberlab-csrf-token-validator",
     "date": "2026-06-15T05:06:50.399Z",
@@ -167,11 +167,11 @@
     "tests_passed": 22,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "ECB mode determinism Ã¢â‚¬â€ identical plaintext blocks produce identical ciphertext blocks, leaking data structure",
-      "CBC padding oracle vulnerability Ã¢â‚¬â€ unauthenticated mode susceptible to bit-flipping and padding attacks",
-      "CTR mode as unauthenticated encryption Ã¢â‚¬â€ no integrity protection despite a random IV",
-      "AES-GCM as authenticated encryption Ã¢â‚¬â€ combines confidentiality and integrity in one pass",
-      "IV uniqueness requirements Ã¢â‚¬â€ IV reuse under CTR/GCM enables plaintext XOR recovery"
+      "ECB mode determinism ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â identical plaintext blocks produce identical ciphertext blocks, leaking data structure",
+      "CBC padding oracle vulnerability ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unauthenticated mode susceptible to bit-flipping and padding attacks",
+      "CTR mode as unauthenticated encryption ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no integrity protection despite a random IV",
+      "AES-GCM as authenticated encryption ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â combines confidentiality and integrity in one pass",
+      "IV uniqueness requirements ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â IV reuse under CTR/GCM enables plaintext XOR recovery"
     ],
     "failure_reason": null
   },
@@ -192,7 +192,7 @@
       "HTML entity encoding to prevent cross-site scripting (XSS)",
       "Path normalization using path.resolve + startsWith to prevent directory traversal",
       "Shell metacharacter rejection to prevent command injection",
-      "Sanitize-at-output vs sanitize-at-input Ã¢â‚¬â€ applying the right layer for each vector",
+      "Sanitize-at-output vs sanitize-at-input ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â applying the right layer for each vector",
       "True positive detection and false positive suppression in a security scanner"
     ],
     "failure_reason": null
@@ -234,9 +234,9 @@
     "tests_passed": 27,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "JWT none-algorithm attack Ã¢â‚¬â€ unsigned tokens accepted when alg=none is not explicitly rejected",
+      "JWT none-algorithm attack ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unsigned tokens accepted when alg=none is not explicitly rejected",
       "Weak HS256 secret cracking via offline dictionary attack against the HMAC-SHA256 signature",
-      "Expired JWT acceptance Ã¢â‚¬â€ missing exp claim validation allows indefinitely valid stolen tokens",
+      "Expired JWT acceptance ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â missing exp claim validation allows indefinitely valid stolen tokens",
       "Constant-time comparison (hmac.compare_digest) to prevent timing side-channels in secret cracking detection",
       "Strict algorithm allowlist as the correct mitigation for alg=none and algorithm confusion"
     ],
@@ -246,14 +246,14 @@
     "id": 12,
     "project": "http-security-header-auditor",
     "title": "HTTP Security Header Auditor",
-    "description": "Scans response headers for security best practices: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy, Referrer-Policy, Permissions-Policy. Grades the endpoint AÃ¢â‚¬â€œF. Demo server has three routes with different header configurations.",
+    "description": "Scans response headers for security best practices: Strict-Transport-Security, X-Content-Type-Options, X-Frame-Options, Content-Security-Policy, Referrer-Policy, Permissions-Policy. Grades the endpoint AÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“F. Demo server has three routes with different header configurations.",
     "category": "web_security",
     "repo": "cyberlab-http-security-header-auditor",
     "date": "2026-07-01T05:06:21.948Z",
     "status": "success",
     "language": "node",
     "server_framework": "express",
-    "summary": "Built an HTTP security header auditor with an Express demo server exposing three endpoints at different security levels (no headers, partial headers, full headers). A weighted scoring system converts the six-header check into an AÃ¢â‚¬â€œF grade; only endpoints below grade A appear in findings. All 27 node:test tests passed on the first run.",
+    "summary": "Built an HTTP security header auditor with an Express demo server exposing three endpoints at different security levels (no headers, partial headers, full headers). A weighted scoring system converts the six-header check into an AÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“F grade; only endpoints below grade A appear in findings. All 27 node:test tests passed on the first run.",
     "tests_passed": 27,
     "tests_failed": 0,
     "concepts_demonstrated": [
@@ -262,7 +262,7 @@
       "X-Frame-Options and CSP frame-ancestors blocking clickjacking via iframe embedding",
       "X-Content-Type-Options nosniff preventing MIME-type confusion attacks",
       "Referrer-Policy limiting information leakage in the Referer header",
-      "Weighted AÃ¢â‚¬â€œF grading to prioritise remediation by impact"
+      "Weighted AÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“F grading to prioritise remediation by impact"
     ],
     "failure_reason": null
   },
@@ -270,7 +270,7 @@
     "id": 13,
     "project": "keylogger-detection-and-flagging",
     "title": "Keylogger Detection and Flagging",
-    "description": "A defensive tool that detects behavioural and artefact-based indicators of keylogger activity. Demo server exposes API endpoints that simulate a process list, a registry key scan, a suspicious file path scan, and a network connection report Ã¢â‚¬â€ some endpoints return clean data, others return data seeded with known keylogger indicators (e.g. suspicious process names like 'hook32.dll', registry autorun keys at HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run, files in %TEMP% with keyboard-capture naming patterns, unexpected outbound connections on port 443 to unknown IPs). The detection tool queries all four endpoints, cross-references findings against a rule set, assigns severity (HIGH/MEDIUM/LOW), and outputs a structured JSON threat report. Safe endpoints return only legitimate system artefacts and must not be flagged.",
+    "description": "A defensive tool that detects behavioural and artefact-based indicators of keylogger activity. Demo server exposes API endpoints that simulate a process list, a registry key scan, a suspicious file path scan, and a network connection report ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â some endpoints return clean data, others return data seeded with known keylogger indicators (e.g. suspicious process names like 'hook32.dll', registry autorun keys at HKCU\\Software\\Microsoft\\Windows\\CurrentVersion\\Run, files in %TEMP% with keyboard-capture naming patterns, unexpected outbound connections on port 443 to unknown IPs). The detection tool queries all four endpoints, cross-references findings against a rule set, assigns severity (HIGH/MEDIUM/LOW), and outputs a structured JSON threat report. Safe endpoints return only legitimate system artefacts and must not be flagged.",
     "category": "malware_analysis_and_forensics",
     "repo": "cyberlab-keylogger-detection-and-flagging",
     "date": "2026-07-04T10:00:00.000Z",
@@ -304,11 +304,11 @@
     "tests_passed": 20,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "SPF (Sender Policy Framework) Ã¢â‚¬â€ TXT record listing authorised mail servers to prevent domain spoofing",
-      "Permissive SPF +all qualifier Ã¢â‚¬â€ nullifies the record by permitting any server to send as the domain",
-      "DMARC (Domain-based Message Authentication, Reporting & Conformance) Ã¢â‚¬â€ enforces SPF/DKIM policy at receiving servers",
-      "DMARC p=none Ã¢â‚¬â€ monitoring-only mode that collects reports but never quarantines or rejects spoofed mail",
-      "Mock DNS API pattern Ã¢â‚¬â€ serving structured DNS record data over HTTP to keep the tool localhost-only"
+      "SPF (Sender Policy Framework) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â TXT record listing authorised mail servers to prevent domain spoofing",
+      "Permissive SPF +all qualifier ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â nullifies the record by permitting any server to send as the domain",
+      "DMARC (Domain-based Message Authentication, Reporting & Conformance) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â enforces SPF/DKIM policy at receiving servers",
+      "DMARC p=none ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â monitoring-only mode that collects reports but never quarantines or rejects spoofed mail",
+      "Mock DNS API pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â serving structured DNS record data over HTTP to keep the tool localhost-only"
     ],
     "failure_reason": null
   },
@@ -327,11 +327,11 @@
     "tests_passed": 21,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "SPF (Sender Policy Framework) Ã¢â‚¬â€ DNS-based authorisation list for mail servers; spf=fail means the envelope sender is not permitted",
-      "DMARC alignment Ã¢â‚¬â€ links SPF/DKIM results to the From: domain; p=reject is the only policy that blocks spoofed mail",
-      "DMARC p=none Ã¢â‚¬â€ monitoring-only mode that generates reports but delivers every spoofed message unchanged",
-      "Email spoofing detection Ã¢â‚¬â€ From domain vs envelope sender mismatch as a phishing indicator",
-      "Authentication-Results header parsing Ã¢â‚¬â€ the receiving server's tamper-resistant stamp of SPF/DKIM/DMARC outcome"
+      "SPF (Sender Policy Framework) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â DNS-based authorisation list for mail servers; spf=fail means the envelope sender is not permitted",
+      "DMARC alignment ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â links SPF/DKIM results to the From: domain; p=reject is the only policy that blocks spoofed mail",
+      "DMARC p=none ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â monitoring-only mode that generates reports but delivers every spoofed message unchanged",
+      "Email spoofing detection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â From domain vs envelope sender mismatch as a phishing indicator",
+      "Authentication-Results header parsing ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the receiving server's tamper-resistant stamp of SPF/DKIM/DMARC outcome"
     ],
     "failure_reason": null
   },
@@ -350,11 +350,11 @@
     "tests_passed": 24,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "PKCE (RFC 7636) Ã¢â‚¬â€ code_verifier and SHA-256 code_challenge bind an authorization code to the legitimate client",
-      "Missing PKCE enforcement Ã¢â‚¬â€ token endpoint accepting exchanges without code_verifier makes PKCE voluntary and ineffective",
-      "Unvalidated redirect_uri Ã¢â‚¬â€ accepting any URI enables authorization code theft via crafted phishing links",
-      "Authorization code single-use enforcement Ã¢â‚¬â€ codes deleted on first exchange to prevent replay attacks",
-      "redirect_uri allowlist exact-match validation Ã¢â‚¬â€ the only safe approach per RFC 6749 and OAuth 2.1"
+      "PKCE (RFC 7636) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â code_verifier and SHA-256 code_challenge bind an authorization code to the legitimate client",
+      "Missing PKCE enforcement ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â token endpoint accepting exchanges without code_verifier makes PKCE voluntary and ineffective",
+      "Unvalidated redirect_uri ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â accepting any URI enables authorization code theft via crafted phishing links",
+      "Authorization code single-use enforcement ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â codes deleted on first exchange to prevent replay attacks",
+      "redirect_uri allowlist exact-match validation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the only safe approach per RFC 6749 and OAuth 2.1"
     ],
     "failure_reason": null
   },
@@ -362,7 +362,7 @@
     "id": 17,
     "project": "timing-attack-demonstrator",
     "title": "Timing Attack Demonstrator",
-    "description": "Shows how naive string comparison for secrets leaks information through response timing. Demo server has two token-check endpoints Ã¢â‚¬â€ one using naive char-by-char comparison with early exit (vulnerable), one using hmac.compare_digest (constant-time, safe). Tool measures timing distributions across prefix-match lengths and reports a Pearson correlation coefficient to quantify the leak.",
+    "description": "Shows how naive string comparison for secrets leaks information through response timing. Demo server has two token-check endpoints ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â one using naive char-by-char comparison with early exit (vulnerable), one using hmac.compare_digest (constant-time, safe). Tool measures timing distributions across prefix-match lengths and reports a Pearson correlation coefficient to quantify the leak.",
     "category": "cryptography",
     "repo": "cyberlab-timing-attack-demonstrator",
     "date": "2026-07-14T18:03:00.000Z",
@@ -373,11 +373,11 @@
     "tests_passed": 24,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Timing side-channel attacks Ã¢â‚¬â€ short-circuit string comparison leaks secret length via response latency",
+      "Timing side-channel attacks ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â short-circuit string comparison leaks secret length via response latency",
       "Pearson correlation as a statistical measure of timing oracle strength",
-      "hmac.compare_digest for constant-time comparison Ã¢â‚¬â€ always processes every byte regardless of mismatch position",
-      "Amplification vs real-world attacks Ã¢â‚¬â€ nanosecond-scale leaks require statistical analysis over thousands of samples",
-      "Secret comparison best practices Ã¢â‚¬â€ constant-time functions as the mitigation for token, HMAC, and API key checks"
+      "hmac.compare_digest for constant-time comparison ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â always processes every byte regardless of mismatch position",
+      "Amplification vs real-world attacks ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â nanosecond-scale leaks require statistical analysis over thousands of samples",
+      "Secret comparison best practices ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â constant-time functions as the mitigation for token, HMAC, and API key checks"
     ],
     "failure_reason": null
   },
@@ -385,7 +385,7 @@
     "id": 18,
     "project": "open-redirect-checker",
     "title": "Open Redirect Checker",
-    "description": "Tests URL redirect parameters for open redirect vulnerabilities. Checks if the server validates redirect destinations against a whitelist. Demo server has a /redirect?url= endpoint Ã¢â‚¬â€ one validates, one doesn't.",
+    "description": "Tests URL redirect parameters for open redirect vulnerabilities. Checks if the server validates redirect destinations against a whitelist. Demo server has a /redirect?url= endpoint ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â one validates, one doesn't.",
     "category": "web_security",
     "repo": "cyberlab-open-redirect-checker",
     "date": "2026-07-15T00:00:00.000Z",
@@ -396,11 +396,11 @@
     "tests_passed": 32,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Open redirect attack Ã¢â‚¬â€ attacker-controlled redirect parameter forwards victims to phishing pages via a trusted domain URL",
-      "Substring-based bypass Ã¢â‚¬â€ checking if the URL contains a trusted domain fails when the attacker embeds it in a query string",
-      "Allowlist validation Ã¢â‚¬â€ parse the full URL, extract origin (scheme + host + port), compare against a strict list",
-      "Relative-path-only login returnTo Ã¢â‚¬â€ rejecting http:// and // prefixes prevents off-domain redirects without an allowlist",
-      "Scanner detection via raw 301/302 response Ã¢â‚¬â€ follow-redirect mode masks open redirects; inspect Location header directly"
+      "Open redirect attack ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â attacker-controlled redirect parameter forwards victims to phishing pages via a trusted domain URL",
+      "Substring-based bypass ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â checking if the URL contains a trusted domain fails when the attacker embeds it in a query string",
+      "Allowlist validation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â parse the full URL, extract origin (scheme + host + port), compare against a strict list",
+      "Relative-path-only login returnTo ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â rejecting http:// and // prefixes prevents off-domain redirects without an allowlist",
+      "Scanner detection via raw 301/302 response ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â follow-redirect mode masks open redirects; inspect Location header directly"
     ],
     "failure_reason": null
   },
@@ -419,11 +419,11 @@
     "tests_passed": 33,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Elastic Common Schema (ECS) alert format Ã¢â‚¬â€ standard field naming used by Kibana SIEM",
-      "SOC Tier 1 triage workflow Ã¢â‚¬â€ Escalate / Investigate / Close as False Positive state transitions",
-      "Pre-triage automation Ã¢â‚¬â€ deduplication by (source_ip, rule_name) and false positive scoring",
+      "Elastic Common Schema (ECS) alert format ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â standard field naming used by Kibana SIEM",
+      "SOC Tier 1 triage workflow ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Escalate / Investigate / Close as False Positive state transitions",
+      "Pre-triage automation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â deduplication by (source_ip, rule_name) and false positive scoring",
       "SSE (Server-Sent Events) for real-time alert streaming without WebSockets",
-      "Alert fatigue mitigation Ã¢â‚¬â€ frequency-based false positive scoring suppresses scanner noise"
+      "Alert fatigue mitigation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â frequency-based false positive scoring suppresses scanner noise"
     ],
     "failure_reason": null
   },
@@ -442,11 +442,11 @@
     "tests_passed": 20,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "path.join does not enforce directory boundaries Ã¢â‚¬â€ it normalises ../ sequences but never verifies the result stays within the intended base directory",
-      "path.resolve + startsWith as the correct mitigation Ã¢â‚¬â€ canonical path is computed first, then checked to be a descendant of the allowed base",
-      "URL-encoded traversal (%2F as /) Ã¢â‚¬â€ Express decodes query parameters before they reach the handler, so encoding does not bypass path.resolve-based guards",
-      "Secret marker detection Ã¢â‚¬â€ scanning response bodies for a known sentinel to confirm actual file disclosure rather than relying on status codes alone",
-      "Least-privilege principle Ã¢â‚¬â€ limiting the server process to read-only access on the public subtree as a complementary OS-layer defence"
+      "path.join does not enforce directory boundaries ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â it normalises ../ sequences but never verifies the result stays within the intended base directory",
+      "path.resolve + startsWith as the correct mitigation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â canonical path is computed first, then checked to be a descendant of the allowed base",
+      "URL-encoded traversal (%2F as /) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Express decodes query parameters before they reach the handler, so encoding does not bypass path.resolve-based guards",
+      "Secret marker detection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â scanning response bodies for a known sentinel to confirm actual file disclosure rather than relying on status codes alone",
+      "Least-privilege principle ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â limiting the server process to read-only access on the public subtree as a complementary OS-layer defence"
     ],
     "failure_reason": null
   },
@@ -454,7 +454,7 @@
     "id": 21,
     "project": "session-fixation-demonstrator",
     "title": "Session Fixation Vulnerability Demo",
-    "description": "Demonstrates session fixation by showing what happens when session IDs aren't regenerated after login. Demo server has two login flows Ã¢â‚¬â€ one regenerates the session, one doesn't. Tool proves the attack path.",
+    "description": "Demonstrates session fixation by showing what happens when session IDs aren't regenerated after login. Demo server has two login flows ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â one regenerates the session, one doesn't. Tool proves the attack path.",
     "category": "authentication_and_access",
     "repo": "cyberlab-session-fixation-demonstrator",
     "date": "2026-07-23T00:00:00.000Z",
@@ -465,11 +465,11 @@
     "tests_passed": 25,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Session fixation attack Ã¢â‚¬â€ attacker plants a known session ID before login; if the server does not regenerate it, the attacker gains authenticated access",
-      "Session ID regeneration on login Ã¢â‚¬â€ the only complete defence: invalidate the pre-auth session and issue a new one immediately after successful authentication",
-      "Old session invalidation Ã¢â‚¬â€ deleting the pre-auth session from the server store prevents replaying the planted ID even if an attacker captures it",
-      "SameSite=Strict cookie attribute as a complementary control Ã¢â‚¬â€ limits cross-site delivery of session cookies but does not replace regeneration",
-      "Scanner detection method Ã¢â‚¬â€ compare the session cookie before and after login; unchanged ID confirms the vulnerability"
+      "Session fixation attack ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â attacker plants a known session ID before login; if the server does not regenerate it, the attacker gains authenticated access",
+      "Session ID regeneration on login ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the only complete defence: invalidate the pre-auth session and issue a new one immediately after successful authentication",
+      "Old session invalidation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â deleting the pre-auth session from the server store prevents replaying the planted ID even if an attacker captures it",
+      "SameSite=Strict cookie attribute as a complementary control ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â limits cross-site delivery of session cookies but does not replace regeneration",
+      "Scanner detection method ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â compare the session cookie before and after login; unchanged ID confirms the vulnerability"
     ],
     "failure_reason": null
   },
@@ -478,7 +478,7 @@
     "project_type": "fullstack_app",
     "project": "student-information-management-system",
     "title": "Student Information Management System",
-    "description": "A secure full-stack web application for managing student records in a UK educational institution. Backend: Express REST API with JWT authentication, role-based access (admin, teacher, student, parent), and SQLite database via node:sqlite. Features: student enrollment with UK-specific fields (UPN, year group, form group, SEN status, FSM eligibility), profile management, emergency contacts, and GDPR-compliant data handling. Frontend: responsive self-contained SPA dashboard with role-specific views Ã¢â‚¬â€ admin sees all students with search/filter, teachers see their form group, students and parents see only their own records. DevSecOps: all inputs validated with express-validator, parameterised queries throughout, bcrypt password hashing (cost 12), JWT with refresh tokens and server-side revocation, CSRF protection via JWT jti double-submit, rate limiting on auth endpoints, security headers via Helmet, audit log of all data access.",
+    "description": "A secure full-stack web application for managing student records in a UK educational institution. Backend: Express REST API with JWT authentication, role-based access (admin, teacher, student, parent), and SQLite database via node:sqlite. Features: student enrollment with UK-specific fields (UPN, year group, form group, SEN status, FSM eligibility), profile management, emergency contacts, and GDPR-compliant data handling. Frontend: responsive self-contained SPA dashboard with role-specific views ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â admin sees all students with search/filter, teachers see their form group, students and parents see only their own records. DevSecOps: all inputs validated with express-validator, parameterised queries throughout, bcrypt password hashing (cost 12), JWT with refresh tokens and server-side revocation, CSRF protection via JWT jti double-submit, rate limiting on auth endpoints, security headers via Helmet, audit log of all data access.",
     "category": "education_platforms",
     "repo": "cyberlab-student-information-management-system",
     "date": "2026-07-28T00:00:00.000Z",
@@ -490,9 +490,9 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with short-lived access tokens (15 min) and revocable refresh tokens stored in SQLite",
-      "CSRF protection via JWT jti double-submit Ã¢â‚¬â€ the token's unique ID serves as the CSRF token echoed in X-CSRF-Token header",
-      "Role-based access control with row-level SQL filtering Ã¢â‚¬â€ each role receives a different query, not client-side filtering",
-      "Parameterised queries preventing SQL injection Ã¢â‚¬â€ injection strings stored safely or rejected by format validation",
+      "CSRF protection via JWT jti double-submit ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the token's unique ID serves as the CSRF token echoed in X-CSRF-Token header",
+      "Role-based access control with row-level SQL filtering ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â each role receives a different query, not client-side filtering",
+      "Parameterised queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â injection strings stored safely or rejected by format validation",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
       "UK Unique Pupil Number (UPN) format validation as business rule enforcement",
       "SEN status and FSM eligibility as sensitive fields restricted to admin-only writes",
@@ -516,11 +516,11 @@
     "tests_passed": 33,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Subdomain enumeration as a reconnaissance technique Ã¢â‚¬â€ wordlist probing to map an organisation's external attack surface",
-      "DNS-over-HTTP mock resolver Ã¢â‚¬â€ serving structured resolution data over HTTP to keep the tool localhost-only",
-      "Severity classification by subdomain name Ã¢â‚¬â€ management panels and dev environments are HIGH, API gateways are MEDIUM, generic services are LOW",
-      "NXDOMAIN handling Ã¢â‚¬â€ 404 response means the subdomain does not exist; tool correctly suppresses it from findings",
-      "Graceful degradation Ã¢â‚¬â€ ConnectError caught on first probe, enumeration halted, empty findings returned without crashing"
+      "Subdomain enumeration as a reconnaissance technique ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â wordlist probing to map an organisation's external attack surface",
+      "DNS-over-HTTP mock resolver ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â serving structured resolution data over HTTP to keep the tool localhost-only",
+      "Severity classification by subdomain name ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â management panels and dev environments are HIGH, API gateways are MEDIUM, generic services are LOW",
+      "NXDOMAIN handling ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 404 response means the subdomain does not exist; tool correctly suppresses it from findings",
+      "Graceful degradation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â ConnectError caught on first probe, enumeration halted, empty findings returned without crashing"
     ],
     "failure_reason": null
   },
@@ -541,11 +541,11 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with short-lived access tokens (15 min) and SHA-256 hashed revocable refresh tokens in SQLite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ matching X-CSRF-Token header and csrf_token cookie required on all state-changing requests",
-      "Role-based access control with ownership checks Ã¢â‚¬â€ patients can only cancel their own appointments, GPs see only their own schedules",
-      "Parameterised queries preventing SQL injection Ã¢â‚¬â€ no user input ever touches SQL string construction",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â matching X-CSRF-Token header and csrf_token cookie required on all state-changing requests",
+      "Role-based access control with ownership checks ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â patients can only cancel their own appointments, GPs see only their own schedules",
+      "Parameterised queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no user input ever touches SQL string construction",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "Rate limiting on auth (20 req/15 min) and general API (100 req/min) routes",
       "Audit log recording every login, booking, and cancellation with user ID and IP address"
     ],
@@ -556,7 +556,7 @@
     "project_type": "security_tool",
     "project": "parameterized-query-comparison",
     "title": "Parameterized Query vs Raw Query Comparison",
-    "description": "Side-by-side comparison of parameterized queries and string-concatenated queries against SQLite. Demo server has twin endpoints for each operation Ã¢â‚¬â€ search and login Ã¢â‚¬â€ one using raw f-string concatenation (vulnerable) and one using bound parameters (safe). Tool sends boolean-OR and comment-injection payloads to both sets of endpoints and reports which are exploitable.",
+    "description": "Side-by-side comparison of parameterized queries and string-concatenated queries against SQLite. Demo server has twin endpoints for each operation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â search and login ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â one using raw f-string concatenation (vulnerable) and one using bound parameters (safe). Tool sends boolean-OR and comment-injection payloads to both sets of endpoints and reports which are exploitable.",
     "category": "secure_coding",
     "repo": "cyberlab-parameterized-query-comparison",
     "date": "2026-08-02T10:00:00.000Z",
@@ -567,11 +567,11 @@
     "tests_passed": 28,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "String concatenation in SQL queries enables injection Ã¢â‚¬â€ user input becomes SQL syntax rather than a literal value",
-      "Boolean-OR injection Ã¢â‚¬â€ payload ' OR '1'='1' bypasses WHERE filters by adding an always-true condition",
-      "Comment injection auth bypass Ã¢â‚¬â€ admin'-- strips the password check from the query entirely",
-      "Parameterized queries as the complete mitigation Ã¢â‚¬â€ the database driver separates code from data at the protocol level",
-      "False positive suppression Ã¢â‚¬â€ parameterized endpoints return zero findings under the same payloads"
+      "String concatenation in SQL queries enables injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â user input becomes SQL syntax rather than a literal value",
+      "Boolean-OR injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â payload ' OR '1'='1' bypasses WHERE filters by adding an always-true condition",
+      "Comment injection auth bypass ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â admin'-- strips the password check from the query entirely",
+      "Parameterized queries as the complete mitigation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the database driver separates code from data at the protocol level",
+      "False positive suppression ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â parameterized endpoints return zero findings under the same payloads"
     ],
     "failure_reason": null
   },
@@ -592,12 +592,12 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with short-lived access tokens (15 min) and revocable refresh tokens stored in SQLite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ matching X-CSRF-Token header against csrf_token cookie on all state-changing requests",
-      "Role-based access control with SQL-level row filtering Ã¢â‚¬â€ teachers see only their own class data, students see only their own records",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â matching X-CSRF-Token header against csrf_token cookie on all state-changing requests",
+      "Role-based access control with SQL-level row filtering ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â teachers see only their own class data, students see only their own records",
       "UK DfE 90% persistent absence threshold enforced server-side with low_attendance flag in attendance summary",
-      "Parameterized queries preventing SQL injection Ã¢â‚¬â€ no user input concatenated into SQL strings",
+      "Parameterized queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no user input concatenated into SQL strings",
       "bcrypt password hashing at cost factor 12",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "Audit log recording every login, attendance mark, and data access with user ID and IP address"
     ],
     "failure_reason": null
@@ -607,7 +607,7 @@
     "project_type": "security_tool",
     "project": "tls-certificate-analyzer",
     "title": "TLS Certificate Analyzer",
-    "description": "Fetches X.509 certificates from a demo server over HTTP and flags common PKI security misconfigurations: expired certificates, self-signed issuers, undersized RSA keys (below 2048-bit), and missing Subject Alternative Names. Demo server uses Python's cryptography library to generate four certificates at startup Ã¢â‚¬â€ expired, self-signed (no SAN), weak 1024-bit RSA key, and a correctly configured baseline. The tool parses each PEM with cryptography.x509, runs four checks, and reports structured JSON findings. The valid certificate produces zero findings, confirming false positive suppression.",
+    "description": "Fetches X.509 certificates from a demo server over HTTP and flags common PKI security misconfigurations: expired certificates, self-signed issuers, undersized RSA keys (below 2048-bit), and missing Subject Alternative Names. Demo server uses Python's cryptography library to generate four certificates at startup ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â expired, self-signed (no SAN), weak 1024-bit RSA key, and a correctly configured baseline. The tool parses each PEM with cryptography.x509, runs four checks, and reports structured JSON findings. The valid certificate produces zero findings, confirming false positive suppression.",
     "category": "network_security",
     "repo": "cyberlab-tls-certificate-analyzer",
     "date": "2026-08-04T00:00:00.000Z",
@@ -618,11 +618,11 @@
     "tests_passed": 37,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "X.509 certificate validity periods Ã¢â‚¬â€ not_valid_after as the hard expiry boundary rejected by all TLS clients",
-      "Self-signed certificate risk Ã¢â‚¬â€ without a CA chain, a MITM can present their own self-signed cert; clients cannot distinguish legitimate from forged",
-      "RSA key size requirements Ã¢â‚¬â€ NIST SP 800-131A deprecated 1024-bit RSA in 2015; 2048 bits is the current minimum for new issuance",
-      "Subject Alternative Names (SAN) Ã¢â‚¬â€ RFC 2818 Ã‚Â§3.1 requires hostnames in the SAN extension; CN-only matching deprecated in Chrome 58 (2017)",
-      "Certificate chain of trust Ã¢â‚¬â€ CA-signed certs link identity to a trusted root; tool distinguishes CA-signed from self-signed by comparing issuer and subject DNs"
+      "X.509 certificate validity periods ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â not_valid_after as the hard expiry boundary rejected by all TLS clients",
+      "Self-signed certificate risk ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â without a CA chain, a MITM can present their own self-signed cert; clients cannot distinguish legitimate from forged",
+      "RSA key size requirements ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â NIST SP 800-131A deprecated 1024-bit RSA in 2015; 2048 bits is the current minimum for new issuance",
+      "Subject Alternative Names (SAN) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â RFC 2818 Ãƒâ€šÃ‚Â§3.1 requires hostnames in the SAN extension; CN-only matching deprecated in Chrome 58 (2017)",
+      "Certificate chain of trust ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CA-signed certs link identity to a trusted root; tool distinguishes CA-signed from self-signed by comparing issuer and subject DNs"
     ],
     "failure_reason": null
   },
@@ -643,12 +643,12 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with 15-minute access tokens and SHA-256 hashed refresh tokens stored in SQLite for server-side revocation",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as a readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
-      "Role-based access control enforced in middleware Ã¢â‚¬â€ resident/admin/finance roles with SQL-level row isolation, not client-side filtering",
-      "Parameterized queries preventing SQL injection Ã¢â‚¬â€ no user input concatenated into SQL strings throughout all route handlers",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as a readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â resident/admin/finance roles with SQL-level row isolation, not client-side filtering",
+      "Parameterized queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no user input concatenated into SQL strings throughout all route handlers",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
       "UK council tax band (A-H) annual charge calculation with stackable discount types (single person, student, disabled, SMI)",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes with RFC-standard headers"
     ],
     "failure_reason": null
@@ -665,17 +665,17 @@
     "status": "success",
     "language": "python",
     "server_framework": "fastapi",
-    "summary": "Built an HTTP technology fingerprinter with a FastAPI demo server exposing five tech-stack simulations (WordPress, React, Django, Rails, Next.js) and a clean baseline. The tool analyzes response headers, cookies, and HTML patterns against a rule set requiring Ã¢â€°Â¥2 indicators per technology. All 36 pytest tests passed on the first run.",
+    "summary": "Built an HTTP technology fingerprinter with a FastAPI demo server exposing five tech-stack simulations (WordPress, React, Django, Rails, Next.js) and a clean baseline. The tool analyzes response headers, cookies, and HTML patterns against a rule set requiring ÃƒÂ¢Ã¢â‚¬Â°Ã‚Â¥2 indicators per technology. All 36 pytest tests passed on the first run.",
     "tests_passed": 36,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Server and X-Powered-By headers as primary framework disclosure vectors Ã¢â‚¬â€ Apache, gunicorn, Express, and Next.js announce themselves by default",
-      "Framework-specific cookie names Ã¢â‚¬â€ csrftoken (Django), wordpress_logged_in_* (WordPress), _<app>_session (Rails) are hardcoded into the framework",
-      "HTML meta generator tag Ã¢â‚¬â€ WordPress embeds its version string in every page until explicitly disabled",
-      "Asset path conventions as fingerprints Ã¢â‚¬â€ /wp-content/, /_next/static/, and /static/js/*.chunk.js are deterministic build outputs",
-      "Rails diagnostic middleware headers Ã¢â‚¬â€ X-Runtime (response time) and X-Request-Id (UUID) are enabled by default via Rack::Runtime and ActionDispatch::RequestId",
-      "Two-indicator minimum to suppress false positives Ã¢â‚¬â€ a single matching header or cookie name is insufficient evidence",
-      "Clean baseline validation Ã¢â‚¬â€ the safe endpoint exposes none of the above signals and produces zero findings"
+      "Server and X-Powered-By headers as primary framework disclosure vectors ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Apache, gunicorn, Express, and Next.js announce themselves by default",
+      "Framework-specific cookie names ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â csrftoken (Django), wordpress_logged_in_* (WordPress), _<app>_session (Rails) are hardcoded into the framework",
+      "HTML meta generator tag ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â WordPress embeds its version string in every page until explicitly disabled",
+      "Asset path conventions as fingerprints ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â /wp-content/, /_next/static/, and /static/js/*.chunk.js are deterministic build outputs",
+      "Rails diagnostic middleware headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â X-Runtime (response time) and X-Request-Id (UUID) are enabled by default via Rack::Runtime and ActionDispatch::RequestId",
+      "Two-indicator minimum to suppress false positives ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â a single matching header or cookie name is insufficient evidence",
+      "Clean baseline validation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â the safe endpoint exposes none of the above signals and produces zero findings"
     ],
     "failure_reason": null
   },
@@ -696,15 +696,15 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with short-lived access tokens (15 min) and SHA-256 hashed revocable refresh tokens stored in SQLite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
-      "Four-role RBAC with SQL-level row isolation Ã¢â‚¬â€ teachers see only their subject data, students see only their own grades, parents see only their linked child's data",
-      "UK GCSE 9-1 grading Ã¢â‚¬â€ server-side percentage-to-grade conversion; 85%+ = 9, 75%+ = 8, down to U below 5%",
-      "UK A-Level A*-U grading Ã¢â‚¬â€ 90%+ = A*, 80%+ = A, down to U below 40%",
-      "At-risk detection Ã¢â‚¬â€ students whose current average falls more than one grade below their target are flagged server-side",
-      "Grade audit trail Ã¢â‚¬â€ previous_marks stored on every grade update for full change history",
-      "Parameterized queries preventing SQL injection Ã¢â‚¬â€ all node:sqlite operations use prepared statements with bound parameters",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Four-role RBAC with SQL-level row isolation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â teachers see only their subject data, students see only their own grades, parents see only their linked child's data",
+      "UK GCSE 9-1 grading ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â server-side percentage-to-grade conversion; 85%+ = 9, 75%+ = 8, down to U below 5%",
+      "UK A-Level A*-U grading ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 90%+ = A*, 80%+ = A, down to U below 40%",
+      "At-risk detection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â students whose current average falls more than one grade below their target are flagged server-side",
+      "Grade audit trail ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â previous_marks stored on every grade update for full change history",
+      "Parameterized queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â all node:sqlite operations use prepared statements with bound parameters",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response"
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response"
     ],
     "failure_reason": null
   },
@@ -713,22 +713,22 @@
     "project_type": "security_tool",
     "project": "totp-mfa-demo",
     "title": "TOTP Multi-Factor Authentication",
-    "description": "Implements TOTP (RFC 6238) generation and verification. Demo server has a login that requires TOTP after password. Tool generates valid and invalid codes, tests time-window tolerance, and replay protection. Demo server exposes a vulnerable endpoint (Ã‚Â±5-minute acceptance window, no replay protection) and a safe endpoint (Ã‚Â±30-second window with per-code de-duplication). The scanner probes both, demonstrating that a replayed code and a 3-minute-old code are both accepted by the vulnerable endpoint and rejected by the safe one.",
+    "description": "Implements TOTP (RFC 6238) generation and verification. Demo server has a login that requires TOTP after password. Tool generates valid and invalid codes, tests time-window tolerance, and replay protection. Demo server exposes a vulnerable endpoint (Ãƒâ€šÃ‚Â±5-minute acceptance window, no replay protection) and a safe endpoint (Ãƒâ€šÃ‚Â±30-second window with per-code de-duplication). The scanner probes both, demonstrating that a replayed code and a 3-minute-old code are both accepted by the vulnerable endpoint and rejected by the safe one.",
     "category": "authentication_and_access",
     "repo": "cyberlab-totp-mfa-demo",
     "date": "2026-08-17T17:12:00.000Z",
     "status": "success",
     "language": "python",
     "server_framework": "fastapi",
-    "summary": "Built a TOTP MFA vulnerability scanner with a FastAPI demo server exposing a vulnerable TOTP endpoint (Ã‚Â±5-minute window, no replay protection) and a safe endpoint (Ã‚Â±30-second window, code de-duplication). Tool implements the RFC 6238 HOTP/TOTP algorithm from stdlib and probes both endpoints. All 24 pytest tests passed on the first run.",
+    "summary": "Built a TOTP MFA vulnerability scanner with a FastAPI demo server exposing a vulnerable TOTP endpoint (Ãƒâ€šÃ‚Â±5-minute window, no replay protection) and a safe endpoint (Ãƒâ€šÃ‚Â±30-second window, code de-duplication). Tool implements the RFC 6238 HOTP/TOTP algorithm from stdlib and probes both endpoints. All 24 pytest tests passed on the first run.",
     "tests_passed": 24,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "RFC 6238 TOTP algorithm Ã¢â‚¬â€ HMAC-SHA1 over a time-step counter, dynamic truncation to 6 digits",
-      "TOTP replay attack Ã¢â‚¬â€ without per-code de-duplication, a valid code can be submitted multiple times within the 30-second window",
-      "Wide time-window acceptance Ã¢â‚¬â€ servers using Ã‚Â±10 steps (Ã‚Â±5 minutes) extend the attack window far beyond RFC 6238's Ã‚Â±1-step recommendation",
-      "Constant-time code tracking Ã¢â‚¬â€ used codes stored as (username, code) tuples; O(1) lookup prevents replay",
-      "TOTP as a shared secret Ã¢â‚¬â€ security depends entirely on the TOTP secret never being disclosed; replay and wide-window flaws both erode the time-limited protection"
+      "RFC 6238 TOTP algorithm ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â HMAC-SHA1 over a time-step counter, dynamic truncation to 6 digits",
+      "TOTP replay attack ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â without per-code de-duplication, a valid code can be submitted multiple times within the 30-second window",
+      "Wide time-window acceptance ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â servers using Ãƒâ€šÃ‚Â±10 steps (Ãƒâ€šÃ‚Â±5 minutes) extend the attack window far beyond RFC 6238's Ãƒâ€šÃ‚Â±1-step recommendation",
+      "Constant-time code tracking ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â used codes stored as (username, code) tuples; O(1) lookup prevents replay",
+      "TOTP as a shared secret ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â security depends entirely on the TOTP secret never being disclosed; replay and wide-window flaws both erode the time-limited protection"
     ],
     "failure_reason": null
   },
@@ -749,13 +749,13 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with 15-minute access tokens and jti-randomised SHA-256 hashed refresh tokens stored in SQLite for collision-safe revocation",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
-      "Role-based access control enforced in middleware Ã¢â‚¬â€ landlords see only their own properties and tenants, SQL-level row isolation not client-side filtering",
-      "UK Right to Rent compliance workflow Ã¢â‚¬â€ follow-up date auto-computed as permission_expiry_date minus 28 days per Home Office guidance",
-      "Server-side status computation Ã¢â‚¬â€ compliant/expiring_soon/expired derived fresh on each API response, never stored or trusted from client",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Role-based access control enforced in middleware ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â landlords see only their own properties and tenants, SQL-level row isolation not client-side filtering",
+      "UK Right to Rent compliance workflow ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â follow-up date auto-computed as permission_expiry_date minus 28 days per Home Office guidance",
+      "Server-side status computation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â compliant/expiring_soon/expired derived fresh on each API response, never stored or trusted from client",
       "Parameterized queries preventing SQL injection throughout all route handlers",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "UK postcode format validation via regex (express-validator) as business rule enforcement",
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
     ],
@@ -777,11 +777,11 @@
     "tests_passed": 33,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "CORS wildcard (Access-Control-Allow-Origin: *) Ã¢â‚¬â€ any origin can read the response; harmless for public APIs but dangerous if auth is later added",
-      "Reflected origin with credentials Ã¢â‚¬â€ echoing the incoming Origin header verbatim plus ACAC: true allows any attacker page to make credentialed cross-origin requests",
-      "Null origin acceptance Ã¢â‚¬â€ sandboxed iframes (data: URIs, srcdoc) send Origin: null; accepting it with credentials permits those contexts to read authenticated responses",
-      "Strict allowlist validation Ã¢â‚¬â€ only origins on a pre-approved list receive the ACAO header; the Vary: Origin header is required to prevent CDN caching issues",
-      "CORS as a browser control Ã¢â‚¬â€ curl and httpx bypass it freely; authentication must still be enforced server-side regardless of CORS policy"
+      "CORS wildcard (Access-Control-Allow-Origin: *) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â any origin can read the response; harmless for public APIs but dangerous if auth is later added",
+      "Reflected origin with credentials ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â echoing the incoming Origin header verbatim plus ACAC: true allows any attacker page to make credentialed cross-origin requests",
+      "Null origin acceptance ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â sandboxed iframes (data: URIs, srcdoc) send Origin: null; accepting it with credentials permits those contexts to read authenticated responses",
+      "Strict allowlist validation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â only origins on a pre-approved list receive the ACAO header; the Vary: Origin header is required to prevent CDN caching issues",
+      "CORS as a browser control ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â curl and httpx bypass it freely; authentication must still be enforced server-side regardless of CORS policy"
     ],
     "failure_reason": null
   },
@@ -790,7 +790,7 @@
     "project_type": "fullstack_app",
     "project": "fee-and-payment-management-system",
     "title": "Fee and Payment Management System",
-    "description": "A full-stack school fee management system tailored to UK independent schools and colleges. Backend: Express REST API with JWT authentication, role-based access (admin, finance, parent), and SQLite database via node:sqlite. Features: create and assign fee schedules to students (tuition, meals, trips, uniform), generate invoices per student per term with automatic sibling discount application (10% tuition discount for second and subsequent siblings), track outstanding balances, record mock payments via card, Direct Debit, or bank transfer. Payment endpoint uses idempotency keys to prevent double-charging. Frontend: self-contained SPA dashboard with role-specific views Ã¢â‚¬â€ admin manages fee schedules, students, and generates invoices; finance views all invoices and payments; parents see only their own child's invoices and payment history. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens, audit log of all financial data access.",
+    "description": "A full-stack school fee management system tailored to UK independent schools and colleges. Backend: Express REST API with JWT authentication, role-based access (admin, finance, parent), and SQLite database via node:sqlite. Features: create and assign fee schedules to students (tuition, meals, trips, uniform), generate invoices per student per term with automatic sibling discount application (10% tuition discount for second and subsequent siblings), track outstanding balances, record mock payments via card, Direct Debit, or bank transfer. Payment endpoint uses idempotency keys to prevent double-charging. Frontend: self-contained SPA dashboard with role-specific views ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â admin manages fee schedules, students, and generates invoices; finance views all invoices and payments; parents see only their own child's invoices and payment history. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens, audit log of all financial data access.",
     "category": "education_platforms",
     "repo": "cyberlab-fee-and-payment-management-system",
     "date": "2026-08-24T08:30:00.000Z",
@@ -802,13 +802,13 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in SQLite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
-      "Role-based access control with SQL-level row isolation Ã¢â‚¬â€ parents see only their own student data, finance sees all, admin has full control",
-      "Payment idempotency keys Ã¢â‚¬â€ UNIQUE constraint on idempotency_key prevents duplicate charges; repeat requests return the original payment",
-      "Server-side sibling discount computation Ã¢â‚¬â€ 10% tuition discount applied during invoice generation, not client-supplied",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Role-based access control with SQL-level row isolation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â parents see only their own student data, finance sees all, admin has full control",
+      "Payment idempotency keys ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UNIQUE constraint on idempotency_key prevents duplicate charges; repeat requests return the original payment",
+      "Server-side sibling discount computation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 10% tuition discount applied during invoice generation, not client-supplied",
       "Parameterized queries preventing SQL injection throughout all route handlers",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes",
       "Audit log recording every login, invoice generation, and payment with user ID and IP address"
     ],
@@ -819,22 +819,22 @@
     "project_type": "security_tool",
     "project": "file-integrity-checker",
     "title": "File Integrity Checker",
-    "description": "Computes SHA-256 hashes of files, stores a baseline, then detects modifications by comparing current hashes against the baseline. Demo server serves a set of files via API Ã¢â‚¬â€ four files remain unchanged (clean) and two have been silently tampered with: auth.py has its password verification replaced with a backdoor that always returns True, and db_connector.py has a reverse-shell subprocess injected alongside the legitimate database code. The tool fetches the integrity manifest from /files (filename + baseline hash), re-hashes each file's current content, and reports mismatches as INTEGRITY_VIOLATION findings.",
+    "description": "Computes SHA-256 hashes of files, stores a baseline, then detects modifications by comparing current hashes against the baseline. Demo server serves a set of files via API ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â four files remain unchanged (clean) and two have been silently tampered with: auth.py has its password verification replaced with a backdoor that always returns True, and db_connector.py has a reverse-shell subprocess injected alongside the legitimate database code. The tool fetches the integrity manifest from /files (filename + baseline hash), re-hashes each file's current content, and reports mismatches as INTEGRITY_VIOLATION findings.",
     "category": "malware_analysis_and_forensics",
     "repo": "cyberlab-file-integrity-checker",
     "date": "2026-08-31T06:10:00.000Z",
     "status": "success",
     "language": "python",
     "server_framework": "fastapi",
-    "summary": "Built a file integrity monitoring tool with a FastAPI demo server serving six files (four clean, two tampered Ã¢â‚¬â€ a backdoored auth handler and a reverse-shell injected database connector). The tool fetches an integrity manifest, re-hashes current file content, and flags any SHA-256 mismatch as a HIGH-severity INTEGRITY_VIOLATION. All 27 pytest tests passed on the first run.",
+    "summary": "Built a file integrity monitoring tool with a FastAPI demo server serving six files (four clean, two tampered ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â a backdoored auth handler and a reverse-shell injected database connector). The tool fetches an integrity manifest, re-hashes current file content, and flags any SHA-256 mismatch as a HIGH-severity INTEGRITY_VIOLATION. All 27 pytest tests passed on the first run.",
     "tests_passed": 27,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "SHA-256 as a cryptographic integrity primitive Ã¢â‚¬â€ any byte change produces a completely different hash (avalanche property)",
-      "Baseline hash manifest pattern Ã¢â‚¬â€ storing known-good hashes separately from the files being monitored, so tampering is detectable even after the fact",
-      "Post-exploitation persistence detection Ã¢â‚¬â€ FIM catches attacker modifications to auth handlers and database connectors that establish backdoors or C2 channels",
-      "False positive suppression Ã¢â‚¬â€ unchanged files produce zero findings, confirming the tool only alerts on genuine mismatches",
-      "Graceful degradation Ã¢â‚¬â€ unreachable server returns empty findings and a descriptive summary without crashing"
+      "SHA-256 as a cryptographic integrity primitive ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â any byte change produces a completely different hash (avalanche property)",
+      "Baseline hash manifest pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â storing known-good hashes separately from the files being monitored, so tampering is detectable even after the fact",
+      "Post-exploitation persistence detection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â FIM catches attacker modifications to auth handlers and database connectors that establish backdoors or C2 channels",
+      "False positive suppression ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unchanged files produce zero findings, confirming the tool only alerts on genuine mismatches",
+      "Graceful degradation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unreachable server returns empty findings and a descriptive summary without crashing"
     ],
     "failure_reason": null
   },
@@ -843,7 +843,7 @@
     "project_type": "fullstack_app",
     "project": "planning-permission-application-tracker",
     "title": "Planning Permission Application Tracker",
-    "description": "A secure full-stack UK planning permission tracking and management system. Backend: Express REST API with JWT authentication, role-based access (applicant, officer, admin), and SQLite database via node:sqlite. Features: applicants submit planning applications (householder, full planning, listed building consent, prior approval) with UK postcode validation, officers review applications and add consultee responses and internal/public notes, issue decision notices, track 8-week statutory determination deadlines per Town and Country Planning Act 1990. Decision notices are publicly accessible without authentication; applicant personal details are restricted to officers and admins via SQL-level row projection. Frontend: self-contained responsive SPA with role-specific dashboards Ã¢â‚¬â€ applicant portal, officer case management dashboard with status filter, admin dashboard with stats and audit log. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens.",
+    "description": "A secure full-stack UK planning permission tracking and management system. Backend: Express REST API with JWT authentication, role-based access (applicant, officer, admin), and SQLite database via node:sqlite. Features: applicants submit planning applications (householder, full planning, listed building consent, prior approval) with UK postcode validation, officers review applications and add consultee responses and internal/public notes, issue decision notices, track 8-week statutory determination deadlines per Town and Country Planning Act 1990. Decision notices are publicly accessible without authentication; applicant personal details are restricted to officers and admins via SQL-level row projection. Frontend: self-contained responsive SPA with role-specific dashboards ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â applicant portal, officer case management dashboard with status filter, admin dashboard with stats and audit log. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterized queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens.",
     "category": "uk_applications",
     "repo": "cyberlab-planning-permission-application-tracker",
     "date": "2026-09-02T00:00:00.000Z",
@@ -855,13 +855,13 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in SQLite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
-      "Role-based access control with SQL-level field projection Ã¢â‚¬â€ unauthenticated requests receive public fields only; personal details returned only to officers and admins",
-      "UK Town and Country Planning Act 1990 Ã¢â‚¬â€ 8-week determination deadline computed server-side at submission time, never trusted from client",
-      "Public register requirement Ã¢â‚¬â€ decision notices served without authentication to mirror statutory planning register obligation",
-      "Parameterized queries preventing SQL injection Ã¢â‚¬â€ all node:sqlite operations use prepared statements with bound parameters",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header and Cookie",
+      "Role-based access control with SQL-level field projection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unauthenticated requests receive public fields only; personal details returned only to officers and admins",
+      "UK Town and Country Planning Act 1990 ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â 8-week determination deadline computed server-side at submission time, never trusted from client",
+      "Public register requirement ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â decision notices served without authentication to mirror statutory planning register obligation",
+      "Parameterized queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â all node:sqlite operations use prepared statements with bound parameters",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "UK postcode format validation via regex (express-validator) as business rule enforcement",
       "Audit log recording every login, application submission, status change, and decision with user ID and IP address"
     ],
@@ -883,11 +883,11 @@
     "tests_passed": 24,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "X-Forwarded-For header spoofing Ã¢â‚¬â€ any HTTP client can set this header to an arbitrary value, defeating rate limits keyed by it",
+      "X-Forwarded-For header spoofing ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â any HTTP client can set this header to an arbitrary value, defeating rate limits keyed by it",
       "TCP connection IP as the only unforgeable client identifier at the HTTP layer",
-      "uvicorn proxy_headers setting Ã¢â‚¬â€ by default uvicorn trusts X-Forwarded-For from 127.0.0.1 and overwrites scope client; proxy_headers=False disables this",
-      "Rate limit bypass as a brute-force enabler Ã¢â‚¬â€ unlimited credential guessing when the limit key can be rotated",
-      "Trusted proxy configuration Ã¢â‚¬â€ correct approach is to strip/overwrite X-Forwarded-For at the ingress proxy, not in application code"
+      "uvicorn proxy_headers setting ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â by default uvicorn trusts X-Forwarded-For from 127.0.0.1 and overwrites scope client; proxy_headers=False disables this",
+      "Rate limit bypass as a brute-force enabler ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â unlimited credential guessing when the limit key can be rotated",
+      "Trusted proxy configuration ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â correct approach is to strip/overwrite X-Forwarded-For at the ingress proxy, not in application code"
     ],
     "failure_reason": null
   },
@@ -908,15 +908,15 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with short-lived access tokens (15 min) and SHA-256 hashed revocable refresh tokens stored in node:sqlite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
-      "Role-based access control enforced in middleware Ã¢â‚¬â€ students see only their own registrations; admin/staff see all via SQL JOINs",
-      "Prerequisite enforcement at the API layer Ã¢â‚¬â€ parameterised query checks enrolment in prerequisite modules before permitting registration",
-      "UK credit framework 120-credit annual limit Ã¢â‚¬â€ SUM(credits) WHERE status='enrolled' checked server-side before each registration",
-      "Timetable clash detection Ã¢â‚¬â€ day_of_week + period overlap checked against active enrolments before inserting a new one",
-      "Waitlist auto-promotion in a SQL transaction Ã¢â‚¬â€ withdrawal and waitlist promotion are atomic to prevent inconsistent state",
-      "Parameterised queries preventing SQL injection Ã¢â‚¬â€ all node:sqlite operations use bound parameters",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â students see only their own registrations; admin/staff see all via SQL JOINs",
+      "Prerequisite enforcement at the API layer ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â parameterised query checks enrolment in prerequisite modules before permitting registration",
+      "UK credit framework 120-credit annual limit ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SUM(credits) WHERE status='enrolled' checked server-side before each registration",
+      "Timetable clash detection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â day_of_week + period overlap checked against active enrolments before inserting a new one",
+      "Waitlist auto-promotion in a SQL transaction ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â withdrawal and waitlist promotion are atomic to prevent inconsistent state",
+      "Parameterised queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â all node:sqlite operations use bound parameters",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "express-rate-limit on auth and API routes",
       "Audit log recording every login, enrolment, withdrawal, and waitlist event with user ID and IP address"
     ],
@@ -927,7 +927,7 @@
     "project_type": "security_tool",
     "project": "rate-limiting-middleware",
     "title": "Rate Limiting Middleware",
-    "description": "Implements three rate limiting algorithms from scratch Ã¢â‚¬â€ token bucket, fixed window, and sliding window Ã¢â‚¬â€ and demonstrates the fixed-window boundary-burst vulnerability. Demo server exposes an unprotected endpoint (no rate limiting) and three protected endpoints (one per algorithm), all with the same nominal limit. The scanner fires rapid request batches to detect MISSING_RATE_LIMITING on unprotected endpoints and FIXED_WINDOW_BURST on fixed-window endpoints (by firing max_requests at the end of a window, waiting for reset, then firing max_requests again Ã¢â‚¬â€ demonstrating 2Ãƒâ€” the configured limit in a single window_seconds period). Token bucket and sliding window produce zero findings.",
+    "description": "Implements three rate limiting algorithms from scratch ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â token bucket, fixed window, and sliding window ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â and demonstrates the fixed-window boundary-burst vulnerability. Demo server exposes an unprotected endpoint (no rate limiting) and three protected endpoints (one per algorithm), all with the same nominal limit. The scanner fires rapid request batches to detect MISSING_RATE_LIMITING on unprotected endpoints and FIXED_WINDOW_BURST on fixed-window endpoints (by firing max_requests at the end of a window, waiting for reset, then firing max_requests again ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â demonstrating 2ÃƒÆ’Ã¢â‚¬â€ the configured limit in a single window_seconds period). Token bucket and sliding window produce zero findings.",
     "category": "secure_coding",
     "repo": "cyberlab-rate-limiting-middleware",
     "date": "2026-09-08T10:00:00.000Z",
@@ -938,11 +938,11 @@
     "tests_passed": 27,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Token bucket algorithm Ã¢â‚¬â€ allows bursts up to configured capacity, then refills at a steady rate; no fixed boundary to exploit",
-      "Fixed-window rate limiting boundary burst Ã¢â‚¬â€ at each window reset, a full new quota becomes available instantly, allowing 2Ãƒâ€” the limit in rapid succession",
-      "Sliding window rate limiting Ã¢â‚¬â€ tracks individual request timestamps in a rolling window; no fixed boundary means no burst opportunity",
-      "MISSING_RATE_LIMITING detection Ã¢â‚¬â€ endpoint that never returns 429 regardless of request rate is HIGH severity for brute-force exposure",
-      "Refill rate calibration Ã¢â‚¬â€ token bucket refill_rate must be much lower than 1/request_latency or rapid-fire tests can consume and refill the bucket in the same pass"
+      "Token bucket algorithm ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â allows bursts up to configured capacity, then refills at a steady rate; no fixed boundary to exploit",
+      "Fixed-window rate limiting boundary burst ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â at each window reset, a full new quota becomes available instantly, allowing 2ÃƒÆ’Ã¢â‚¬â€ the limit in rapid succession",
+      "Sliding window rate limiting ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â tracks individual request timestamps in a rolling window; no fixed boundary means no burst opportunity",
+      "MISSING_RATE_LIMITING detection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â endpoint that never returns 429 regardless of request rate is HIGH severity for brute-force exposure",
+      "Refill rate calibration ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â token bucket refill_rate must be much lower than 1/request_latency or rapid-fire tests can consume and refill the bucket in the same pass"
     ],
     "failure_reason": null
   },
@@ -951,7 +951,7 @@
     "project_type": "fullstack_app",
     "project": "universal-credit-eligibility-calculator",
     "title": "Universal Credit Eligibility Calculator",
-    "description": "A secure full-stack UK Universal Credit eligibility assessment and calculation tool. Backend: Express REST API with JWT authentication, role-based access (admin, user), and SQLite database via node:sqlite. Features: users complete a multi-step assessment covering household composition, housing situation, employment and earnings, health conditions (LCWRA), carer status, and savings; system calculates UC entitlement using current DWP rates (2024/25) Ã¢â‚¬â€ standard allowance, child elements, disabled child elements, LCWRA element, carer element, housing cost element, childcare element, 55% taper on earnings above work allowance, tariff income on savings between Ã‚Â£6,000Ã¢â‚¬â€œÃ‚Â£16,000, and benefit cap (London/national Ãƒâ€” family/single); capital limit of Ã‚Â£16,000 enforced. Frontend: self-contained SPA styled after GOV.UK Design System with multi-step assessment wizard, GOV.UK-branded results page with full calculation breakdown, assessment history, and admin dashboard. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with random-jti revocable refresh tokens stored as SHA-256 hashes in SQLite.",
+    "description": "A secure full-stack UK Universal Credit eligibility assessment and calculation tool. Backend: Express REST API with JWT authentication, role-based access (admin, user), and SQLite database via node:sqlite. Features: users complete a multi-step assessment covering household composition, housing situation, employment and earnings, health conditions (LCWRA), carer status, and savings; system calculates UC entitlement using current DWP rates (2024/25) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â standard allowance, child elements, disabled child elements, LCWRA element, carer element, housing cost element, childcare element, 55% taper on earnings above work allowance, tariff income on savings between Ãƒâ€šÃ‚Â£6,000ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“Ãƒâ€šÃ‚Â£16,000, and benefit cap (London/national ÃƒÆ’Ã¢â‚¬â€ family/single); capital limit of Ãƒâ€šÃ‚Â£16,000 enforced. Frontend: self-contained SPA styled after GOV.UK Design System with multi-step assessment wizard, GOV.UK-branded results page with full calculation breakdown, assessment history, and admin dashboard. DevSecOps: Helmet security headers, CSRF double-submit cookie protection, express-validator input validation, express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with random-jti revocable refresh tokens stored as SHA-256 hashes in SQLite.",
     "category": "uk_applications",
     "repo": "cyberlab-universal-credit-eligibility-calculator",
     "date": "2026-09-15T00:00:00.000Z",
@@ -963,15 +963,15 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with 15-minute access tokens and jti-randomised SHA-256 hashed refresh tokens stored in SQLite for collision-safe revocation",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
-      "Role-based access control enforced in middleware Ã¢â‚¬â€ users see only their own assessments via SQL-level WHERE user_id = ? filtering",
-      "Server-side benefit calculation Ã¢â‚¬â€ all DWP UC rate logic runs on validated inputs; users cannot submit manipulated entitlement figures",
-      "UK Universal Credit 55% taper rate Ã¢â‚¬â€ earnings above the work allowance reduce UC by 55p per Ã‚Â£1 earned",
-      "Capital limit and tariff income Ã¢â‚¬â€ savings above Ã‚Â£6,000 generate tariff income (Ã‚Â£4.35/Ã‚Â£250 above threshold); savings above Ã‚Â£16,000 disqualify entirely",
-      "Benefit cap application Ã¢â‚¬â€ UC capped at DWP national/London rates for families and singles; LCWRA exempts claimants from the cap",
-      "Parameterised queries preventing SQL injection Ã¢â‚¬â€ all node:sqlite operations use bound parameters",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â users see only their own assessments via SQL-level WHERE user_id = ? filtering",
+      "Server-side benefit calculation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â all DWP UC rate logic runs on validated inputs; users cannot submit manipulated entitlement figures",
+      "UK Universal Credit 55% taper rate ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â earnings above the work allowance reduce UC by 55p per Ãƒâ€šÃ‚Â£1 earned",
+      "Capital limit and tariff income ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â savings above Ãƒâ€šÃ‚Â£6,000 generate tariff income (Ãƒâ€šÃ‚Â£4.35/Ãƒâ€šÃ‚Â£250 above threshold); savings above Ãƒâ€šÃ‚Â£16,000 disqualify entirely",
+      "Benefit cap application ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UC capped at DWP national/London rates for families and singles; LCWRA exempts claimants from the cap",
+      "Parameterised queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â all node:sqlite operations use bound parameters",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
     ],
     "failure_reason": null
@@ -992,12 +992,12 @@
     "tests_passed": 30,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "SHA-256 as an unsafe password hash Ã¢â‚¬â€ no work factor enables billions of guesses per second on GPU hardware",
-      "bcrypt adaptive cost factor Ã¢â‚¬â€ serial Feistel design prevents GPU parallelism; cost 12 Ã¢â€°Ë† 300ms per hash",
-      "scrypt memory-hardness Ã¢â‚¬â€ n=16384 requires ~128 MiB per hash, defeating ASIC and GPU parallel attacks",
-      "argon2id as the modern recommendation Ã¢â‚¬â€ winner of the 2015 Password Hashing Competition, combines time-hardness and memory-hardness",
-      "Dictionary attack demonstration Ã¢â‚¬â€ SHA-256 hash of 'password123' cracked in <1ms; bcrypt and argon2 resist the same wordlist",
-      "Work factor benchmarking Ã¢â‚¬â€ timing comparison shows safe algorithms are 5000Ã¢â‚¬â€œ150000Ãƒâ€” slower than SHA-256 per hash"
+      "SHA-256 as an unsafe password hash ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â no work factor enables billions of guesses per second on GPU hardware",
+      "bcrypt adaptive cost factor ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â serial Feistel design prevents GPU parallelism; cost 12 ÃƒÂ¢Ã¢â‚¬Â°Ã‹â€  300ms per hash",
+      "scrypt memory-hardness ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â n=16384 requires ~128 MiB per hash, defeating ASIC and GPU parallel attacks",
+      "argon2id as the modern recommendation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â winner of the 2015 Password Hashing Competition, combines time-hardness and memory-hardness",
+      "Dictionary attack demonstration ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SHA-256 hash of 'password123' cracked in <1ms; bcrypt and argon2 resist the same wordlist",
+      "Work factor benchmarking ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â timing comparison shows safe algorithms are 5000ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“150000ÃƒÆ’Ã¢â‚¬â€ slower than SHA-256 per hash"
     ],
     "failure_reason": null
   },
@@ -1017,15 +1017,15 @@
     "tests_passed": 35,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "Server-side exam gating Ã¢â‚¬â€ questions included in API responses only when an active sitting exists; never pre-loaded to the client",
-      "Answer key stripping Ã¢â‚¬â€ is_correct field removed from all student-facing choice objects at the API layer",
-      "Attempt limit enforcement Ã¢â‚¬â€ SELECT COUNT(*) server-side check; cannot be bypassed by client manipulation",
+      "Server-side exam gating ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â questions included in API responses only when an active sitting exists; never pre-loaded to the client",
+      "Answer key stripping ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â is_correct field removed from all student-facing choice objects at the API layer",
+      "Attempt limit enforcement ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SELECT COUNT(*) server-side check; cannot be bypassed by client manipulation",
       "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in node:sqlite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
-      "Role-based access control enforced in middleware Ã¢â‚¬â€ students see only published exams and their own sittings; teachers see only their own exams",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control enforced in middleware ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â students see only published exams and their own sittings; teachers see only their own exams",
       "Parameterised queries preventing SQL injection throughout all route handlers",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "express-rate-limit on auth (20 req/15 min) and API (150 req/min) routes",
       "Audit log recording every exam view, sitting start, and submission with user ID and IP address"
     ],
@@ -1047,11 +1047,11 @@
     "tests_passed": 32,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "robots.txt as an unintentional attack-surface map Ã¢â‚¬â€ Disallow entries reveal sensitive paths to any reader, not just crawlers",
-      "Sitemap information disclosure Ã¢â‚¬â€ development and staging URLs included in sitemap.xml can be indexed by search engines",
-      "Severity classification Ã¢â‚¬â€ /.git and /phpmyadmin are HIGH (direct access = critical compromise), /admin and /backup are MEDIUM, /dev paths are LOW",
-      "robots.txt is not a security control Ã¢â‚¬â€ it is advisory only; any client can ignore it",
-      "Defence-in-depth remediation Ã¢â‚¬â€ remove sensitive paths from robots.txt AND protect them with authentication server-side"
+      "robots.txt as an unintentional attack-surface map ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Disallow entries reveal sensitive paths to any reader, not just crawlers",
+      "Sitemap information disclosure ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â development and staging URLs included in sitemap.xml can be indexed by search engines",
+      "Severity classification ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â /.git and /phpmyadmin are HIGH (direct access = critical compromise), /admin and /backup are MEDIUM, /dev paths are LOW",
+      "robots.txt is not a security control ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â it is advisory only; any client can ignore it",
+      "Defence-in-depth remediation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â remove sensitive paths from robots.txt AND protect them with authentication server-side"
     ],
     "failure_reason": null
   },
@@ -1060,27 +1060,27 @@
     "project_type": "fullstack_app",
     "project": "social-housing-application-portal",
     "title": "Social Housing Application Portal",
-    "description": "A secure full-stack UK social housing application and allocation management system. Backend: Express REST API with JWT authentication, role-based access (admin, officer, applicant), and SQLite database via node:sqlite. Features: applicants submit housing needs assessments covering homelessness, domestic abuse, overcrowding, and medical need; system calculates housing band (AÃ¢â‚¬â€œD) server-side per Housing Act 1996 Part VI; officers manage property listings, open bidding cycles, view priority-ranked bids, and award properties to the highest-priority applicant; applicants browse available properties matching their bedroom need and place bids; two refusals triggers a suspension flag. Frontend: responsive self-contained SPA styled after GOV.UK Design System with applicant and officer dashboards. DevSecOps: Helmet security headers (CSP, HSTS, X-Frame-Options DENY), CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens.",
+    "description": "A secure full-stack UK social housing application and allocation management system. Backend: Express REST API with JWT authentication, role-based access (admin, officer, applicant), and SQLite database via node:sqlite. Features: applicants submit housing needs assessments covering homelessness, domestic abuse, overcrowding, and medical need; system calculates housing band (AÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“D) server-side per Housing Act 1996 Part VI; officers manage property listings, open bidding cycles, view priority-ranked bids, and award properties to the highest-priority applicant; applicants browse available properties matching their bedroom need and place bids; two refusals triggers a suspension flag. Frontend: responsive self-contained SPA styled after GOV.UK Design System with applicant and officer dashboards. DevSecOps: Helmet security headers (CSP, HSTS, X-Frame-Options DENY), CSRF double-submit cookie protection, express-validator input validation (including UK postcode regex), express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes, parameterised queries throughout, bcrypt password hashing at cost 12, JWT with SHA-256 hashed revocable refresh tokens.",
     "category": "uk_applications",
     "repo": "cyberlab-social-housing-application-portal",
     "date": "2026-09-26T00:00:00.000Z",
     "status": "success",
     "language": "node",
     "server_framework": "express",
-    "summary": "Built a full-stack UK social housing application portal with Express, node:sqlite, and a self-contained GOV.UK-styled SPA frontend. Implements server-side band calculation (AÃ¢â‚¬â€œD) from assessed needs, JWT auth (access + refresh tokens with SHA-256 hashed revocable storage), three-role RBAC (admin/officer/applicant) with SQL-level row isolation, CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. All 36 node:test tests passed after fixing SQLite datetime() quoting and Helmet frameguard config.",
+    "summary": "Built a full-stack UK social housing application portal with Express, node:sqlite, and a self-contained GOV.UK-styled SPA frontend. Implements server-side band calculation (AÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Å“D) from assessed needs, JWT auth (access + refresh tokens with SHA-256 hashed revocable storage), three-role RBAC (admin/officer/applicant) with SQL-level row isolation, CSRF double-submit cookie protection, Helmet security headers, rate limiting, and express-validator input validation. All 36 node:test tests passed after fixing SQLite datetime() quoting and Helmet frameguard config.",
     "tests_passed": 36,
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens stored in node:sqlite",
-      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
-      "Server-side housing band calculation Ã¢â‚¬â€ Band A (homeless/DA), Band B (overcrowded + medical), Band D (standard); band cannot be client-supplied",
-      "Role-based access control enforced in middleware Ã¢â‚¬â€ applicants see only their own data via SQL-level WHERE filtering, officers see all rows via JOIN",
-      "Choice-Based Lettings model Ã¢â‚¬â€ applicants bid on available properties; officer awards to highest-priority band with earliest application date as tiebreak",
-      "Refusal tracking with suspension Ã¢â‚¬â€ two refused offers triggers suspension_flag, blocking further bids as per CBL policy",
-      "Housing Act 1996 Part VI allocation bands Ã¢â‚¬â€ A (urgent), B (high), D (standard) implemented server-side from assessed need flags",
-      "Parameterised queries preventing SQL injection Ã¢â‚¬â€ all node:sqlite operations use bound parameters",
+      "CSRF double-submit cookie pattern ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Server-side housing band calculation ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Band A (homeless/DA), Band B (overcrowded + medical), Band D (standard); band cannot be client-supplied",
+      "Role-based access control enforced in middleware ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â applicants see only their own data via SQL-level WHERE filtering, officers see all rows via JOIN",
+      "Choice-Based Lettings model ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â applicants bid on available properties; officer awards to highest-priority band with earliest application date as tiebreak",
+      "Refusal tracking with suspension ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â two refused offers triggers suspension_flag, blocking further bids as per CBL policy",
+      "Housing Act 1996 Part VI allocation bands ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â A (urgent), B (high), D (standard) implemented server-side from assessed need flags",
+      "Parameterised queries preventing SQL injection ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â all node:sqlite operations use bound parameters",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options DENY on every response",
+      "Helmet security headers ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSP, HSTS, X-Content-Type-Options, X-Frame-Options DENY on every response",
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes",
       "Audit log recording every login, application submission, bid, and allocation with user ID and IP address"
     ],
@@ -1091,7 +1091,7 @@
     "project_type": "security_tool",
     "project": "cookie-security-analyzer",
     "title": "Cookie Security Analyzer",
-    "description": "Inspects HTTP Set-Cookie response headers and flags missing or misconfigured security attributes. Demo server exposes six FastAPI endpoints each setting a session cookie with a different security configuration: bare (no flags), HttpOnly only, HttpOnly + Secure, fully hardened (HttpOnly + Secure + SameSite=Strict), SameSite=Lax, and SameSite=None without Secure. The scanner fetches /targets to discover endpoints, probes each one, parses the raw Set-Cookie header, and reports four vulnerability types: MISSING_HTTPONLY (HIGH Ã¢â‚¬â€ JS can steal the token via XSS), MISSING_SECURE (HIGH Ã¢â‚¬â€ cookie travels over plain HTTP), MISSING_SAMESITE (MEDIUM Ã¢â‚¬â€ CSRF exposure), and INSECURE_SAMESITE_NONE (HIGH Ã¢â‚¬â€ SameSite=None without Secure is rejected by Chrome 80+/Firefox/Safari, breaking authentication). The two fully hardened endpoints produce zero findings, confirming false positive suppression.",
+    "description": "Inspects HTTP Set-Cookie response headers and flags missing or misconfigured security attributes. Demo server exposes six FastAPI endpoints each setting a session cookie with a different security configuration: bare (no flags), HttpOnly only, HttpOnly + Secure, fully hardened (HttpOnly + Secure + SameSite=Strict), SameSite=Lax, and SameSite=None without Secure. The scanner fetches /targets to discover endpoints, probes each one, parses the raw Set-Cookie header, and reports four vulnerability types: MISSING_HTTPONLY (HIGH ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â JS can steal the token via XSS), MISSING_SECURE (HIGH ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â cookie travels over plain HTTP), MISSING_SAMESITE (MEDIUM ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â CSRF exposure), and INSECURE_SAMESITE_NONE (HIGH ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â SameSite=None without Secure is rejected by Chrome 80+/Firefox/Safari, breaking authentication). The two fully hardened endpoints produce zero findings, confirming false positive suppression.",
     "category": "web_security",
     "repo": "cyberlab-cookie-security-analyzer",
     "date": "2026-09-28T12:08:00.000Z",
@@ -1102,12 +1102,12 @@
     "tests_passed": 42,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "HttpOnly flag Ã¢â‚¬â€ prevents JavaScript from reading the cookie via document.cookie, blocking session theft through XSS",
-      "Secure flag Ã¢â‚¬â€ restricts cookie transmission to HTTPS connections only, preventing network interception over plain HTTP",
-      "SameSite attribute Ã¢â‚¬â€ controls whether cookies are sent with cross-origin requests; absence leaves sessions open to CSRF attacks",
-      "SameSite=Lax vs SameSite=Strict Ã¢â‚¬â€ Lax allows cookies on top-level navigations (safe for most apps), Strict blocks them entirely (strongest CSRF protection)",
-      "SameSite=None without Secure (RFC 6265bis Ã‚Â§8.8) Ã¢â‚¬â€ invalid configuration; Chrome 80+, Firefox, and Safari silently reject the cookie, breaking authentication",
-      "Cookie flag parsing Ã¢â‚¬â€ inspecting Set-Cookie directives programmatically to audit security posture without authentication"
+      "HttpOnly flag ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â prevents JavaScript from reading the cookie via document.cookie, blocking session theft through XSS",
+      "Secure flag ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â restricts cookie transmission to HTTPS connections only, preventing network interception over plain HTTP",
+      "SameSite attribute ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â controls whether cookies are sent with cross-origin requests; absence leaves sessions open to CSRF attacks",
+      "SameSite=Lax vs SameSite=Strict ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â Lax allows cookies on top-level navigations (safe for most apps), Strict blocks them entirely (strongest CSRF protection)",
+      "SameSite=None without Secure (RFC 6265bis Ãƒâ€šÃ‚Â§8.8) ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â invalid configuration; Chrome 80+, Firefox, and Safari silently reject the cookie, breaking authentication",
+      "Cookie flag parsing ÃƒÂ¢Ã¢â€šÂ¬Ã¢â‚¬Â inspecting Set-Cookie directives programmatically to audit security posture without authentication"
     ],
     "failure_reason": null
   },
@@ -1128,15 +1128,15 @@
     "tests_failed": 0,
     "concepts_demonstrated": [
       "JWT authentication with per-token jti claim preventing hash collisions in high-throughput test environments",
-      "Four-role RBAC â€” admin (full access), teacher (own form groups only), student (own record), parent (linked children) enforced via SQL-level filtering",
-      "UPN validation â€” 13-character Unique Pupil Number format (letter + 12 digits) validated server-side with express-validator",
-      "CSRF double-submit cookie pattern â€” UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
-      "Row-level data isolation â€” teachers see only students in their assigned form groups via JOIN; parents see only their linked children via parent_student table",
-      "Audit log â€” every student view, create, update, and delete is recorded with user ID, action, and IP address",
-      "Emergency contacts and medical records â€” role-checked access ensures only authorised users can view sensitive health data",
+      "Four-role RBAC Ã¢â‚¬â€ admin (full access), teacher (own form groups only), student (own record), parent (linked children) enforced via SQL-level filtering",
+      "UPN validation Ã¢â‚¬â€ 13-character Unique Pupil Number format (letter + 12 digits) validated server-side with express-validator",
+      "CSRF double-submit cookie pattern Ã¢â‚¬â€ UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Row-level data isolation Ã¢â‚¬â€ teachers see only students in their assigned form groups via JOIN; parents see only their linked children via parent_student table",
+      "Audit log Ã¢â‚¬â€ every student view, create, update, and delete is recorded with user ID, action, and IP address",
+      "Emergency contacts and medical records Ã¢â‚¬â€ role-checked access ensures only authorised users can view sensitive health data",
       "bcrypt password hashing at configurable cost factor with constant-time comparison preventing timing attacks",
-      "Parameterised queries â€” all node:sqlite operations use bound parameters preventing SQL injection",
-      "Helmet security headers â€” CSP, HSTS, X-Content-Type-Options, X-Frame-Options DENY on every response",
+      "Parameterised queries Ã¢â‚¬â€ all node:sqlite operations use bound parameters preventing SQL injection",
+      "Helmet security headers Ã¢â‚¬â€ CSP, HSTS, X-Content-Type-Options, X-Frame-Options DENY on every response",
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes"
     ],
     "failure_reason": null
@@ -1184,20 +1184,45 @@
     "tests_passed": 36,
     "tests_failed": 0,
     "concepts_demonstrated": [
-      "UK income tax calculation — personal allowance taper above pound-100k creating effective 60% marginal rate",
+      "UK income tax calculation â€” personal allowance taper above pound-100k creating effective 60% marginal rate",
       "NI Class 2 (flat weekly rate) and Class 4 (percentage on profits) for self-employed income",
       "CGT annual exemption (pound-3,000) and basic/higher rate CGT on net gains",
       "Dividend allowance (pound-500) with three dividend tax rates (basic 8.75%, higher 33.75%, additional 39.35%)",
-      "Payment on account rules — triggered when self-assessment tax due exceeds pound-1,000 and less than 80% collected via PAYE",
+      "Payment on account rules â€” triggered when self-assessment tax due exceeds pound-1,000 and less than 80% collected via PAYE",
       "JWT authentication with 15-minute access tokens and SHA-256 hashed revocable refresh tokens in node:sqlite",
-      "CSRF double-submit cookie pattern — UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
-      "Role-based access control — users see only their own returns, accountants can read all, admins can manage roles and view audit log",
-      "Server-side financial calculations — client submits raw income figures; all tax amounts computed server-side to prevent manipulation",
-      "Parameterised queries preventing SQL injection — all node:sqlite operations use bound parameters",
+      "CSRF double-submit cookie pattern â€” UUID token set as readable cookie on login; every state-changing request must echo it in X-CSRF-Token header",
+      "Role-based access control â€” users see only their own returns, accountants can read all, admins can manage roles and view audit log",
+      "Server-side financial calculations â€” client submits raw income figures; all tax amounts computed server-side to prevent manipulation",
+      "Parameterised queries preventing SQL injection â€” all node:sqlite operations use bound parameters",
       "bcrypt password hashing at cost factor 12 with constant-time comparison",
-      "Helmet security headers — CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
+      "Helmet security headers â€” CSP, HSTS, X-Content-Type-Options, X-Frame-Options on every response",
       "express-rate-limit on auth (20 req/15 min) and API (100 req/min) routes",
       "Audit log recording every login, return creation, update, and submission with user ID and IP address"
+    ],
+    "failure_reason": null
+  },
+  {
+    "id": 49,
+    "project_type": "security_tool",
+    "project": "hex-dump-viewer",
+    "title": "Hex Dump Viewer with Pattern Highlighting",
+    "description": "Renders hex dumps of binary files with highlighting for known magic bytes (file signatures), ASCII strings, and suspicious byte patterns. Demo server serves sample binary files.",
+    "category": "malware_analysis_and_forensics",
+    "repo": "cyberlab-hex-dump-viewer",
+    "date": "2026-10-12T06:10:29.5838638+01:00",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a FastAPI demo server serving 6 binary files (3 clean, 3 suspicious) and a CLI hex-dump tool that detects embedded scripts, shell commands, and high-entropy content. 25/25 tests passed.",
+    "tests_passed": 25,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "magic byte identification",
+      "Shannon entropy analysis",
+      "suspicious string pattern scanning",
+      "binary forensics",
+      "hex dump visualization",
+      "file type fingerprinting"
     ],
     "failure_reason": null
   }
