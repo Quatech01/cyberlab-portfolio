@@ -1256,5 +1256,32 @@
       "Public catalogue (GET /api/books) separated from protected mutation routes — browse without auth, act with auth"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 51,
+    "category": "secure_coding",
+    "language": "python",
+    "concepts_demonstrated": [
+      "Content Security Policy",
+      "HTML parsing for resource extraction",
+      "inline script detection",
+      "eval() usage detection",
+      "inline event handler detection",
+      "external origin enumeration",
+      "CSP directive generation",
+      "false positive prevention"
+    ],
+    "server_framework": "fastapi",
+    "title": "Content Security Policy Generator",
+    "project_type": "security_tool",
+    "project": "csp-generator",
+    "description": "Analyzes a web page's resource usage (scripts, styles, images, fonts, iframes) and generates an appropriate CSP header. Demo server has pages with various resource patterns. Tool scans and recommends CSP directives.",
+    "status": "success",
+    "summary": "Built a CSP generator that parses HTML resource patterns and recommends Content-Security-Policy headers. All 27 pytest tests passed.",
+    "failure_reason": null,
+    "repo": "cyberlab-csp-generator",
+    "date": "2026-10-19T06:07:27.0991110+01:00",
+    "tests_failed": 0,
+    "tests_passed": 27
   }
 ]

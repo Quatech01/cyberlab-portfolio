@@ -1,0 +1,69 @@
+{
+  "target": "http://127.0.0.1:4692",
+  "findings": [
+    {
+      "endpoint": "http://127.0.0.1:4692/page/unsafe-inline",
+      "vulnerability_type": "missing_csp",
+      "evidence": "No Content-Security-Policy header present on this page",
+      "severity": "high",
+      "recommended_csp": "script-src 'self' 'unsafe-inline'; style-src 'self'; img-src 'self' data:; frame-src 'none'; default-src 'self'"
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/unsafe-inline",
+      "vulnerability_type": "inline_script_detected",
+      "evidence": "Inline <script> block found — requires 'unsafe-inline' in script-src",
+      "severity": "medium",
+      "recommended_csp": null
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/unsafe-inline",
+      "vulnerability_type": "inline_event_handler",
+      "evidence": "Inline event handler attribute detected (e.g. onclick, onload)",
+      "severity": "medium",
+      "recommended_csp": null
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/cdn-resources",
+      "vulnerability_type": "missing_csp",
+      "evidence": "No Content-Security-Policy header present on this page",
+      "severity": "high",
+      "recommended_csp": "script-src 'self' https://analytics.example.com https://cdn.example.com; style-src 'self' https://cdn.example.com https://fonts.example.com; img-src 'self' data: https://images.example.com; frame-src 'none'; default-src 'self'"
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/cdn-resources",
+      "vulnerability_type": "external_script_sources",
+      "evidence": "Scripts loaded from 2 external source(s): https://analytics.example.com, https://cdn.example.com",
+      "severity": "low",
+      "recommended_csp": null
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/mixed",
+      "vulnerability_type": "missing_csp",
+      "evidence": "No Content-Security-Policy header present on this page",
+      "severity": "high",
+      "recommended_csp": "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.example.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://images.example.com; frame-src 'self' https://embed.example.com; default-src 'self'"
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/mixed",
+      "vulnerability_type": "inline_script_detected",
+      "evidence": "Inline <script> block found — requires 'unsafe-inline' in script-src",
+      "severity": "medium",
+      "recommended_csp": null
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/mixed",
+      "vulnerability_type": "eval_usage_detected",
+      "evidence": "eval() call found in inline script — requires 'unsafe-eval' in script-src",
+      "severity": "high",
+      "recommended_csp": null
+    },
+    {
+      "endpoint": "http://127.0.0.1:4692/page/mixed",
+      "vulnerability_type": "external_script_sources",
+      "evidence": "Scripts loaded from 1 external source(s): https://cdn.example.com",
+      "severity": "low",
+      "recommended_csp": null
+    }
+  ],
+  "summary": "Analyzed 4 page(s). Found 9 issue(s): 4 high, 3 medium, 2 low."
+}

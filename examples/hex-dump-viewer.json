@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4879",
+  "target": "http://127.0.0.1:4218",
   "findings": [
     {
       "endpoint": "/files/suspicious_script.bin",
@@ -16,7 +16,7 @@
     {
       "endpoint": "/files/high_entropy.bin",
       "vulnerability_type": "high_entropy",
-      "evidence": "Shannon entropy 7.80 >= 7.5 in high_entropy.bin (possible encryption or packing)",
+      "evidence": "Shannon entropy 7.81 >= 7.5 in high_entropy.bin (possible encryption or packing)",
       "severity": "MEDIUM"
     }
   ],
