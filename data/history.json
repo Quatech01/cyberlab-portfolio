@@ -1283,5 +1283,34 @@
     "date": "2026-10-19T06:07:27.0991110+01:00",
     "tests_failed": 0,
     "tests_passed": 27
+  },
+  {
+    "id": 52,
+    "project_type": "fullstack_app",
+    "project": "nhs-prescription-system",
+    "title": "NHS Prescription Management System",
+    "description": "A full-stack NHS-style electronic prescription management system. GPs issue prescriptions, patients request repeats online, pharmacists dispense, and controlled drugs require dual GP/admin authorization. Implements JWT authentication, RBAC across four roles, CSRF protection, parameterized SQL, bcrypt, helmet security headers, and rate limiting.",
+    "category": "uk_applications",
+    "repo": "cyberlab-nhs-prescription-system",
+    "date": "2026-10-19T11:17:00.187Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack NHS prescription system with JWT + RBAC, controlled drug dual-authorisation, and all 8 DevSecOps features. All 29 node:test tests passed.",
+    "tests_passed": 29,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication",
+      "bcrypt password hashing",
+      "role-based access control",
+      "CSRF protection",
+      "parameterized SQL queries",
+      "security headers (Helmet)",
+      "rate limiting",
+      "controlled drug dual-authorisation workflow",
+      "refresh token revocation",
+      "audit logging"
+    ],
+    "failure_reason": null
   }
 ]
