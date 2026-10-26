@@ -1,10 +1,10 @@
 {
-  "target": "http://127.0.0.1:4125",
+  "target": "http://127.0.0.1:4244",
   "findings": [
     {
       "endpoint": "/login/vulnerable",
       "vulnerability_type": "SESSION_FIXATION",
-      "evidence": "Session ID unchanged after successful login (id prefix: 11fa88bb…). An attacker who plants a known session ID before login gains authenticated access once the victim logs in.",
+      "evidence": "Session ID unchanged after successful login (id prefix: 5c8e2435…). An attacker who plants a known session ID before login gains authenticated access once the victim logs in.",
       "severity": "HIGH"
     }
   ],

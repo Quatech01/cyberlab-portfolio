@@ -1312,5 +1312,30 @@
       "audit logging"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 53,
+    "project_type": "security_tool",
+    "project": "certificate-transparency-log-searcher",
+    "title": "Certificate Transparency Log Searcher",
+    "description": "Queries certificate transparency data to discover subdomains and certificate history for a domain. Demo server provides a mock CT log API with a vulnerable endpoint that accepts wildcard patterns and a safe endpoint that validates domain format. Tool discovers certificates, extracts subdomain information, and detects wildcard injection vulnerabilities.",
+    "category": "osint_and_recon",
+    "repo": "cyberlab-certificate-transparency-log-searcher",
+    "date": "2026-10-26T05:07:59.640Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a CT log searcher that enumerates subdomains from mock certificate data and detects wildcard pattern injection in unvalidated CT log query endpoints. 24/24 tests passed.",
+    "tests_passed": 24,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "certificate transparency logs",
+      "subdomain enumeration via SAN fields",
+      "wildcard pattern injection",
+      "domain input validation",
+      "OSINT reconnaissance techniques",
+      "CT log API security"
+    ],
+    "failure_reason": null
   }
 ]

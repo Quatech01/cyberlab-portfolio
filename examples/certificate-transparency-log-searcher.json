@@ -1,0 +1,31 @@
+{
+  "target": "http://127.0.0.1:4343",
+  "domain": "example.com",
+  "subdomains_discovered": [
+    "admin.example.com",
+    "api.example.com",
+    "dev.example.com",
+    "example.com",
+    "mail.example.com",
+    "secret-api.example.com",
+    "secure.example.com",
+    "staging.example.com",
+    "vault.example.com",
+    "www.example.com"
+  ],
+  "findings": [
+    {
+      "endpoint": "/api/ct/search",
+      "vulnerability_type": "Wildcard Pattern Injection in CT Log Query",
+      "evidence": "Wildcard query '*.example.com' returned 3 certificate(s) (exact query returned 3). Safe endpoint correctly rejects: Invalid domain format. Wildcards and special characters are not permitted..",
+      "severity": "medium"
+    },
+    {
+      "endpoint": "/api/ct/search",
+      "vulnerability_type": "Sensitive Subdomain Exposure via CT Log",
+      "evidence": "Certificate SANs disclose potentially sensitive hostnames: admin.example.com, dev.example.com, secret-api.example.com, staging.example.com, vault.example.com",
+      "severity": "low"
+    }
+  ],
+  "summary": "Found 2 issue(s) on http://127.0.0.1:4343 | [MEDIUM] Wildcard Pattern Injection in CT Log Query | [LOW] Sensitive Subdomain Exposure via CT Log | CT log reveals 10 subdomain(s) for example.com: admin.example.com, api.example.com, dev.example.com, example.com, mail.example.com, secret-api.example.com, secure.example.com, staging.example.com, vault.example.com, www.example.com"
+}
