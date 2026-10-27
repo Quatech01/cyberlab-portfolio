@@ -1337,5 +1337,35 @@
       "CT log API security"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 54,
+    "project_type": "fullstack_app",
+    "project": "timetable-room-scheduling-system",
+    "title": "Timetable and Room Scheduling System",
+    "description": "A full-stack timetable management platform for UK schools. Backend Express API with SQLite managing rooms, subjects, teachers, student groups, and time slots. Features: admin builds the weekly timetable assigning teacher + room + subject to each period, system detects and blocks double-booking (same teacher or same room in the same slot), generates views per teacher, per room, and per student group. Supports the UK standard school day structure (5 periods, 08:50-14:30). Frontend: self-contained SPA with admin timetable grid builder, teacher weekly view, student group view, and a Canvas room-utilisation heatmap. DevSecOps: JWT auth with access/refresh tokens and CSRF protection, bcrypt password hashing, Helmet security headers, express-rate-limit, express-validator input validation, parameterized queries throughout, role-based access (admin/teacher/student), and audit logging.",
+    "category": "education_platforms",
+    "repo": "cyberlab-timetable-room-scheduling-system",
+    "date": "2026-10-27T11:15:03.710Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a secure school timetable and room scheduling system with Express, node:sqlite, and a vanilla JS SPA. All 24 node:test tests passed, covering server health, auth flows, RBAC, security headers, input validation, clash detection, and CRUD operations.",
+    "tests_passed": 24,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with access and refresh tokens",
+      "Per-session CSRF token validation",
+      "Role-based access control (admin, teacher, student)",
+      "Clash detection (teacher, room, and group double-booking)",
+      "bcrypt password hashing (cost 12)",
+      "Parameterized SQL queries preventing injection",
+      "Helmet security headers (CSP, HSTS, X-Frame-Options: DENY)",
+      "Rate limiting with express-rate-limit",
+      "Input validation with express-validator",
+      "Audit logging of all scheduling changes",
+      "Canvas room-utilisation heatmap"
+    ],
+    "failure_reason": null
   }
 ]

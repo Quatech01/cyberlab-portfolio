@@ -1,6 +1,6 @@
 {
-  "target": "http://localhost:4902",
-  "timestamp": "2026-10-26T05:08:26.953Z",
+  "target": "http://localhost:4969",
+  "timestamp": "2026-10-27T11:15:44.674Z",
   "findings": [
     {
       "endpoint": "/api/vulnerable/encrypt",
@@ -26,7 +26,7 @@
       "issues": [
         "No authentication tag — susceptible to padding oracle attacks and ciphertext bit-flipping"
       ],
-      "evidence": "Random IV per encryption: first=6c17b8534bc72269... second=89482248fadbdb42..."
+      "evidence": "Random IV per encryption: first=b061f5ff82802d63... second=9edf0bfb37d4578c..."
     },
     {
       "endpoint": "/api/acceptable/encrypt",
@@ -39,7 +39,7 @@
       "issues": [
         "No authentication tag — ciphertext integrity is not verified (unauthenticated encryption)"
       ],
-      "evidence": "Random IV per encryption: first=162f0f8fb4b0c340... second=9562d7241c96b103..."
+      "evidence": "Random IV per encryption: first=f9d860db3916f35e... second=b7c97308f2a8b03a..."
     },
     {
       "endpoint": "/api/secure/encrypt",
@@ -50,7 +50,7 @@
       "authenticated": true,
       "deterministic": false,
       "issues": [],
-      "evidence": "Random IV per encryption: first=aa5679e90ab7e264... second=f510a93c2807fb02..."
+      "evidence": "Random IV per encryption: first=d15f83129b39198d... second=6c5bc00ce28c5858..."
     }
   ],
   "pattern_test": {

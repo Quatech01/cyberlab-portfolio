@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4343",
+  "target": "http://127.0.0.1:4194",
   "domain": "example.com",
   "subdomains_discovered": [
     "admin.example.com",
@@ -27,5 +27,5 @@
       "severity": "low"
     }
   ],
-  "summary": "Found 2 issue(s) on http://127.0.0.1:4343 | [MEDIUM] Wildcard Pattern Injection in CT Log Query | [LOW] Sensitive Subdomain Exposure via CT Log | CT log reveals 10 subdomain(s) for example.com: admin.example.com, api.example.com, dev.example.com, example.com, mail.example.com, secret-api.example.com, secure.example.com, staging.example.com, vault.example.com, www.example.com"
+  "summary": "Found 2 issue(s) on http://127.0.0.1:4194 | [MEDIUM] Wildcard Pattern Injection in CT Log Query | [LOW] Sensitive Subdomain Exposure via CT Log | CT log reveals 10 subdomain(s) for example.com: admin.example.com, api.example.com, dev.example.com, example.com, mail.example.com, secret-api.example.com, secure.example.com, staging.example.com, vault.example.com, www.example.com"
 }
