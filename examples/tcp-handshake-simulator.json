@@ -1,0 +1,12 @@
+{
+  "target": "http://127.0.0.1:4651",
+  "findings": [
+    {
+      "endpoint": "127.0.0.1:4653",
+      "vulnerability_type": "ABRUPT_CONNECTION_RESET",
+      "evidence": "Server on port 4653 sent TCP RST after receiving probe data (Receives probe data then abruptly resets the connection with TCP RST instead of FIN)",
+      "severity": "MEDIUM"
+    }
+  ],
+  "summary": "Probed 2 TCP endpoint(s) on 127.0.0.1. 1 finding(s). port 4652 (normal_fin): NORMAL_CLOSE, port 4653 (rst): RST."
+}

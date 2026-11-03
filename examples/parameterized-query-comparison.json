@@ -1,5 +1,5 @@
 {
-  "target": "http://127.0.0.1:4189",
+  "target": "http://127.0.0.1:4732",
   "findings": [
     {
       "endpoint": "/search/unsafe",

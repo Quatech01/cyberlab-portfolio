@@ -1367,5 +1367,31 @@
       "Canvas room-utilisation heatmap"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 55,
+    "project_type": "security_tool",
+    "project": "tcp-handshake-simulator",
+    "title": "TCP Handshake Simulator",
+    "description": "Visualises the TCP three-way handshake and detects abrupt TCP RST resets. Demo server (FastAPI) exposes a /tcp-ports discovery endpoint alongside two raw TCP servers in daemon threads: an echo server that closes with graceful FIN and an RST server that sets SO_LINGER(l_onoff=1, l_linger=0) before closing — causing the OS to transmit RST instead of FIN. The scanner tool fetches /tcp-ports, establishes real TCP connections to each port, logs every state transition (CLOSED → SYN_SENT → ESTABLISHED → DATA_SENT → DATA_RECEIVED/RST_RECEIVED → FIN_SENT → CLOSED), and reports RST-terminated connections as ABRUPT_CONNECTION_RESET findings. The echo endpoint produces zero findings, confirming false positive suppression.",
+    "category": "network_security",
+    "repo": "cyberlab-tcp-handshake-simulator",
+    "date": "2026-11-03T05:10:00.000Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a TCP handshake visualiser with a FastAPI demo server running two raw TCP servers in daemon threads: a graceful-FIN echo server and an SO_LINGER RST server. The scanner probes both, logs state transitions, and flags ABRUPT_CONNECTION_RESET on the RST endpoint. All 27 pytest tests passed on the first run.",
+    "tests_passed": 27,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "TCP three-way handshake (SYN → SYN-ACK → ACK) and four-way teardown (FIN → ACK → FIN → ACK)",
+      "TCP RST vs FIN — abrupt reset skips teardown and leaves the peer in an uncertain state",
+      "SO_LINGER with l_onoff=1, l_linger=0 — forces close() to transmit RST instead of flushing and sending FIN",
+      "Windows vs Linux SO_LINGER struct packing (HH vs ii) for cross-platform RST generation",
+      "ConnectionResetError (WinError 10054) as the Python signal that the peer sent RST",
+      "State machine logging — CLOSED / SYN_SENT / ESTABLISHED / DATA_SENT / RST_RECEIVED / FIN_SENT / TIME_WAIT / CLOSED",
+      "False positive suppression — echo port with graceful FIN produces zero findings under identical probe payloads"
+    ],
+    "failure_reason": null
   }
 ]
