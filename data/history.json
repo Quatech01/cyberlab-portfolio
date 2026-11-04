@@ -1393,5 +1393,36 @@
       "False positive suppression — echo port with graceful FIN produces zero findings under identical probe payloads"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 56,
+    "project_type": "fullstack_app",
+    "project": "uk-visa-immigration-status-tracker",
+    "title": "UK Visa and Immigration Status Tracker",
+    "description": "A full-stack UK visa and immigration status tracking system for individuals and immigration advisers. Backend: Express API with SQLite managing visa applications, document checklists, status update timelines, and case notes. Features: applicants register applications (Skilled Worker, Student Route, Family Visa, etc.), track stage progression (submitted → biometrics → decision pending → approved/refused), maintain document checklists with tick-off, view ILR and citizenship eligibility dates calculated from approval date, receive 28-day expiry alerts. Advisers manage client portfolios and add case notes. Admin has full visibility. Passport numbers stored masked (last 4 digits only). Frontend: self-contained SPA with role-specific views — applicant timeline dashboard, adviser portfolio, admin oversight. DevSecOps: JWT auth with access/refresh tokens, bcrypt passwords, Helmet security headers, CSRF tokens, express-rate-limit, express-validator, parameterized SQLite queries, audit logging, RBAC middleware. Tests: 34 node:test cases covering health, auth flow, RBAC, security headers, input validation (including SQL injection resistance and CSRF enforcement), and domain CRUD.",
+    "category": "uk_applications",
+    "repo": "cyberlab-uk-visa-immigration-status-tracker",
+    "date": "2026-11-04T05:16:46.689Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a full-stack UK visa status tracker with Express, SQLite, and JWT auth. Applicants track their own visa applications through stages, documents, and deadline alerts; advisers manage client cases; admins have full visibility. All 34 node:test tests passed.",
+    "tests_passed": 34,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT authentication with access tokens (15m) and refresh tokens (7d)",
+      "bcrypt password hashing at cost factor 12",
+      "Role-based access control — applicant / adviser / admin roles enforced in middleware",
+      "Passport number masking — only last 4 digits stored, raw number never persisted",
+      "CSRF double-submit token pattern — token issued at login, required on all state-changing requests",
+      "ILR and citizenship eligibility date calculation per UK Immigration Rules (5yr / 6yr continuous residence)",
+      "28-day visa expiry alert mirroring Home Office grace period guidance",
+      "Parameterized SQLite queries via node:sqlite preventing SQL injection",
+      "Helmet security headers — CSP, HSTS, X-Frame-Options, X-Content-Type-Options",
+      "Rate limiting on auth endpoints (20 req/15min) and API (100 req/min)",
+      "express-validator input validation at API boundary",
+      "Audit log recording all actions with user ID, resource, and IP address"
+    ],
+    "failure_reason": null
   }
 ]
