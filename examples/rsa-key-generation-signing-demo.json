@@ -1,0 +1,18 @@
+{
+  "target": "http://127.0.0.1:4515",
+  "findings": [
+    {
+      "endpoint": "/sign/pkcs1v15",
+      "vulnerability_type": "DEPRECATED_PADDING_SCHEME",
+      "evidence": "Endpoint uses PKCS#1 v1.5 padding. This deterministic scheme is deprecated in favour of RSA-PSS (PKCS#1 v2.1) per RFC 8017. PKCS#1 v1.5 signatures are non-randomised and have a known padding oracle attack surface.",
+      "severity": "LOW"
+    },
+    {
+      "endpoint": "/verify/weak",
+      "vulnerability_type": "SIGNATURE_VERIFICATION_BYPASS",
+      "evidence": "Endpoint accepted a randomly-generated 256-byte forgery as a valid signature. Server response: {\"valid\": true, \"endpoint\": \"weak\"}. Only the presence of a non-empty string is checked — no cryptographic verification is performed.",
+      "severity": "HIGH"
+    }
+  ],
+  "summary": "Found 2 issue(s): 1 HIGH/CRITICAL, 1 LOW"
+}
