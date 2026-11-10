@@ -1450,5 +1450,35 @@
       "Python cryptography library — rsa.generate_private_key, padding.PSS, padding.PKCS1v15, public_key.verify()"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 58,
+    "project_type": "fullstack_app",
+    "project": "parent-teacher-communication-portal",
+    "title": "Parent-Teacher Communication Portal",
+    "description": "A secure full-stack messaging platform for UK schools. Backend: Express API with SQLite storing users, messages, announcements, children, and relationship tables (parent_children, teacher_children). Features: parents message their child's teachers, teachers message parents of their students, admins post school-wide announcements, inbox/sent views with unread counts, soft-delete, message read receipts. Auth: JWT access tokens (15m) + refresh tokens (7d) with jti uniqueness, bcrypt cost 12, server-side CSRF tokens validated on every state-changing request. RBAC: role-based guards on routes plus graph-query row-level check ensuring parents can only message teachers linked to their child. Frontend: self-contained SPA (all JS/CSS inline) with login, registration, inbox, compose, and announcements views. DevSecOps: Helmet security headers, CSRF protection, express-validator input validation, express-rate-limit, parameterized queries via node:sqlite DatabaseSync, bcrypt password hashing, JWT auth with refresh rotation, role-based access control. Tests: 28 tests covering health, full auth flow including token refresh, RBAC enforcement, all four security headers, input validation and SQL injection resistance, and core messaging business logic.",
+    "category": "education_platforms",
+    "repo": "cyberlab-parent-teacher-communication-portal",
+    "date": "2026-11-10T17:24:06.007Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a secure parent-teacher messaging portal with Express/SQLite demonstrating JWT auth with refresh token rotation, CSRF validation, and graph-query RBAC ensuring parents can only contact their child's teachers. All 28 tests passed on the first green run.",
+    "tests_passed": 28,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "JWT access + refresh token rotation with jti uniqueness claim",
+      "bcrypt password hashing at cost factor 12",
+      "Server-side CSRF token validation via X-CSRF-Token header",
+      "Role-based access control — admin, teacher, parent roles with 403 enforcement",
+      "Row-level RBAC via SQL graph query — parent can only message their child's teachers",
+      "Soft delete — recipient_deleted and sender_deleted flags preserve audit trail",
+      "node:sqlite DatabaseSync with parameterized queries — injection-safe",
+      "Helmet security headers — CSP, HSTS, X-Frame-Options, X-Content-Type-Options",
+      "express-rate-limit on auth endpoints and general API",
+      "Refresh token server-side revocation on logout",
+      "GDPR-aligned audit log — all logins, sends, and announcements recorded"
+    ],
+    "failure_reason": null
   }
 ]
