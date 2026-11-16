@@ -1,0 +1,66 @@
+{
+  "target": "http://127.0.0.1:4408",
+  "findings": [
+    {
+      "endpoint": "/files/vuln_photo.jpg",
+      "vulnerability_type": "GPS Location Disclosure",
+      "evidence": "GPS embedded in image EXIF: 51.507222°N, 0.127778°W",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/files/vuln_photo.jpg",
+      "vulnerability_type": "Email Address Disclosure",
+      "evidence": "EXIF artist: j.smith@contoso-internal.com",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/files/vuln_photo.jpg",
+      "vulnerability_type": "Software Version Disclosure",
+      "evidence": "EXIF software: Adobe Photoshop CS6 13.0.1",
+      "severity": "LOW"
+    },
+    {
+      "endpoint": "/files/vuln_photo.jpg",
+      "vulnerability_type": "Software Version Disclosure",
+      "evidence": "EXIF camera_make: Canon",
+      "severity": "LOW"
+    },
+    {
+      "endpoint": "/files/vuln_photo.jpg",
+      "vulnerability_type": "Software Version Disclosure",
+      "evidence": "EXIF camera_model: Canon EOS 5D Mark IV",
+      "severity": "LOW"
+    },
+    {
+      "endpoint": "/files/vuln_document.pdf",
+      "vulnerability_type": "Email Address Disclosure",
+      "evidence": "PDF Author: j.davies@contoso-internal.com",
+      "severity": "MEDIUM"
+    },
+    {
+      "endpoint": "/files/vuln_document.pdf",
+      "vulnerability_type": "Sensitive Classification Label",
+      "evidence": "PDF Subject: Q4 Financial Summary - CONFIDENTIAL INTERNAL USE ONLY",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/files/vuln_document.pdf",
+      "vulnerability_type": "Sensitive Classification Label",
+      "evidence": "PDF Keywords: internal confidential quarterly earnings forecast",
+      "severity": "HIGH"
+    },
+    {
+      "endpoint": "/files/vuln_document.pdf",
+      "vulnerability_type": "Software Version Disclosure",
+      "evidence": "PDF Creator: Microsoft Word 16.0.14326",
+      "severity": "LOW"
+    },
+    {
+      "endpoint": "/files/vuln_document.pdf",
+      "vulnerability_type": "Software Version Disclosure",
+      "evidence": "PDF Producer: Microsoft Office 2019",
+      "severity": "LOW"
+    }
+  ],
+  "summary": "Found 10 metadata finding(s) across 2 file(s). Severity breakdown: HIGH=3, MEDIUM=2, LOW=5."
+}

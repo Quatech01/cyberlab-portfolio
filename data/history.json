@@ -1480,5 +1480,32 @@
       "GDPR-aligned audit log — all logins, sends, and announcements recorded"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 59,
+    "project_type": "security_tool",
+    "project": "metadata-extractor",
+    "title": "Metadata Extractor",
+    "description": "Extracts metadata from common file formats: EXIF from images, properties from PDFs. Flags metadata that leaks sensitive information: GPS coordinates (HIGH), embedded email addresses (MEDIUM), software version strings (LOW), and sensitive classification labels in document subject/keyword fields (HIGH). Demo server (FastAPI) generates four synthetic files in-memory at startup — a vulnerable JPEG with full EXIF including GPS and author email, a clean JPEG with no EXIF, a vulnerable PDF with confidential subject and author email, and a clean PDF. The scanner fetches the file list, downloads each file, extracts metadata using piexif (JPEG) and pypdf (PDF), applies severity rules, and outputs structured JSON.",
+    "category": "malware_analysis_and_forensics",
+    "repo": "cyberlab-metadata-extractor",
+    "date": "2026-11-16T23:11:00.694Z",
+    "status": "success",
+    "language": "python",
+    "server_framework": "fastapi",
+    "summary": "Built a metadata leakage scanner with a FastAPI demo server serving synthetic JPEG and PDF files at varying sensitivity levels. The scanner extracts EXIF and PDF document properties and flags GPS coordinates, email addresses, software versions, and confidential classification labels. All 29 pytest tests passed on the second run after a minor tool fix.",
+    "tests_passed": 29,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "EXIF metadata leakage — GPS coordinates reveal photographer location (HIGH severity)",
+      "Email address disclosure via EXIF Artist and PDF Author fields (MEDIUM severity)",
+      "Software version disclosure via EXIF Software and PDF Creator/Producer fields (LOW severity)",
+      "Sensitive classification label detection in PDF Subject and Keywords (HIGH severity)",
+      "piexif library — reading and writing EXIF data including GPS IFD rational numbers",
+      "pypdf PdfWriter.add_metadata — attaching document properties to PDF files",
+      "DMS to decimal degrees conversion for GPS latitude/longitude",
+      "Metadata stripping as countermeasure — exiftool and PDF document inspection tools"
+    ],
+    "failure_reason": null
   }
 ]
