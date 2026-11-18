@@ -1507,5 +1507,35 @@
       "Metadata stripping as countermeasure — exiftool and PDF document inspection tools"
     ],
     "failure_reason": null
+  },
+  {
+    "id": 60,
+    "project_type": "fullstack_app",
+    "project": "electoral-registration-polling",
+    "title": "Electoral Registration and Polling System",
+    "description": "A full-stack UK electoral registration and polling portal. Backend: Express API with JWT authentication, role-based access (admin, returning_officer, voter), and SQLite database. Features: voter registration with UK eligibility checks (age 18+, British/Irish/Commonwealth nationality, prisoner and conviction exclusions), election management with status transitions (draft → open → closed), anonymous ballot casting using SHA-256 voter hash preventing double-voting while ensuring no vote can be linked back to a voter, public results after election closes with winner declaration, and audit logging. Frontend: responsive SPA with login, voter registration form, election dashboard, voting booth, and results page with Canvas bar chart. DevSecOps: Helmet security headers (CSP, HSTS, X-Frame-Options: DENY), double-submit CSRF via JWT csrf claim, express-validator input validation with UK postcode regex, rate limiting (20 req/15min auth, 100 req/min general, 5/min vote), node:sqlite DatabaseSync parameterized queries, bcrypt cost 12, JWT HS256 with 15-min access + 7-day revocable refresh tokens, requireRole() middleware. Tests: 28 node:test tests covering all 6 required groups.",
+    "category": "uk_applications",
+    "repo": "cyberlab-electoral-registration-polling",
+    "date": "2026-11-18T05:09:58.762Z",
+    "status": "success",
+    "language": "node",
+    "server_framework": "express",
+    "summary": "Built a secure electoral registration and polling portal implementing anonymous ballot casting via SHA-256 voter hashing with UK eligibility rules. All 28 node:test tests passed on the first run.",
+    "tests_passed": 28,
+    "tests_failed": 0,
+    "concepts_demonstrated": [
+      "Anonymous voting via SHA-256(user_id:election_id:SALT) — vote cannot be linked back to voter",
+      "Duplicate vote prevention via UNIQUE(election_id, voter_hash) database constraint",
+      "UK electoral eligibility — age 18+, nationality check, prisoner/conviction exclusion",
+      "Election status state machine — draft → open → closed, one-way transitions",
+      "Double-submit CSRF protection — csrf claim in JWT matched against X-CSRF-Token header",
+      "JWT access + refresh token cycle with server-side refresh token revocation",
+      "Role-based access control — voter/returning_officer/admin with requireRole() middleware",
+      "node:sqlite DatabaseSync — built-in Node 24 SQLite, no native compilation",
+      "Helmet security headers — CSP, HSTS, X-Frame-Options: DENY, nosniff",
+      "Results only published after election is closed, winner by plurality",
+      "Canvas bar chart for vote distribution in self-contained SPA"
+    ],
+    "failure_reason": null
   }
 ]
